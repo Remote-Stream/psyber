@@ -84120,20 +84120,7 @@ let cm, cmconsole, exampleCode,
    } 
 
    const startingText = `
-/* welcome!
-
-to improve your gibbering, we suggest 
-opening your browser's development console, 
-which will display a variety of important 
-messages. use one of the keystrokes below to
-open it:
-
-               chrome/edge               firefox
-win/lin |   ctrl + shift + j    |    ctrl + shift + i
-mac     | command + option + j  |  command + option + i
-
-...and for best results, use chrome.
-
+/* 
    ************************************************
   **************************************************
  ***                                              ***
@@ -84255,9 +84242,23 @@ module.exports = function( Gibber, element = '#editor', userEditable=true ) {
 //     8
 //   )`
 
-const defaultCode = `Clock.bpm = 140
+const defaultCode = 
+`
+// To run a line of code, you can do the following:
+// 1. Place your cursor in the line you'd like to execute and hit Control+Enter
+// 2. Select the entire line of code with your mouse or keyboard shortcuts and hit Control+Enter
+// 3. Hit Alt+Enter to execute block of code.
+
+Clock.bpm = 140
  
-verb = Reverb( 'space' ).bus()`
+bass = Monosynth('bass.stab')
+  .note.seq( 
+    gen( beats(8) * 4 ), 
+    Euclid(5,16) 
+  )
+
+k = Kick().trigger.seq( 1, 1/4 )
+`
 
     if( window.location.search !== '' ) {
       // use slice to get rid of ?
