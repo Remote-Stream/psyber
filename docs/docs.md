@@ -25,7 +25,7 @@ instrument
 **scaleIndex** *int* (required) - The arguent scale index is converted to Hz according to the currently selected tuning and mode.
 
 ### instrument.notef(  *frequency* ) ###
-**frequency** *float* (required) - The direct frequency to be played, bypassing gibber's theory / tuning systems.
+**frequency** *float* (required) - The direct frequency to be played, bypassing dilber's theory / tuning systems.
 
 ### instrument.notec(  *scaleIndex* ) ###
 **scaleIndex** *float* (required) - The arguent scale index is converted to Hz according to the currently selected tuning and mode. Unlike note(), in notec() floating point scale indices are supported and will be linearly interpolated between pitches
@@ -45,7 +45,7 @@ effect
 ## Graphics
 operation
 ----
-The majority of 3D objects in gibber include methods found in this prototype.
+The majority of 3D objects in dilber include methods found in this prototype.
 
 
 #### Methods ####
@@ -89,7 +89,7 @@ geometry
 ----
 *Prototype: [operation](#prototypes-operation)*
 
-Any 3D geometry in gibber includes methods from this prototype.
+Any 3D geometry in dilber includes methods from this prototype.
 
 
 #### Methods ####
@@ -118,9 +118,9 @@ number(sequencable)
 **time** *number* (required) - The duration of the fade, in measures.
 
 ### number(sequencable).seq(  *values*,  *timings?*,  *seq_id?* ) ###
-**values** *number, pattern, or gen expression* (required) - This determines the output of the sequencer. A single value will be outputted repeatedly. Arrays will be converted to gibber Pattern objects. gen expressions creating signals can also be used here; this signals will be sampled whenever the sequencer is triggered (as determined by the timings argument).
+**values** *number, pattern, or gen expression* (required) - This determines the output of the sequencer. A single value will be outputted repeatedly. Arrays will be converted to dilber Pattern objects. gen expressions creating signals can also be used here; this signals will be sampled whenever the sequencer is triggered (as determined by the timings argument).
 
-**timings** *number or pattern* (optional) - This argument determines when the sequencer fires. If no value is passed, the sequencer will fire whenever another sequencer on the same object fires... this enables you to only specify a single timings pattern and control all sequencers on an object with it. Arrays passed as an argument will be automatically converted to gibber pattern objects.
+**timings** *number or pattern* (optional) - This argument determines when the sequencer fires. If no value is passed, the sequencer will fire whenever another sequencer on the same object fires... this enables you to only specify a single timings pattern and control all sequencers on an object with it. Arrays passed as an argument will be automatically converted to dilber pattern objects.
 
 **seq_id** *number* (optional) - This argument is used to identify individual sequencers, as multiple sequencers can be assigned to control a single method/property.
 
@@ -141,9 +141,9 @@ method(sequencable)
 
 #### Methods ####
 ### method(sequencable).seq(  *values*,  *timings?*,  *seq_id?* ) ###
-**values** *number, array, pattern, or gen expression* (required) - This determines the output of the sequencer. A single value will be outputted repeatedly. Arrays will be converted to gibber Pattern objects. gen expressions creating signals can also be used here; this signals will be sampled whenever the sequencer is triggered (as determined by the timings argument).
+**values** *number, array, pattern, or gen expression* (required) - This determines the output of the sequencer. A single value will be outputted repeatedly. Arrays will be converted to dilber Pattern objects. gen expressions creating signals can also be used here; this signals will be sampled whenever the sequencer is triggered (as determined by the timings argument).
 
-**timings** *number, array, or pattern* (optional) - This argument determines when the sequencer fires. If no value is passed, the sequencer will fire whenever another sequencer on the same object fires... this enables you to only specify a single timings pattern and control all sequencers on an object with it. Arrays passed as an argument will be automatically converted to gibber pattern objects.
+**timings** *number, array, or pattern* (optional) - This argument determines when the sequencer fires. If no value is passed, the sequencer will fire whenever another sequencer on the same object fires... this enables you to only specify a single timings pattern and control all sequencers on an object with it. Arrays passed as an argument will be automatically converted to dilber pattern objects.
 
 **seq_id** *number* (optional) - 
 
@@ -752,7 +752,7 @@ A shorthand to create a lfo that uses a sawtooth oscillator.
 *float* default: 0.  The center point for the output of lfos. All lfos are bipolar (they have positive and negative valuess) around this center point.
 Theory
 ----
-The `Theory` object controls harmony inside of gibber, including the ability to specify chord progressions and tunings.
+The `Theory` object controls harmony inside of dilber, including the ability to specify chord progressions and tunings.
 
 
 #### Properties ####
