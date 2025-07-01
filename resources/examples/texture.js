@@ -2,7 +2,7 @@
 
 textures
    
-Gibber lets you use textures in a
+Dilber lets you use textures in a
 number of different ways, from presets
 to defining your own GLSL shader 
 code.

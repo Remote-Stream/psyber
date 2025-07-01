@@ -2,7 +2,7 @@
 **
 ** First, we'll note that both the Freesound
 ** and the Drums objects use Samplers behind
-** the scenes, so if you've played with Gibber
+** the scenes, so if you've played with Dilber
 ** a bit you've probably been using Samplers
 ** without realizing it. Samplers enable you to
 ** load a audiofile from a webserver and then
@@ -13,7 +13,7 @@
 ** per-note basis.
 **
 ** While there are some samples sitting on 
-** Gibber's server for you to use, you'll
+** Dilber's server for you to use, you'll
 ** probably eventually want to experiment with
 ** your own samples. To do this, you need a 
 ** web server. If you're comfortable with
@@ -23,7 +23,7 @@
 **
 ** You need to turn on the CORS feature to
 ** load samples from a different server than
-** you're loading Gibber from. You could run it
+** you're loading Dilber from. You could run it
 ** like so after installation:
 **
 ** http-server pathToYourSampleDirectory -p 8080 --cors true
@@ -59,7 +59,7 @@ s.note.seq( [3,3,-1],[1/4,1/4,1/2] )
 // we can also call .trigger and then
 // control the rate property separately
 
-Gibber.clear()
+Dilber.clear()
 s = Sampler('openhat.wav')
 s.trigger.seq( 1, 1/4 )
 s.rate = gen( 1 + cycle(1) * .75 )
@@ -71,14 +71,14 @@ s.rate.seq( [-1,1,2,-2,4,-4], Euclid(3,8) )
 // which let you control how much of the
 // sample is played (range 0–1).
 
-Gibber.clear()
+Dilber.clear()
 s = Sampler( 'openhat.wav' )
 s.trigger.seq( 1,1/4 )
 s.end.seq( [.05,.1,.2,.5], 1 )
 
 // We can also load multiple files on
 // initialization
-Gibber.clear()
+Dilber.clear()
 s = Sampler({
   files:[
     'resources/audiofiles/kick.wav',
@@ -99,7 +99,7 @@ s.pick.seq( Rndi(0,3) )
 // many samples it contains. So, for example, if
 // we want to loop through all the kicks:
 
-Gibber.clear()
+Dilber.clear()
 s = Sampler('kicks')
 s.trigger.seq( 1, 1/16 )
 s.pick.seq( gen( beats(16) * s.length ) )

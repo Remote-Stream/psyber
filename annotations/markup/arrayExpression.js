@@ -50,10 +50,10 @@ module.exports = function( Marker ) {
           }
 
           if( Array.isArray( arr ) ) {
-            const tmp = Gibber.shouldDelay
-            Gibber.shouldDelay = Gibber.Audio.shouldDelay = false 
+            const tmp = Dilber.shouldDelay
+            Dilber.shouldDelay = Dilber.Audio.shouldDelay = false 
             patternObject.set( arr )
-            Gibber.shouldDelay = tmp
+            Dilber.shouldDelay = tmp
 
             pos.start = pos.from
             pos.end = pos.to

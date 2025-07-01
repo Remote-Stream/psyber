@@ -2,11 +2,11 @@
 
 polyphony & voices
     
-Most synths in Gibber can only play
+Most synths in Dilber can only play
 one note at a time; they are 
 monophonic. This tutorial describes
 special features / considerations
-for Gibber's polyphonic synths,
+for Dilber's polyphonic synths,
 currently PolySynth, PolyFM, PolyComplex,
 PolyConga, PolyMono, and the Multisampler.
 
@@ -64,7 +64,7 @@ perc.voices[0].glide = 500
 
 // adsr times are measured in samples... the
 // individuals voices don't have the abstractions
-// that top-level Gibber instruments have for time.
+// that top-level Dilber instruments have for time.
 // the Clock.btos method converts beats to samples.
 perc.voices[0].decay = Clock.btos( 2 )
 
@@ -88,7 +88,7 @@ perc.pan = .75
 // notes are attached to.
 
 // fresh start...
-Gibber.clear()
+Dilber.clear()
 verb = Bus2('spaceverb')
 perc = PolySynth('square.perc').connect( verb, .5 )
 

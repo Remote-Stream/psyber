@@ -5,7 +5,7 @@ audiovisual mapping
 In this tutorial we look at how to
 use audio objects to control visual
 parameters. Unlike most systems
-Gibber gives you the ability to assign
+Dilber gives you the ability to assign
 individual instruments to visual
 output for greater control.
     

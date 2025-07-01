@@ -3,7 +3,7 @@ const $ = Utility.create
 const EuclidAnnotation = require( '../update/euclidAnnotation.js' )
 
 module.exports = function( node, cm, track, objectName, state, cb ) {
-  const Marker = Gibber.Environment.codeMarkup 
+  const Marker = Dilber.Environment.codeMarkup 
   const steps = node.arguments[ 0 ].properties
   const Identifier = Marker.patternMarkupFunctions.Identifier
 
@@ -180,7 +180,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
         }
       }
 
-      Gibber.subscribe( 'clear', pattern.clear )
+      Dilber.subscribe( 'clear', pattern.clear )
     }
   }
 

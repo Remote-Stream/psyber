@@ -2,7 +2,7 @@ const Utility = require( '../../../js/utility.js' )
 const $ = Utility.create
 
 module.exports = function( node, cm, track, objectName, state, cb ) {
-  const Marker = Gibber.Environment.codeMarkup // tsk tsk tsk global...
+  const Marker = Dilber.Environment.codeMarkup // tsk tsk tsk global...
   const steps = node.arguments[ 0 ].properties
 
   track.markup.textMarkers[ 'step' ] = []
@@ -54,7 +54,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
 
         span = $( spanName )
 
-        //if( currentValue !== Gibber.Seq.DO_NOT_OUTPUT ) {
+        //if( currentValue !== Dilber.Seq.DO_NOT_OUTPUT ) {
         span.add( 'euclid0' )
         span.add( 'euclid1' )
 
@@ -65,8 +65,8 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
       }
 
       patternObject._onchange = () => {
-        //let delay = Gibber.Clock.btoms( 1,  Gibber.Clock.bpm )
-        //Gibber.Environment.animationScheduler.add( () => {
+        //let delay = Dilber.Clock.btoms( 1,  Dilber.Clock.bpm )
+        //Dilber.Environment.animationScheduler.add( () => {
         //  marker.doc.replaceRange( patternObject.values.join(''), step.loc.start, step.loc.end )
         //  mark( step, key, cm, track )
         //}, delay ) 
@@ -100,7 +100,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
         if( typeof __clear === 'function' ) __clear.call( patternObject )
       }
 
-      Gibber.subscribe( 'clear', patternObject.clear )
+      Dilber.subscribe( 'clear', patternObject.clear )
     }
   }
 

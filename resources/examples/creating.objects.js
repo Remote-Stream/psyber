@@ -7,12 +7,12 @@ audio and visual objects, and store
 them so we can change their properties
 and tell them to do tasks.
     
-In Gibber, we usually create new objects
+In Dilber, we usually create new objects
 by calling a *constructor*. Constructors
 are functions that can be identified by
 the capitalization of their first letter.
 (there are some exceptions to this in 
-Gibber). Run the code below, making
+Dilber). Run the code below, making
 sure your console is open first.
 --*/
 
@@ -41,7 +41,7 @@ syn.note( 0 )
 
 /*--md
 In this case, the synth plays the first
-note in Gibber's default scale (learn 
+note in Dilber's default scale (learn 
 more in the theory tutorial). We can
 also change properties of our synth:
 --*/

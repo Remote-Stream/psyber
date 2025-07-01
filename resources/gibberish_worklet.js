@@ -16270,7 +16270,7 @@ module.exports = function (Gibberish) {
       }
     },
 
-    // can't include inputs here as it will be sucked up by Gibber,
+    // can't include inputs here as it will be sucked up by Dilber,
     // instead pass during Object.assign() after defaults.
     defaults: {
       gain: 1,
@@ -17124,7 +17124,7 @@ module.exports = function (Gibberish) {
       properties.id = Gibberish.factory.getUID();
       Object.assign(seq, properties);
       seq.__properties__ = properties; // support for sequences that are triggered via other means,
-      // in Gibber this is when you provide timing to one sequence
+      // in Dilber this is when you provide timing to one sequence
       // on an object and want to use that one pattern to trigger
       // multiple sequences.
 
@@ -17144,7 +17144,7 @@ module.exports = function (Gibberish) {
             if (typeof timing === 'function') timing = timing();
           }
 
-          let shouldIncreaseSpeed = density <= 1 ? false : true; // XXX this supports an edge case in Gibber, where patterns like Euclid / Hex return
+          let shouldIncreaseSpeed = density <= 1 ? false : true; // XXX this supports an edge case in Dilber, where patterns like Euclid / Hex return
           // objects indicating both whether or not they should should trigger values as well
           // as the next time they should run. perhaps this could be made more generalizable?
 
@@ -17320,7 +17320,7 @@ module.exports = function (Gibberish) {
           }
         }
 
-        if (typeof timing === 'function') timing = timing(); // XXX this supports an edge case in Gibber, where patterns like Euclid / Hex return
+        if (typeof timing === 'function') timing = timing(); // XXX this supports an edge case in Dilber, where patterns like Euclid / Hex return
         // objects indicating both whether or not they should should trigger values as well
         // as the next time they should run. perhaps this could be made more generalizable?
 

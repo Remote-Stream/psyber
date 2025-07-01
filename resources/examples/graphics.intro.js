@@ -2,7 +2,7 @@
 
 intro to graphics in gibber
    
-Graphics in Gibber are created using
+Graphics in Dilber are created using
 marching.js, a ray-marching library:
 
 http://charlie-roberts.com/marching
@@ -56,7 +56,7 @@ b.rotate(45,1,1,1)
 c = Twist( Box() ).render()
 c.amount = gen( 2 + cycle(.5) * 2 )
 
-// additionally, Gibber enables you to define an
+// additionally, Dilber enables you to define an
 // onframe function that is run once per video frame.
 // you can modify vidoe or audio objects in this function.
 

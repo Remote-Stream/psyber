@@ -2,7 +2,7 @@
 
 sound design: filters
    
-There are currently four different filter models available in Gibber. 
+There are currently four different filter models available in Dilber. 
 While the first two are only lowpass, the SVF and biquad come with multiple
 modes.
 
@@ -65,7 +65,7 @@ s.note(0)
 // besides .filterModel and .filterMode. The first is .cutoff,
 // which is measured from 0-1. 
 
-Gibber.clear()
+Dilber.clear()
 s = Synth().note.seq( 0, 1/4 )
 s.cutoff.seq( [.1,.25,.35,.5,.75, .9] )
 
@@ -77,7 +77,7 @@ s.cutoff.seq( [.1,.25,.35,.5,.75, .9] )
 // frequency... the amount of this effect is determined
 // by the .filterMult property
 
-Gibber.clear()
+Dilber.clear()
 s = Synth({ cutoff:.1 }).note.seq( 0, 1/4 )
 s.filterMult.seq( [.5,1,2,4,8] )
 

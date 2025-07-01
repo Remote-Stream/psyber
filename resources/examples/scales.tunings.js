@@ -3,7 +3,7 @@
 using scales / tunings
    
 this tutorial looks at how to use
-scales and microtonality in Gibber,
+scales and microtonality in Dilber,
 powered by the fantastic tune.js
 library by Andrew Bernstein and Ben
 Taylor.
@@ -12,7 +12,7 @@ http://abbernie.github.io/tune/
     
 ** __--__--__--__--__--__--__--__*/
 
-// By default Gibber plays scales in A minor,
+// By default Dilber plays scales in A minor,
 // starting in the 4th octave.
 
 s = Synth('square.perc')

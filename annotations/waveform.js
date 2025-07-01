@@ -4,7 +4,7 @@ const COLORS = {
   DOT:'var(--f_high)'//'rgba(89, 151, 198, 1)'//'rgba(0,0,255,1)'
 }
 
-let Gibber = null
+let Dilber = null
 
 const findByName = name => {
   let targetWidget = null
@@ -54,7 +54,7 @@ const Waveform = {
     widget.ctx.strokeStyle = Environment.theme.get('f_med')//COLORS.FILL 
     widget.ctx.font = '10px monospace'
     widget.ctx.lineWidth = 1
-    widget.gen = patternObject !== null ? patternObject.value : walkState.gen.value//Gibber.Gen.lastConnected.shift()
+    widget.gen = patternObject !== null ? patternObject.value : walkState.gen.value//Dilber.Gen.lastConnected.shift()
     widget.values = []
     widget.storage = []
     widget.min = 10000
@@ -120,7 +120,7 @@ const Waveform = {
       }
     }
 
-    //if( widget.gen.id === undefined ) widget.gen.id = Gibber.Gibberish.utilities.getUID()
+    //if( widget.gen.id === undefined ) widget.gen.id = Dilber.Gibberish.utilities.getUID()
 
     widget.mark = cm.markText({ line, ch:ch }, { line, ch:ch+1 }, { replacedWith:widget })
     widget.mark.__clear = widget.mark.clear
@@ -151,7 +151,7 @@ const Waveform = {
     
     if( patternObject !== null ) {
       patternObject.mark = widget.mark
-      if( patternObject === Gibber.Audio.Gen.lastConnected[0] ) Gibber.Audio.Gen.lastConnected.shift()
+      if( patternObject === Dilber.Audio.Gen.lastConnected[0] ) Dilber.Audio.Gen.lastConnected.shift()
     }
 
     if( !isFade ) {
@@ -391,6 +391,6 @@ const Waveform = {
 
 
 module.exports = function( __Gibber ) {
-  Gibber = __Gibber
+  Dilber = __Gibber
   return Waveform
 }

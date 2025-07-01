@@ -4851,18 +4851,18 @@ const Audio = {
     latencyHint: .05
   },
 
-  init(options, Gibber) {
+  init(options, Dilber) {
     let {
       workletPath,
       ctx,
       bufferSize,
       latencyHint
     } = Object.assign({}, this.__defaults, options);
-    this.Gibber = Gibber;
-    this.Core = Gibber; // XXX should probably just call Audio.Core.createProperty to avoid confusion...
+    this.Dilber = Dilber;
+    this.Core = Dilber; // XXX should probably just call Audio.Core.createProperty to avoid confusion...
 
-    this.createProperty = Gibber.createProperty;
-    Gibber.Audio = this;
+    this.createProperty = Dilber.createProperty;
+    Dilber.Audio = this;
     this.Gibberish = Gibberish;
     Gibberish.workletPath = workletPath;
     this.createPubSub();
@@ -4880,7 +4880,7 @@ const Audio = {
         Audio.Gen = Gen(Audio);
         Audio.Gen.init();
         Audio.Gen.export(Audio.Gen.ugens);
-        Audio.Theory.init(window.Gibber);
+        Audio.Theory.init(window.Dilber);
         Audio.Utilities = Utility;
         Audio.WavePattern = WavePattern(Audio);
         Audio.ctx = ctx; // must wait for Gen to be initialized
@@ -4905,7 +4905,7 @@ const Audio = {
         Audio.setupGlobals(); //const drums = Audio.Drums('x*o-')
         //drums.disconnect()
         //drums.stop()
-        // store last location in memory... we can clear everything else in Gibber.clear9)
+        // store last location in memory... we can clear everything else in Dilber.clear9)
 
         const memIdx = Object.keys(Gibberish.memory.list).reverse()[0];
         this.__memoryEnd = parseInt(memIdx) + Gibberish.memory.list[memIdx]; // XXX this forces the gibberish scheduler to start
@@ -4922,7 +4922,7 @@ const Audio = {
   },
 
   restart() {
-    Gibber.clear();
+    Dilber.clear();
     Gibberish.worklet.port.close();
     window.w = Gibberish.worklet;
     Gibberish.worklet.disconnect();
@@ -4930,7 +4930,7 @@ const Audio = {
       Audio.out = Gibberish.output;
       Audio.node = processorNode;
       Audio.Theory.deleteProperties();
-      Audio.Theory.init(window.Gibber);
+      Audio.Theory.init(window.Dilber);
       Audio.initialized = true;
       Audio.node = processorNode;
       Audio.Out = Gibberish.output;
@@ -4950,7 +4950,7 @@ const Audio = {
       };
 
       Audio.export(window);
-      Gibber.export(window);
+      Dilber.export(window);
       Audio.phase = Audio.makePhase();
       Audio.phase.connect(Audio.Out, 0);
       const memIdx = Object.keys(Gibberish.memory.list).reverse()[0];
@@ -5094,7 +5094,7 @@ const Audio = {
     Audio.Out.connect(Gibberish.output);
     Audio.Clock.init(Audio.Gen, Audio);
     Audio.phase.connect(Audio.Out, 0); // the idea is that we only clear memory that was filled after
-    // the initial Gibber initialization... this stops objects
+    // the initial Dilber initialization... this stops objects
     // like Clock and Theory from having their memory cleared and
     // from having to re-initialize them.
     // fill memory with zeros from the end initialization block onwards
@@ -5134,11 +5134,11 @@ const Audio = {
   },
 
   stop() {
-    Gibber.Seq.sequencers.forEach(s => s.stop());
+    Dilber.Seq.sequencers.forEach(s => s.stop());
   },
 
   start() {
-    Gibber.Seq.sequencers.forEach(s => s.start());
+    Dilber.Seq.sequencers.forEach(s => s.start());
   },
 
   onload() {},
@@ -5165,20 +5165,20 @@ const Audio = {
   },
 
   printcb() {
-    Gibber.Audio.Gibberish.worklet.port.postMessage({
+    Dilber.Audio.Gibberish.worklet.port.postMessage({
       address: 'callback'
     });
   },
 
   printobj(obj) {
-    Gibber.Audio.Gibberish.worklet.port.postMessage({
+    Dilber.Audio.Gibberish.worklet.port.postMessage({
       address: 'print',
       object: obj.id
     });
   },
 
   send(msg) {
-    Gibber.Audio.Gibberish.worklet.port.postMessage(msg);
+    Dilber.Audio.Gibberish.worklet.port.postMessage(msg);
   },
 
   createPubSub() {
@@ -5598,7 +5598,7 @@ const Clock = {
           bpm = v
           if( Gibberish.mode === 'worklet' ) {
             this.__lastBPM = v
-            if( Audio.Gibber.Tidal !== undefined ) Audio.Gibber.Tidal.cps = bpm/120/2
+            if( Audio.Dilber.Tidal !== undefined ) Audio.Dilber.Tidal.cps = bpm/120/2
             if( Audio.phase !== undefined ) Audio.phase.bpm = bpm
 
             Gibberish.worklet.port.postMessage({
@@ -5841,7 +5841,7 @@ module.exports = function( __Audio ) {
 
     //  drums.__sequencers.push( drums.seq )
     //}else{
-    //  Gibber.addSequencing( drums, 'play', 0 )
+    //  Dilber.addSequencing( drums, 'play', 0 )
     //}
 
     drums.samplers = [ k,s,ch,oh ]
@@ -6037,7 +6037,7 @@ module.exports = function( Audio ) {
     }
 
     ens.tidal = (pattern,num=0) => {
-      const t =  Audio.Gibber.Tidal({
+      const t =  Audio.Dilber.Tidal({
         target:ens,
         key:'play',
         pattern
@@ -6057,7 +6057,7 @@ module.exports = function( Audio ) {
     ens.seq = (values,timings,num=0,offset=0) => {
       if( ens.__sequencers[ num ] !== undefined ) ens.__sequencers[ num ].stop()
 
-      ens.__sequencers[ num ] = Audio.Gibber.Seq({
+      ens.__sequencers[ num ] = Audio.Dilber.Seq({
         target:ens,
         key:'play',
         values,timings,offset
@@ -6597,7 +6597,7 @@ const Gen  = {
     Gen.names.push( 'tri' )
     Gen.names.push( 'saw' )
 
-    //Gibber.subscribe( 'clear', ()=> Gen.lastConnected.length = 0 )
+    //Dilber.subscribe( 'clear', ()=> Gen.lastConnected.length = 0 )
   },
 
   // if property is !== ugen (it's a number) a Param must be made using a default
@@ -6623,16 +6623,16 @@ const Gen  = {
           value = v
           if( obj.active ) {
             if( obj.__client === 'live' ) {
-              Gibber.Communication.send( `genp ${obj.paramID} ${obj[ key ].uid} ${v}` ) 
+              Dilber.Communication.send( `genp ${obj.paramID} ${obj[ key ].uid} ${v}` ) 
             }else if( obj.__client === 'max' ) {
-              Gibber.Communication.send( `sig ${obj.paramID} param ${obj[ key ].uid} ${v}`, 'max' ) 
+              Dilber.Communication.send( `sig ${obj.paramID} param ${obj[ key ].uid} ${v}`, 'max' ) 
             }
           }
         }
       }
       obj[ key ].uid = Gen.getUID()
  
-      // XXX Gibber.addSequencingToMethod( obj, key )
+      // XXX Dilber.addSequencingToMethod( obj, key )
     }
 
     // accomodate non-audio-rate options. during codegen the compiler
@@ -6661,7 +6661,7 @@ const Gen  = {
       }else{
         value = v
         if( obj.active ) {
-          Gibber.Communication.send( `genp ${obj.paramID} ${obj[ 0 ].uid} ${v}` ) 
+          Dilber.Communication.send( `genp ${obj.paramID} ${obj[ 0 ].uid} ${v}` ) 
         }
       }
     }
@@ -6669,7 +6669,7 @@ const Gen  = {
     Gen.getUID() // leave 0 behind...
     obj[ 0 ].uid = Gen.getUID()
 
-    Gibber.addSequencingToMethod( obj, '0' )
+    Dilber.addSequencingToMethod( obj, '0' )
 
     return obj
   },
@@ -6704,7 +6704,7 @@ const Gen  = {
 
   clear() {
     for( let ugen of Gen.connected ) {
-      Gibber.Communication.send( `ungen ${ugen.paramID}` )
+      Dilber.Communication.send( `ungen ${ugen.paramID}` )
     }
 
     Gen.connected.length = 0
@@ -6779,7 +6779,7 @@ const Gen  = {
         str = def.str + '(',
         count = 0
     
-    // tell Gibber that this gen object is part of an active gen graph
+    // tell Dilber that this gen object is part of an active gen graph
     // so that changes to it are forwarded to m4l
     this.active = true
 
@@ -6822,7 +6822,7 @@ const Gen  = {
         str = `g.${def.str}(`,
         count = 0
     
-    // tell Gibber that this gen object is part of an active gen graph
+    // tell Dilber that this gen object is part of an active gen graph
     // so that changes to it are forwarded to m4l
     this.active = true
 
@@ -6960,7 +6960,7 @@ const Gen  = {
 
     fade( time = 1, from = 1, to = 0 ) {
       let g = Gen.ugens
-      let fade, amt, beatsInSeconds = time * ( 60 / Gibber.Live.LOM.bpm )
+      let fade, amt, beatsInSeconds = time * ( 60 / Dilber.Live.LOM.bpm )
      
       if( from > to ) {
         amt = from - to
@@ -7087,7 +7087,7 @@ const Gen  = {
     const g = Audio.Gibberish.genish
 
     // store properties of our gen object in this array
-    // they will then become properties of our Gibber object
+    // they will then become properties of our Dilber object
     const paramArray = []
 
     // get genish.js codelet for our graph
@@ -7126,32 +7126,32 @@ const Gen  = {
       return Audio.Gibberish.factory( mymod, g.add(0,0), 'Gen'+id, params )
     }
 
-    // XXX do I really have to make a Gibberish constructor and a Gibber constructor to
-    // turn a genish graph into a Gibber ugen? Is there a shortcut to take? Is it worth
+    // XXX do I really have to make a Gibberish constructor and a Dilber constructor to
+    // turn a genish graph into a Dilber ugen? Is there a shortcut to take? Is it worth
     // writing custom code for?
 
-    // create a Gibber constructor using our Gibberish constructor
+    // create a Dilber constructor using our Gibberish constructor
     let temp = params.id
     //delete params.id
     const Make = Audio.Ugen( make, { name:'Gen'+id, properties:params, methods:[]}, Audio )
 
-    // create Gibber ugen and pass in properties dictionary to initailize
+    // create Dilber ugen and pass in properties dictionary to initailize
     const out = Make({ params })
     out.__wrapped__.id = temp 
     out.__wrapped__.connected = []
 
     let count = 0
     out.__wrapped__.output = out.output = function( v ) {
-      //if( Audio.Gibber.Environment !== undefined ) {
+      //if( Audio.Dilber.Environment !== undefined ) {
         // XXX should these be averaged instead of only taking every sixth sample (roughly
         // corresponds to 58 frames a second)
         if( count++ % 6 === 0 ) {
           // XXX this shouldn't happen here, should happen when the annotation is created.
-          if( Audio.Gibber.Environment !== undefined ) {
-            if( Audio.Gibber.Environment.Annotations.waveform.widgets[ temp ] === undefined ) {
-              Audio.Gibber.Environment.Annotations.waveform.widgets[ temp ] = out.widget
+          if( Audio.Dilber.Environment !== undefined ) {
+            if( Audio.Dilber.Environment.Annotations.waveform.widgets[ temp ] === undefined ) {
+              Audio.Dilber.Environment.Annotations.waveform.widgets[ temp ] = out.widget
             }
-            Audio.Gibber.Environment.Annotations.waveform.updateWidget( out.widget, v, false )
+            Audio.Dilber.Environment.Annotations.waveform.updateWidget( out.widget, v, false )
           }
         }
       //}
@@ -8962,7 +8962,7 @@ const Gibberish = require( 'gibberish-dsp' )
 const serialize = require( 'serialize-javascript' )
 const Tune      = require( './external/tune-api-only.js' )
 
-let Gibber = null
+let Dilber = null
 
 const Theory = {
   // needed to force library to be serialized for transport to 
@@ -9079,7 +9079,7 @@ const Theory = {
 
   initProperties: function() {
     if( Gibberish.mode === 'worklet' ) {
-      Gibber.createProperty( 
+      Dilber.createProperty( 
         this, 'root', 440, function() {
           if( typeof Theory.__root.value === 'string' ) {
             Theory.root = Theory.__noteToFreq( Theory.__root.value )
@@ -9089,7 +9089,7 @@ const Theory = {
         1
       )
 
-      Gibber.createProperty( 
+      Dilber.createProperty( 
         this, 'tuning', 'et', 
         function() { // XXX why doesn't this work??? duplicated below... 
           this.loadScale( this.__tuning.value ) 
@@ -9097,9 +9097,9 @@ const Theory = {
         1
       )
 
-      Gibber.createProperty( this, 'mode', 'aeolian', null, 0 )
-      Gibber.createProperty( this, 'offset', 0, null, 0 )
-      Gibber.createProperty( this, 'degree', 'i', null, 0 )
+      Dilber.createProperty( this, 'mode', 'aeolian', null, 0 )
+      Dilber.createProperty( this, 'offset', 0, null, 0 )
+      Dilber.createProperty( this, 'degree', 'i', null, 0 )
 
       //setTimeout( ()=> Theory.tuning = 'et', 250 )
       this.tuning = 'et'
@@ -9227,7 +9227,7 @@ const Theory = {
   },
 
   init:function( __Gibber ) {
-    Gibber = __Gibber
+    Dilber = __Gibber
 
     this.Tune = new this.__Tune()
     this.Tune.TuningList = this.__tunings
@@ -9251,7 +9251,7 @@ const Theory = {
         post:'store'
       })
 
-      Gibber.subscribe( 'clear', () => this.reset() )
+      Dilber.subscribe( 'clear', () => this.reset() )
       this.initProperties()
     }
 
@@ -9268,10 +9268,10 @@ const Theory = {
 
   freeze:function() {
     if( Gibberish.mode === 'worklet' ) {
-      Gibber.Theory.degree.sequencers.forEach( s => s.stop() )  
-      Gibber.Theory.offset.sequencers.forEach( s => s.stop() )  
-      Gibber.Theory.mode.sequencers.forEach( s => s.stop() )  
-      Gibber.Theory.root.sequencers.forEach( s => s.stop() )  
+      Dilber.Theory.degree.sequencers.forEach( s => s.stop() )  
+      Dilber.Theory.offset.sequencers.forEach( s => s.stop() )  
+      Dilber.Theory.mode.sequencers.forEach( s => s.stop() )  
+      Dilber.Theory.root.sequencers.forEach( s => s.stop() )  
     }
   },
 
@@ -9433,7 +9433,7 @@ const Presets = require( './presets.js' )
 const Theory  = require( './theory.js' )
 const Gibberish = require( 'gibberish-dsp' )
 const seqDefaults = require( './defaults.js' )
-// Gibber ugens are essentially wrappers around underlying gibberish 
+// Dilber ugens are essentially wrappers around underlying gibberish 
 // ugens, providing convenience methods for rapidly sequencing
 // and modulating them.
 
@@ -9701,7 +9701,7 @@ const Ugen = function( gibberishConstructor, description, Audio, shouldUsePool =
           obj[ methodName ].__owner = obj
         }else{
           // in this block we are monkey patching the note method of Gibberish synths so that
-          // they use Gibber's harmonic system inside the AudioWorkletProcessor.
+          // they use Dilber's harmonic system inside the AudioWorkletProcessor.
 
           obj[ methodName ] = function( ...args ) {
             let shouldSendNoteNow = false
@@ -10080,7 +10080,7 @@ const Ugen = function( gibberishConstructor, description, Audio, shouldUsePool =
           const sum = dest.mods.concat( dest.preModValue )
           const add = Audio.binops.Add( ...sum ) 
           // below works for oscillators, above works for instruments...
-          //const add = Gibber.Gibberish.binops.Add( ...sum ) 
+          //const add = Dilber.Gibberish.binops.Add( ...sum ) 
           add.__useMapping = false
           dest.__owner[ dest.name ] = add
 
@@ -10116,8 +10116,8 @@ const Ugen = function( gibberishConstructor, description, Audio, shouldUsePool =
     Object.defineProperty( obj, '_', { get() { obj.disconnect(); return obj } })
 
     const instrumentName = description.name ==='Multisampler' ? 'Sampler' : description.name
-    if( Gibber.extensions !== undefined && Gibber.extensions[ instrumentName ] !== undefined ) {
-      Object.assign( obj, Gibber.extensions[ instrumentName ] ) 
+    if( Dilber.extensions !== undefined && Dilber.extensions[ instrumentName ] !== undefined ) {
+      Object.assign( obj, Dilber.extensions[ instrumentName ] ) 
     }
     // presetInit is a function in presets that triggers actions after the ugen
     // has been instantiated... it is primarily used to add effects and modulations
@@ -10404,8 +10404,8 @@ const Utility = {
     return new Function( fncString )
   },
 
-  time( v ) { return Gibber.Audio.Clock.time( v ) },
-  btof( beats ) { return 1 / (beats * ( 60 / Gibber.Audio.Clock.bpm )) },
+  time( v ) { return Dilber.Audio.Clock.time( v ) },
+  btof( beats ) { return 1 / (beats * ( 60 / Dilber.Audio.Clock.bpm )) },
 
   random(...args) {
     this.randomFlag = true
@@ -10475,7 +10475,7 @@ const Utility = {
 module.exports = Utility
 
 },{}],119:[function(require,module,exports){
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
 
   const WavePattern = function( ugen ) {
     
@@ -10485,7 +10485,7 @@ module.exports = function( Gibber ) {
 
     fnc.ugen = ugen
 
-    return Gibber.Pattern( fnc )
+    return Dilber.Pattern( fnc )
   }
 
   return WavePattern
@@ -10667,9 +10667,9 @@ module.exports = function serialize(obj, options) {
 }
 
 },{}],121:[function(require,module,exports){
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
 
-let Pattern = Gibber.Pattern
+let Pattern = Dilber.Pattern
 
 // taken from https://github.com/mkontogiannis/euclidean-rhythms
 const getPattern = (pulses, steps) => {
@@ -10722,7 +10722,7 @@ let Euclid = function( ones, length, time, rotation=0 ) {
 
   onesAndZeros = getPattern( ones,length )
 
-  let pattern = Gibber.Pattern( ...onesAndZeros )
+  let pattern = Dilber.Pattern( ...onesAndZeros )
 
   if( isNaN( time ) || time === null ) time = 1 / onesAndZeros.length
 
@@ -10769,7 +10769,7 @@ let Euclid = function( ones, length, time, rotation=0 ) {
     return pattern
   }
 
-  //Gibber.addSequencingToMethod( pattern, 'reseed' )
+  //Dilber.addSequencingToMethod( pattern, 'reseed' )
 
   if( rotation !== 0 ) pattern.rotate( rotation )
   return pattern
@@ -10856,9 +10856,9 @@ return Euclid
 }
 
 },{}],122:[function(require,module,exports){
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
 
-const Pattern = Gibber.Pattern
+const Pattern = Dilber.Pattern
 
 const Hex = function( hexString, time = 1/16, rotation ) {
   let count = 0,
@@ -10882,7 +10882,7 @@ const Hex = function( hexString, time = 1/16, rotation ) {
 
   let __onesAndZeros = onesAndZeros.split('') 
 
-  const pattern = Gibber.Pattern( ...__onesAndZeros ) 
+  const pattern = Dilber.Pattern( ...__onesAndZeros ) 
   
   pattern.onrender = function( rendered ) {
     rendered.type = 'Hex'
@@ -10927,7 +10927,7 @@ const Hex = function( hexString, time = 1/16, rotation ) {
     return pattern
   }
 
-  //Gibber.addSequencingToMethod( pattern, 'reseed' )
+  //Dilber.addSequencingToMethod( pattern, 'reseed' )
 
   if( typeof rotation === 'number' ) pattern.rotate( rotation )
 
@@ -10941,7 +10941,7 @@ return Hex
 },{}],123:[function(require,module,exports){
 "use strict";
 
-const Gibber = {
+const Dilber = {
   initialized: false,
   exportTarget: null,
   plugins: [],
@@ -10949,7 +10949,7 @@ const Gibber = {
   __Pattern: require('./pattern.js'),
 
   /* 
-   * const promises = Gibber.init([
+   * const promises = Dilber.init([
    *   {
    *     plugin:Audio, // Audio is required, imported, or grabbed via <script>
    *     options: { workletPath:'../dist/gibberish_worklet.js' }
@@ -10981,7 +10981,7 @@ const Gibber = {
         values.forEach(v => {
           if (Array.isArray(v)) this[v[1]] = v[0];
         });
-        Gibber.publish('init');
+        Dilber.publish('init');
         resolve();
       });
     });
@@ -10989,16 +10989,16 @@ const Gibber = {
   },
 
   log(...args) {
-    if (Gibber.Environment) {
-      Gibber.Environment.log(...args);
+    if (Dilber.Environment) {
+      Dilber.Environment.log(...args);
     } else {
       console.log(...args);
     }
   },
 
   error(...args) {
-    if (Gibber.Environment) {
-      Gibber.Environment.error(...args);
+    if (Dilber.Environment) {
+      Dilber.Environment.error(...args);
     } else {
       console.error(...args);
     }
@@ -11015,14 +11015,14 @@ const Gibber = {
     obj.Triggers = this.Triggers;
     obj.Steps = this.Steps;
     this.plugins.forEach(p => {
-      p.plugin.export(obj, Gibber);
+      p.plugin.export(obj, Dilber);
     }); //obj.Clock = this.Clock
     //obj.WavePattern = this.WavePattern
   },
 
   // XXX stop clock from being cleared.
   clear(shouldPrint = true) {
-    for (let plugin of Gibber.plugins) {
+    for (let plugin of Dilber.plugins) {
       plugin.plugin.clear();
     }
 
@@ -11084,16 +11084,16 @@ const Gibber = {
       __owner: obj,
 
       fade(from = 0, to = 1, time = 4, delay = 0) {
-        Gibber[obj.type].createFade(from, to, time, obj, name, delay);
+        Dilber[obj.type].createFade(from, to, time, obj, name, delay);
         return obj;
       }
 
     };
-    Gibber.addSequencing(obj, name, priority, value, '__');
+    Dilber.addSequencing(obj, name, priority, value, '__');
     Object.defineProperty(obj, name, {
       configurable: true,
-      get: Gibber[obj.type].createGetter(obj, name),
-      set: Gibber[obj.type].createSetter(obj, name, post, transform, isPoly)
+      get: Dilber[obj.type].createGetter(obj, name),
+      set: Dilber[obj.type].createSetter(obj, name, post, transform, isPoly)
     });
   },
 
@@ -11103,12 +11103,12 @@ const Gibber = {
     switch (from.type) {
       case 'audio':
       case 'Audio':
-        type = Gibber.Audio;
+        type = Dilber.Audio;
         break;
 
       case 'graphics':
       case 'Graphics':
-        type = Gibber.Graphics;
+        type = Dilber.Graphics;
         break;
 
       case 'gen':
@@ -11168,7 +11168,7 @@ const Gibber = {
     //      let target = to[ name ].value.widget !== undefined ? to[ name ].value.widget : from.widget
     //      if( target === undefined && to[ name ].value.mark !== undefined ) 
     //        target = to[ name ].value.mark.replacedWith
-    //      Gibber.Environment.codeMarkup.waveform.updateWidget( target, val, false )
+    //      Dilber.Environment.codeMarkup.waveform.updateWidget( target, val, false )
     //    }
     //  }else{
     //    // assignment hack while DOM creation is taking place,
@@ -11179,7 +11179,7 @@ const Gibber = {
     //    to[ '__'+name ].callback = t => {
     //      const val = gen()
     //      to[ name ] = val
-    //      Gibber.Environment.codeMarkup.waveform.updateWidget( to[ '__'+name ].widget, val, false )
+    //      Dilber.Environment.codeMarkup.waveform.updateWidget( to[ '__'+name ].widget, val, false )
     //    }
     //  }
     //  if( typeof to[ name ].value !== 'object' ) {
@@ -11200,7 +11200,7 @@ const Gibber = {
     obj[prefix + name].seq = function (values, timings, number = 0, delay = 0) {
       if (value !== undefined && typeof value === 'object') value.name = obj.name;
       const type = obj.type === 'gen' ? 'audio' : obj.type;
-      Gibber.Seq({
+      Dilber.Seq({
         values,
         timings,
         target: obj,
@@ -11217,7 +11217,7 @@ const Gibber = {
     obj[prefix + name].tidal = function (pattern, number = 0, delay = 0) {
       if (value !== undefined && typeof value !== 'number') value.name = obj.name;
       const type = obj.type === 'gen' ? 'audio' : obj.type;
-      const s = Gibber.Tidal({
+      const s = Dilber.Tidal({
         pattern,
         target: obj,
         key: name,
@@ -11231,18 +11231,18 @@ const Gibber = {
   }
 
 };
-module.exports = Gibber;
+module.exports = Dilber;
 
 },{"./euclid.js":121,"./hex.js":122,"./pattern.js":124,"./seq.js":125,"./steps.js":126,"./tidal.js":127,"./triggers.js":128}],124:[function(require,module,exports){
-const patternWrapper = function( Gibber ) {
+const patternWrapper = function( Dilber ) {
   "use strict"
 
   // hack to pass Gibberish to pattern generator from within worklet processor
   let Gibberish
-  if( Gibber.Gibberish === undefined ) {
-    Gibberish = Gibber.Audio !== undefined ? Gibber.Audio.Gibberish : Gibber 
+  if( Dilber.Gibberish === undefined ) {
+    Gibberish = Dilber.Audio !== undefined ? Dilber.Audio.Gibberish : Dilber 
   }else{
-    Gibberish = Gibber.Gibberish
+    Gibberish = Dilber.Gibberish
   }
 
   const PatternProto = Object.create( function(){} )
@@ -11353,8 +11353,8 @@ const patternWrapper = function( Gibber ) {
 
     render( cat='Audio' ) {
       this.category = cat
-      if( typeof Gibber[ cat ] === 'object' && typeof Gibber[ cat ].patternRender === 'function' ) {
-        Gibber[ cat ].patternRender( this )
+      if( typeof Dilber[ cat ] === 'object' && typeof Dilber[ cat ].patternRender === 'function' ) {
+        Dilber[ cat ].patternRender( this )
       }
       if( typeof this.onrender === 'function' ) {
         this.onrender()
@@ -11484,7 +11484,7 @@ const patternWrapper = function( Gibber ) {
       },
       thaw() {
         fnc.__frozen = false
-        Gibber.Theory.thaw()
+        Dilber.Theory.thaw()
       },
 
       setSeq( seq ) {
@@ -11622,7 +11622,7 @@ const patternWrapper = function( Gibber ) {
    //      let filter = function( args ) {
    //        console.log( filter.lastAmt, args[0])
    //        args[ 0 ] -= filter.lastAmt
-   //        filter.lastAmt = Gibber.Clock.time( Gibber.Utilities.rndi( randomMin, randomMax ) )
+   //        filter.lastAmt = Dilber.Clock.time( Dilber.Utilities.rndi( randomMin, randomMax ) )
    //
    //        console.log( "LA", filter.lastAmt )
    //        args[0] += filter.lastAmt
@@ -11775,7 +11775,7 @@ const patternWrapper = function( Gibber ) {
           return this
         }
         if( !fnc.__frozen ) {
-          Gibber.Utility.shuffle( fnc.values )
+          Dilber.Utility.shuffle( fnc.values )
           fnc._onchange( 'shuffule', null )
         }
         
@@ -11924,15 +11924,15 @@ const patternWrapper = function( Gibber ) {
             for( let i = 0; i < out[ key ].sequencers.length; i++ ) {
               // this can most certainly be optimized, but I had real problems
               // getting this clearing to work, perhaps related to proxy behaviors?
-              const __seq = Gibber.Seq.sequencers.find( s => s.id === out[ key ][ i ].id )
+              const __seq = Dilber.Seq.sequencers.find( s => s.id === out[ key ][ i ].id )
               if( __seq !== undefined ) {
-                Gibber.Audio.Gibberish.worklet.port.postMessage({ address:'method', object:__seq.id, name:'stop', args:[] })
+                Dilber.Audio.Gibberish.worklet.port.postMessage({ address:'method', object:__seq.id, name:'stop', args:[] })
               
                 __seq.stop()
                 __seq.clear()
 
-                const idx = Gibber.Seq.sequencers.indexOf( __seq )
-                Gibber.Seq.sequencers.splice( idx, 1 )
+                const idx = Dilber.Seq.sequencers.indexOf( __seq )
+                Dilber.Seq.sequencers.splice( idx, 1 )
                 __seq.target[ __seq.key ][0].stop()
               }
             }
@@ -11965,7 +11965,7 @@ const patternWrapper = function( Gibber ) {
 
             // convert samples to beats
             if( fnc.__patternType === 'timings' ) {
-              val = Gibber.Clock.stob( val )
+              val = Dilber.Clock.stob( val )
             }
             fnc.values[0].widget.values[ fnc.values[0].widget.values.length - 1 ] = { value:val } 
           }
@@ -12016,17 +12016,17 @@ const patternWrapper = function( Gibber ) {
     if( Gibberish.mode === 'worklet' ) {
 
       for( let key of PatternProto.__methodNames ) { 
-        Gibber.addSequencing( fnc,key,2,undefined )
+        Dilber.addSequencing( fnc,key,2,undefined )
       }
       //for( let key of PatternProto.__methodNames ) { 
-      //  fnc.sequencers[ key ] = Gibber.Core !== undefined 
-      //    ? Gibber.Core.addSequencing( fnc, key, 2 ) 
-      //    : Gibber.addSequencing( fnc,key,2 )
+      //  fnc.sequencers[ key ] = Dilber.Core !== undefined 
+      //    ? Dilber.Core.addSequencing( fnc, key, 2 ) 
+      //    : Dilber.addSequencing( fnc,key,2 )
       //}
-      fnc.sequences.reset = Gibber.addSequencing( fnc, 'reset', 1 )
+      fnc.sequences.reset = Dilber.addSequencing( fnc, 'reset', 1 )
     }
     
-    // TODO: Gibber.createProxyProperties( fnc, { 'stepSize':0, 'start':0, 'end':0 })
+    // TODO: Dilber.createProxyProperties( fnc, { 'stepSize':0, 'start':0, 'end':0 })
     
     fnc.__proto__ = PatternProto 
 
@@ -12079,14 +12079,14 @@ const patternWrapper = function( Gibber ) {
   Pattern.freeze = function( shouldFreezeTheory = true ) {
     Pattern.children.forEach( p => p.freeze() ) 
     if( shouldFreezeTheory === true ) {
-      Gibber.Theory.freeze()
+      Dilber.Theory.freeze()
       Pattern.__isFrozen = true
     }
   }
   Pattern.thaw = ()=> {
     Pattern.children.forEach( p => p.thaw() )
     if( Pattern.__isFrozen === true ) {
-      Gibber.Theory.thaw()
+      Dilber.Theory.thaw()
       Pattern.__isFrozen = false
     }
   }
@@ -12101,7 +12101,7 @@ const patternWrapper = function( Gibber ) {
     
     if( Gibberish.mode === 'processor' ) return
 
-    // TODO: don't use Gibber.currentTrack, store the object in the pattern
+    // TODO: don't use Dilber.currentTrack, store the object in the pattern
     let rangeStart = fnc.markers[ fnc.start ].find(),
         rangeEnd   = fnc.markers[ fnc.end ].find()
 
@@ -12111,14 +12111,14 @@ const patternWrapper = function( Gibber ) {
           ptrnEnd = fnc.markers[ fnc.markers.length - 1 ].find()
 
       //fnc.column.editor.markText( ptrnStart.from, ptrnEnd.to, { className:'rangeOutside' })
-      Gibber.Environment.editor.markText( ptrnStart.from, ptrnEnd.to, { className:'rangeOutside' })//className:'pattern-update-range-outside' })
+      Dilber.Environment.editor.markText( ptrnStart.from, ptrnEnd.to, { className:'rangeOutside' })//className:'pattern-update-range-outside' })
       if( !Pattern.listeners.range.initialzied ) Pattern.listeners.range.init()
     }
 
     if( fnc.range.mark ) fnc.range.mark.clear()
     //fnc.range.mark = fnc.column.editor.markText( rangeStart.from, rangeEnd.to, { className:'rangeInside' })
     // TODO: Dont use GE.codemirror... how else do I get this? stored in pattern is created?
-    fnc.range.mark = Gibber.Environment.editor.markText( rangeStart.from, rangeEnd.to, { className:'rangeInside' })
+    fnc.range.mark = Dilber.Environment.editor.markText( rangeStart.from, rangeEnd.to, { className:'rangeInside' })
   }
 
   Pattern.listeners.range.init = function() {
@@ -12156,7 +12156,7 @@ module.exports = patternWrapper
 },{}],125:[function(require,module,exports){
 const autotrig = [ 'note','chord','trigger','pickplay','notec','notef' ]
 
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
   const addValuesFilters = (seq,key,target) => {
     const values = seq.values
 
@@ -12208,7 +12208,7 @@ module.exports = function( Gibber ) {
       }
       : (args,ptrn) => {
         if( typeof args[0] === 'number' ) {
-          args[0] = Gibber.Clock.time( args[0] )
+          args[0] = Dilber.Clock.time( args[0] )
         }
         return args
       }  
@@ -12235,7 +12235,7 @@ module.exports = function( Gibber ) {
     let   autotrig  = false
     const render    = props.render || 'Audio'
 
-    const Gibberish = Gibber.Audio.Gibberish !== undefined ? Gibber.Audio.Gibberish : null
+    const Gibberish = Dilber.Audio.Gibberish !== undefined ? Dilber.Audio.Gibberish : null
 
     if( __values.type === 'gen' ) {
       __values = __values.render()
@@ -12244,12 +12244,12 @@ module.exports = function( Gibber ) {
     if( Array.isArray( __values ) && __values.length <= 0 ) throw Error('arrays passed to sequences must have at least one value inside of them')
     // convert to pattern if needed and render
     const values = Array.isArray( __values ) 
-      ? Gibber.Pattern( ...__values ).render()
+      ? Dilber.Pattern( ...__values ).render()
       : typeof __values === 'function' && __values.isPattern 
         ? __values.render()
         : __values.requiresRender 
           ? __values
-          : Gibber.Pattern( __values ).render()
+          : Dilber.Pattern( __values ).render()
 
     // if an array of values is passed, let users call pattern method on that array, for example:
     // a.note.seq( b=[0,1,2,3], 1/4 )
@@ -12273,8 +12273,8 @@ module.exports = function( Gibber ) {
 
     // process time values
     if( target !== undefined ) {
-      if( Gibber[ render ].timeProps[ target.name ] !== undefined 
-        && Gibber[ render ].timeProps[ target.name ].indexOf( key ) !== -1  ) {
+      if( Dilber[ render ].timeProps[ target.name ] !== undefined 
+        && Dilber[ render ].timeProps[ target.name ].indexOf( key ) !== -1  ) {
 
         const filter = render === 'Audio' 
           ? (args,ptrn) => {
@@ -12282,7 +12282,7 @@ module.exports = function( Gibber ) {
               return args
             }
           : (args,ptrn) => {
-              args[0] = Gibber.Audio.Clock.time( args[0] )
+              args[0] = Dilber.Audio.Clock.time( args[0] )
               return args
             }
 
@@ -12291,14 +12291,14 @@ module.exports = function( Gibber ) {
     }
  
     const timings = Array.isArray( __timings ) 
-      ? Gibber.Pattern( ...__timings ).render()
+      ? Dilber.Pattern( ...__timings ).render()
       : typeof __timings === 'function' && __timings.isPattern 
         ? __timings.render()
         : __timings === undefined || __timings === null 
           ? null
           : __timings.requiresRender
             ? __timings
-            : Gibber.Pattern( __timings ).render()
+            : Dilber.Pattern( __timings ).render()
 
 
     if( timings === null ) autotrig = true
@@ -12359,11 +12359,11 @@ module.exports = function( Gibber ) {
     values.__patternType = 'values'
     if( timings !== null ) timings.__patternType = 'timings'
 
-    //const offsetRate = Gibberish.binops.Mul(rate, Gibber.Clock.AudioClock )
+    //const offsetRate = Gibberish.binops.Mul(rate, Dilber.Clock.AudioClock )
 
     // XXX need to fix so that we can use the clock rate as the base
     // XXX need to abstract this so that a graphics sequencer could also be called...
-    const seq = Gibber.Audio.Gibberish.Sequencer({ values, timings, density, target, key, priority, rate:1/*Gibber.Clock.AudioClock*/, clear, autotrig, mainthreadonly:props.mainthreadonly })
+    const seq = Dilber.Audio.Gibberish.Sequencer({ values, timings, density, target, key, priority, rate:1/*Dilber.Clock.AudioClock*/, clear, autotrig, mainthreadonly:props.mainthreadonly })
 
     if( values.setSeq ) values.setSeq( seq )
 
@@ -12376,7 +12376,7 @@ module.exports = function( Gibber ) {
       if( target !== undefined ) {
         if( target.autotrig === undefined ) {
           target.autotrig = []
-          Gibber.Audio.Gibberish.worklet.port.postMessage({
+          Dilber.Audio.Gibberish.worklet.port.postMessage({
             address:'property',
             name:'autotrig',
             value:[],
@@ -12385,8 +12385,8 @@ module.exports = function( Gibber ) {
 
         }
         // object name key value
-        if( Gibber.Audio.Gibberish.mode === 'worklet' ) {
-          Gibber.Audio.Gibberish.worklet.port.postMessage({
+        if( Dilber.Audio.Gibberish.mode === 'worklet' ) {
+          Dilber.Audio.Gibberish.worklet.port.postMessage({
             address:'addObjectToProperty',
             name:'autotrig',
             object:target.id,
@@ -12401,7 +12401,7 @@ module.exports = function( Gibber ) {
     } 
 
     //Gibberish.proxyEnabled = false
-    //Gibber.Ugen.createProperty( seq, 'density', timings, [], Gibber )
+    //Dilber.Ugen.createProperty( seq, 'density', timings, [], Dilber )
     //Gibberish.proxyEnabled = true
 
     Seq.sequencers.push( seq )
@@ -12425,13 +12425,13 @@ module.exports = function( Gibber ) {
       targetProp[ props.number ] = seq 
       //target.__sequencers.push( seq )
       if( typeof delay !== 'function' ) { 
-        seq.start( Gibber.Audio.Clock.time( delay ) )
+        seq.start( Dilber.Audio.Clock.time( delay ) )
       } else {
         delay.seqs.push( seq )
       }
     }
 
-    Gibber.publish( 'new sequence', seq )
+    Dilber.publish( 'new sequence', seq )
 
     return seq
   }
@@ -12451,7 +12451,7 @@ module.exports = function( Gibber ) {
 }
 
 },{}],126:[function(require,module,exports){
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
  
 const Steps = {
   type:'Steps',
@@ -12468,16 +12468,16 @@ const Steps = {
       let usesStringValues = false
       if( values.isPattern !== true ) {
         if( Array.isArray( values ) ) {
-          values = Gibber.Pattern( ...values )
+          values = Dilber.Pattern( ...values )
         }else if( typeof values === 'string' ) {
           values = values.split('')
           usesStringValues = true
         }else{
-          values = Gibber.Pattern( values )
+          values = Dilber.Pattern( values )
         }
       }
 
-      const seq = Gibber.Seq({
+      const seq = Dilber.Seq({
         values: usesStringValues ? values : key,
         timings: usesStringValues ?  [ 1  / values.length ] : values,
         'key': target.__isEnsemble !== true ? 'note' : 'trigger', 
@@ -12531,7 +12531,7 @@ const Steps = {
    */
   addPatternMethods() {
     // XXX shouldn't use audio id by default... sigh
-    const id = Gibber.Audio.Gibberish.utilities.getUID()
+    const id = Dilber.Audio.Gibberish.utilities.getUID()
 
     // store ids of all controlled sequencers
     const seqIds = []
@@ -12552,7 +12552,7 @@ const Steps = {
 
       this[ name ].sequencers = []
       this[ name ].seq = ( values, timings, number = 0, delay = 0 ) => {
-        const s = Gibber.Seq({ 
+        const s = Dilber.Seq({ 
           values, 
           timings, 
           target:this.__wrapped,
@@ -12588,7 +12588,7 @@ const Steps = {
       }
       Gibberish.ugens.set( steps.id, steps )`
  
-    Gibber.Audio.Gibberish.worklet.port.postMessage({
+    Dilber.Audio.Gibberish.worklet.port.postMessage({
       address:'eval',
       code
     }) 
@@ -12629,13 +12629,13 @@ return Steps.create
 }
 
 },{}],127:[function(require,module,exports){
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
 
   const buildAndCheckPattern = function( pattern, key, target ) {
     try {
-      p = Gibber.Audio.Gibberish.Tidal.Pattern( pattern ) 
+      p = Dilber.Audio.Gibberish.Tidal.Pattern( pattern ) 
     } catch(e) {
-      Gibber.publish( 'error', `Your Tidal pattern ${pattern} used invalid syntax.` )
+      Dilber.publish( 'error', `Your Tidal pattern ${pattern} used invalid syntax.` )
       return null
     }
 
@@ -12649,7 +12649,7 @@ module.exports = function( Gibber ) {
       tokens.forEach( t => {
         if( t !== '~' ) {
           if( target[ t ] === undefined ) {
-            Gibber.publish( 'error', `\nYour Tidal pattern is using a token (${t}) that can't be found on the targeted instrument.\n` )
+            Dilber.publish( 'error', `\nYour Tidal pattern is using a token (${t}) that can't be found on the targeted instrument.\n` )
             tokenNotFound = true
           }
         }
@@ -12672,7 +12672,7 @@ module.exports = function( Gibber ) {
         if( t !== '~' ) {
           if( t.match( numbersRegEx ) === null ) {
             tokenNotNumber = true
-            Gibber.publish( 'error', `\nYour Tidal pattern is using a token (${t}) that isn't a valid value for what you are sequencing.\n` )
+            Dilber.publish( 'error', `\nYour Tidal pattern is using a token (${t}) that isn't a valid value for what you are sequencing.\n` )
          
           }
         }
@@ -12697,13 +12697,13 @@ module.exports = function( Gibber ) {
     let   autotrig  = false
 
     const render    = target.type !== undefined ? target.type.toLowerCase() : 'audio'
-    //const Gibber.Audio.Gibberish = Gibber.Gibber.Audio.Gibberish !== undefined ? Gibber.Gibber.Audio.Gibberish : null
+    //const Dilber.Audio.Gibberish = Dilber.Dilber.Audio.Gibberish !== undefined ? Dilber.Dilber.Audio.Gibberish : null
 
     const clear = render === 'audio'
       ? function() {
           this.stop()
           
-          if( Gibber.Audio.Gibberish.mode === 'worklet' ) {
+          if( Dilber.Audio.Gibberish.mode === 'worklet' ) {
             const idx = Seq.sequencers.indexOf( seq )
             seq.stop()
             const __seq = Seq.sequencers.splice( idx, 1 )[0]
@@ -12748,19 +12748,19 @@ module.exports = function( Gibber ) {
     
     if( p === null ) return null
 
-    const seq = Gibber.Audio.Gibberish.Tidal({ pattern, target, key, priority, filters, mainthreadonly:props.mainthreadonly })
+    const seq = Dilber.Audio.Gibberish.Tidal({ pattern, target, key, priority, filters, mainthreadonly:props.mainthreadonly })
     seq.clear = clear
-    seq.uid = Gibber.Audio.Gibberish.Tidal.getUID()
+    seq.uid = Dilber.Audio.Gibberish.Tidal.getUID()
     
-    //Gibber.Audio.Gibberish.proxyEnabled = false
+    //Dilber.Audio.Gibberish.proxyEnabled = false
     //Audio.Ugen.createProperty( seq, 'density', timings, [], Audio )
-    //Gibber.Audio.Gibberish.proxyEnabled = true
+    //Dilber.Audio.Gibberish.proxyEnabled = true
 
-    Gibber.addSequencing( seq, 'rotate', 1 )
+    Dilber.addSequencing( seq, 'rotate', 1 )
 
     Seq.sequencers.push( seq )
 
-    Gibber.subscribe( 'clear', ()=> seq.clear() )
+    Dilber.subscribe( 'clear', ()=> seq.clear() )
 
     // if x.y.tidal() etc. 
     // standalone === false is most common use case
@@ -12777,12 +12777,12 @@ module.exports = function( Gibber ) {
         //removeSeq( obj, prevSeq )
       }
 
-      seq.start( Gibber.Audio.Clock.time( delay ) )
+      seq.start( Dilber.Audio.Clock.time( delay ) )
 
       target[ '__' + key ].tidals[ number ] = target[ '__' + key ][ number ] = seq
     }
 
-    Gibber.publish( 'new tidal', seq )
+    Dilber.publish( 'new tidal', seq )
     return seq
   }
 
@@ -12802,7 +12802,7 @@ module.exports = function( Gibber ) {
     get() { return val },
     set(v) {
       val = v
-      Gibber.Audio.Gibberish.Tidal.cps = v
+      Dilber.Audio.Gibberish.Tidal.cps = v
     }
   })
 
@@ -12811,9 +12811,9 @@ module.exports = function( Gibber ) {
 }
 
 },{}],128:[function(require,module,exports){
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
 
-const Pattern = Gibber.Pattern
+const Pattern = Dilber.Pattern
 
 const Triggers = function( __values ) {
   const values = __values.split('')
@@ -13533,7 +13533,7 @@ module.exports = [
 
 const Marching = require('marching');
 
-let Gibber = null,
+let Dilber = null,
     storepos,
     storedir,
     storerot;
@@ -13623,8 +13623,8 @@ const Graphics = {
   },
 
   init(props, __Gibber) {
-    Gibber = __Gibber;
-    Gibber.Graphics = this;
+    Dilber = __Gibber;
+    Dilber.Graphics = this;
     this.canvas = props.canvas || document.querySelector('canvas');
     this.__native = {};
     this.__wrapped = {};
@@ -13685,17 +13685,17 @@ const Graphics = {
         }
       }
 
-      if (Gibber.Environment) Graphics.clearCodeBackground();
+      if (Dilber.Environment) Graphics.clearCodeBackground();
     };
 
-    Gibber.subscribe('clear', this.clear);
+    Dilber.subscribe('clear', this.clear);
     return Promise.resolve([Graphics, 'Graphics']);
   },
 
   addCodeBackground() {
-    if (Gibber.Environment) {
+    if (Dilber.Environment) {
       const sheet = window.document.styleSheets[window.document.styleSheets.length - 1];
-      const b = Gibber.Environment.theme.active.background;
+      const b = Dilber.Environment.theme.active.background;
       const bg = `rgba(${parseInt(b.slice(1, 3), 16)}, ${parseInt(b.slice(3, 5), 16)}, ${parseInt(b.slice(5, 7), 16)}, .75)`;
       Graphics.__ruleIdx = sheet.insertRule(`.CodeMirror pre { background-color: ${bg} !important; }`, sheet.cssRules.length);
       Graphics.__showCodeBackground = true;
@@ -13802,8 +13802,8 @@ const Graphics = {
 
     instance.texture.tidals = wrapped.texture.tidals = [];
     instance.texture.__sequencers = wrapped.texture.__sequencers = [];
-    instance.texture.__id = wrapped.texture.__id = __wrapped.__id = Gibber.Audio.Gibberish.utilities.getUID();
-    Gibber.Audio.Gibberish.worklet.ugens.set(instance.texture.__id, instance.texture);
+    instance.texture.__id = wrapped.texture.__id = __wrapped.__id = Dilber.Audio.Gibberish.utilities.getUID();
+    Dilber.Audio.Gibberish.worklet.ugens.set(instance.texture.__id, instance.texture);
     return instance;
   },
 
@@ -13818,8 +13818,8 @@ const Graphics = {
     )
     instance.light.tidals = wrapped.light.tidals = []
     instance.light.__sequencers = wrapped.light.__sequencers = []
-    instance.light.__id = wrapped.light.__id = __wrapped.__id = Gibber.Gibberish.utilities.getUID()
-    Gibber.Gibberish.worklet.ugens.set( instance.light.__id, instance.light )*/
+    instance.light.__id = wrapped.light.__id = __wrapped.__id = Dilber.Gibberish.utilities.getUID()
+    Dilber.Gibberish.worklet.ugens.set( instance.light.__id, instance.light )*/
 
     Graphics.__lights.push(light);
 
@@ -13833,7 +13833,7 @@ const Graphics = {
       const wrapped = op(...args);
       const instance = {
         __wrapped: wrapped,
-        __id: Gibber.Audio.Gibberish.utilities.getUID(),
+        __id: Dilber.Audio.Gibberish.utilities.getUID(),
         __sequencers: [],
         emit: wrapped.emit !== undefined ? wrapped.emit.bind(wrapped) : null,
         emit_decl: wrapped.emit_decl !== undefined ? wrapped.emit_decl.bind(wrapped) : null,
@@ -13969,8 +13969,8 @@ const Graphics = {
                   Graphics.createProperty(instance.texture, p.name, tex[p.name], tex);
                   instance.texture.tidals = wrapped.texture.tidals = [];
                   instance.texture.__sequencers = wrapped.texture.__sequencers = [];
-                  instance.texture.__id = wrapped.texture.__id = __wrapped.__id = Gibber.Audio.Gibberish.utilities.getUID();
-                  Gibber.Audio.Gibberish.worklet.ugens.set(instance.texture.__id, instance.texture);
+                  instance.texture.__id = wrapped.texture.__id = __wrapped.__id = Dilber.Audio.Gibberish.utilities.getUID();
+                  Dilber.Audio.Gibberish.worklet.ugens.set(instance.texture.__id, instance.texture);
                 }
 
                 return instance;
@@ -13993,8 +13993,8 @@ const Graphics = {
                   )
                   instance.material.tidals = wrapped.material.tidals = []
                   instance.material.__sequencers = wrapped.material.__sequencers = []
-                  instance.material.__id = wrapped.material.__id = __wrapped.__id = Gibber.Gibberish.utilities.getUID()
-                  Gibber.Gibberish.worklet.ugens.set( instance.material.__id, instance.material )
+                  instance.material.__id = wrapped.material.__id = __wrapped.__id = Dilber.Gibberish.utilities.getUID()
+                  Dilber.Gibberish.worklet.ugens.set( instance.material.__id, instance.material )
                 }*/
 
                 return instance;
@@ -14053,7 +14053,7 @@ const Graphics = {
       } // hack to make audio sequencing work with graphical objects
 
 
-      Gibber.Audio.Gibberish.worklet.ugens.set(instance.__id, instance);
+      Dilber.Audio.Gibberish.worklet.ugens.set(instance.__id, instance);
 
       if (isfx) {
         Graphics.__postprocessing.push(instance.__wrapped);
@@ -14136,7 +14136,7 @@ const Graphics = {
 
           let target = to[name].value.widget !== undefined ? to[name].value.widget : from.widget;
           if (target === undefined && to[name].value.mark !== undefined) target = to[name].value.mark.replacedWith;
-          Gibber.Environment.codeMarkup.waveform.updateWidget(target, val, false);
+          Dilber.Environment.codeMarkup.waveform.updateWidget(target, val, false);
         };
       } else {
         // assignment hack while DOM creation is taking place,
@@ -14148,7 +14148,7 @@ const Graphics = {
         to['__' + name].callback = t => {
           const val = gen();
           to[name] = val;
-          Gibber.Environment.codeMarkup.waveform.updateWidget(to['__' + name].widget, val, false);
+          Dilber.Environment.codeMarkup.waveform.updateWidget(to['__' + name].widget, val, false);
         };
       }
 
@@ -14221,7 +14221,7 @@ const Graphics = {
               widget.max = to;
               obj[name].value.from = from;
               obj[name].value.to = to;
-              Gibber.Environment.codeMarkup.waveform.updateWidget(widget, from + val * diff, false);
+              Dilber.Environment.codeMarkup.waveform.updateWidget(widget, from + val * diff, false);
             }
           } else {
             const prop = obj[name].__fadeObj;
@@ -14249,7 +14249,7 @@ const Graphics = {
         } // XXX you have to add a method that does all this shit on the worklet. crap.
 
 
-        obj['__' + name].sequencers[number] = obj['__' + name][number] = Gibber.Seq({
+        obj['__' + name].sequencers[number] = obj['__' + name][number] = Dilber.Seq({
           values,
           timings,
           target: {
@@ -14259,7 +14259,7 @@ const Graphics = {
           mainthreadonly: obj.__id,
           key: name,
           priority: 0
-        }).start(Gibber.Audio.Clock.time(delay));
+        }).start(Dilber.Audio.Clock.time(delay));
 
         obj.__sequencers.push(obj['__' + name][number]); // return object for method chaining
 
@@ -14280,7 +14280,7 @@ const Graphics = {
           prevSeq.clear(); //removeSeq( obj, prevSeq )
         }
 
-        const s = Gibber.Tidal({
+        const s = Dilber.Tidal({
           pattern,
           target: {
             id: obj.__id
@@ -14288,7 +14288,7 @@ const Graphics = {
           mainthreadonly: obj.__id,
           key: name
         });
-        s.start(Gibber.Audio.Clock.time(delay));
+        s.start(Dilber.Audio.Clock.time(delay));
         obj['__' + name].sequencers[number] = obj['__' + name][number] = obj['__' + name].tidals[number] = s;
 
         obj.__sequencers.push(s);
@@ -14307,8 +14307,8 @@ const Graphics = {
 
       for (let i = 0; i < size; i++) {
         Graphics.createProperty(obj['__' + name], props[i], wrapped[name][props[i]], wrapped[name]);
-        const id = obj['__' + name].__id = Gibber.Audio.Gibberish.utilities.getUID();
-        Gibber.Audio.Gibberish.worklet.ugens.set(id, obj['__' + name]);
+        const id = obj['__' + name].__id = Dilber.Audio.Gibberish.utilities.getUID();
+        Dilber.Audio.Gibberish.worklet.ugens.set(id, obj['__' + name]);
       }
     }
 
@@ -80352,10 +80352,10 @@ module.exports = function( Marker ) {
           }
 
           if( Array.isArray( arr ) ) {
-            const tmp = Gibber.shouldDelay
-            Gibber.shouldDelay = Gibber.Audio.shouldDelay = false 
+            const tmp = Dilber.shouldDelay
+            Dilber.shouldDelay = Dilber.Audio.shouldDelay = false 
             patternObject.set( arr )
-            Gibber.shouldDelay = tmp
+            Dilber.shouldDelay = tmp
 
             pos.start = pos.from
             pos.end = pos.to
@@ -81084,13 +81084,13 @@ module.exports = function( Marker ) {
       if( current !== codestr ) {
         codestr = current//.slice(1,-1)
 
-        const valid = Gibber.Tidal.check( codestr, tidal.key, target )
+        const valid = Dilber.Tidal.check( codestr, tidal.key, target )
 
         if( valid ) { 
-          const tmp = Gibber.shouldDelay
-          Gibber.shouldDelay = Gibber.Audio.shouldDelay = false 
+          const tmp = Dilber.shouldDelay
+          Dilber.shouldDelay = Dilber.Audio.shouldDelay = false 
           tidal.set( codestr )
-          Gibber.shouldDelay = tmp
+          Dilber.shouldDelay = tmp
 
           pos.start = pos.from
           pos.end = pos.to
@@ -81323,7 +81323,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
     span = $( spanName )
 
     span.add( 'euclid0' )
-    if( currentValue !== Gibber.Seq.DNR && ( typeof currentValue === 'object' && currentValue.shouldExecute !== 0 ) ) {
+    if( currentValue !== Dilber.Seq.DNR && ( typeof currentValue === 'object' && currentValue.shouldExecute !== 0 ) ) {
       span.add( 'euclid1' )
 
       setTimeout( ()=> { 
@@ -81365,7 +81365,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
     if( typeof __clear === 'function' ) __clear.call( patternObject )
   }
 
-  Gibber.subscribe( 'clear', patternObject.clear )
+  Dilber.subscribe( 'clear', patternObject.clear )
 
   Marker._addPatternFilter( patternObject )
 }  
@@ -81377,7 +81377,7 @@ const $ = Utility.create
 const EuclidAnnotation = require( '../update/euclidAnnotation.js' )
 
 module.exports = function( node, cm, track, objectName, state, cb ) {
-  const Marker = Gibber.Environment.codeMarkup 
+  const Marker = Dilber.Environment.codeMarkup 
   const steps = node.arguments[ 0 ].properties
   const Identifier = Marker.patternMarkupFunctions.Identifier
 
@@ -81457,12 +81457,12 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
         if( typeof __clear === 'function' ) __clear.call( pattern )
       }
 
-      Gibber.subscribe( 'clear', pattern.clear )
+      Dilber.subscribe( 'clear', pattern.clear )
       /*
 
       patternObject._onchange = () => {
-        let delay = Utility.beatsToMs( 1,  Gibber.Scheduler.bpm )
-        Gibber.Environment.animationScheduler.add( () => {
+        let delay = Utility.beatsToMs( 1,  Dilber.Scheduler.bpm )
+        Dilber.Environment.animationScheduler.add( () => {
           marker.doc.replaceRange( patternObject.values.join(''), step.loc.start, step.loc.end )
           mark( step, key, cm, track )
         }, delay ) 
@@ -81480,7 +81480,7 @@ const $ = Utility.create
 const EuclidAnnotation = require( '../update/euclidAnnotation.js' )
 
 module.exports = function( node, cm, track, objectName, state, cb ) {
-  const Marker = Gibber.Environment.codeMarkup 
+  const Marker = Dilber.Environment.codeMarkup 
   const steps = node.arguments[ 0 ].properties
   const Identifier = Marker.patternMarkupFunctions.Identifier
 
@@ -81657,7 +81657,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
         }
       }
 
-      Gibber.subscribe( 'clear', pattern.clear )
+      Dilber.subscribe( 'clear', pattern.clear )
     }
   }
 
@@ -81904,10 +81904,10 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
           }
 
           if( Array.isArray( arr ) ) {
-            const tmp = Gibber.shouldDelay
-            Gibber.shouldDelay = Gibber.Audio.shouldDelay = false 
+            const tmp = Dilber.shouldDelay
+            Dilber.shouldDelay = Dilber.Audio.shouldDelay = false 
             patternObject.set( arr )
-            Gibber.shouldDelay = tmp
+            Dilber.shouldDelay = tmp
 
             pos.start = pos.from
             pos.end = pos.to
@@ -82124,7 +82124,7 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
     }
 
     // XXX remove global reference somehow...
-    Gibber.subscribe( 'clear', patternObject.clear )
+    Dilber.subscribe( 'clear', patternObject.clear )
     out = update
   }
 
@@ -82138,11 +82138,11 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
 
 },{"../utilities.js":241}],240:[function(require,module,exports){
 module.exports = ( patternObject, marker, className, cm, track, patternNode, patternType, seqNumber ) => {
-  Gibber.Environment.codeMarkup.processGen( patternNode, cm, null, patternObject, null, -1 )
+  Dilber.Environment.codeMarkup.processGen( patternNode, cm, null, patternObject, null, -1 )
 
   patternNode.arguments[1].offset = patternNode.offset 
 
-  Gibber.Environment.codeMarkup.patternMarkupFunctions.ArrayExpression(
+  Dilber.Environment.codeMarkup.patternMarkupFunctions.ArrayExpression(
     patternNode.arguments[1], 
     cm.__state,
     { object:patternObject, [ patternType ]: patternObject },
@@ -82315,7 +82315,7 @@ module.exports = function( Marker ) {
           }
 
           if( righthandName !== undefined ) {
-            state.containsGen = Marker.Gibber.Audio.Gen.names.indexOf( righthandName ) > -1
+            state.containsGen = Marker.Dilber.Audio.Gen.names.indexOf( righthandName ) > -1
 
             // if assigning to a global variable...
             if( leftName.indexOf('.') === -1 ) {
@@ -82572,7 +82572,7 @@ const COLORS = {
   DOT:'var(--f_high)'//'rgba(89, 151, 198, 1)'//'rgba(0,0,255,1)'
 }
 
-let Gibber = null
+let Dilber = null
 
 const findByName = name => {
   let targetWidget = null
@@ -82622,7 +82622,7 @@ const Waveform = {
     widget.ctx.strokeStyle = Environment.theme.get('f_med')//COLORS.FILL 
     widget.ctx.font = '10px monospace'
     widget.ctx.lineWidth = 1
-    widget.gen = patternObject !== null ? patternObject.value : walkState.gen.value//Gibber.Gen.lastConnected.shift()
+    widget.gen = patternObject !== null ? patternObject.value : walkState.gen.value//Dilber.Gen.lastConnected.shift()
     widget.values = []
     widget.storage = []
     widget.min = 10000
@@ -82688,7 +82688,7 @@ const Waveform = {
       }
     }
 
-    //if( widget.gen.id === undefined ) widget.gen.id = Gibber.Gibberish.utilities.getUID()
+    //if( widget.gen.id === undefined ) widget.gen.id = Dilber.Gibberish.utilities.getUID()
 
     widget.mark = cm.markText({ line, ch:ch }, { line, ch:ch+1 }, { replacedWith:widget })
     widget.mark.__clear = widget.mark.clear
@@ -82719,7 +82719,7 @@ const Waveform = {
     
     if( patternObject !== null ) {
       patternObject.mark = widget.mark
-      if( patternObject === Gibber.Audio.Gen.lastConnected[0] ) Gibber.Audio.Gen.lastConnected.shift()
+      if( patternObject === Dilber.Audio.Gen.lastConnected[0] ) Dilber.Audio.Gen.lastConnected.shift()
     }
 
     if( !isFade ) {
@@ -82959,7 +82959,7 @@ const Waveform = {
 
 
 module.exports = function( __Gibber ) {
-  Gibber = __Gibber
+  Dilber = __Gibber
   return Waveform
 }
 
@@ -82968,14 +82968,14 @@ const acorn = require( 'acorn' )
 const walk  = require( 'acorn-walk' )
 //const Utility = require( '../js/utility.js' )
 
-module.exports = function( Gibber ) {
+module.exports = function( Dilber ) {
 
 const Marker = {
-  waveform: require( './annotations/waveform.js' )( Gibber ),
+  waveform: require( './annotations/waveform.js' )( Dilber ),
   _patternTypes: [ 'values', 'timings', 'index' ],
   globalIdentifiers:{},
   arrayPatterns:{},
-  Gibber,
+  Dilber,
 
   acorn, walk,
 
@@ -83001,14 +83001,14 @@ const Marker = {
 
     this.visitors = this.__visitors( this )
 
-    Gibber.subscribe( 'clear', this.clear )
+    Dilber.subscribe( 'clear', this.clear )
   },
 
   commentClasses: ['gibber_comment', 'hex'],
 
   clear() { 
     Marker.waveform.clear() 
-    Gibber.Environment.editor.getAllMarks().forEach( m => {
+    Dilber.Environment.editor.getAllMarks().forEach( m => {
       if( m.className !== undefined ) {
         Marker.commentClasses.forEach( __class => {
           if( m.className.indexOf( __class  ) > -1 ) {
@@ -83020,7 +83020,7 @@ const Marker = {
       }
       if( m.markdown !== true ) m.clear()
     }) 
-    Gibber.Environment.editor.getAllMarks().forEach( m => { if( m.markdown !== true ) m.clear() })
+    Dilber.Environment.editor.getAllMarks().forEach( m => { if( m.markdown !== true ) m.clear() })
   },
   
   prepareObject( obj ) {
@@ -83085,7 +83085,7 @@ const Marker = {
 
     const parsed = acorn.parse( code, Marker.parsingOptions )
       
-    Gibber.Audio.Gibberish.proxyEnabled = false
+    Dilber.Audio.Gibberish.proxyEnabled = false
 
     parsed.body.forEach( node => {
       state.length = 0
@@ -83094,11 +83094,11 @@ const Marker = {
       try{
         walk.recursive( node, state, Marker.visitors )
       }catch(e){
-        Gibber.Environment.console.error( e.message, e ) 
+        Dilber.Environment.console.error( e.message, e ) 
       }
     })
 
-    Gibber.Audio.Gibberish.proxyEnabled = true
+    Dilber.Audio.Gibberish.proxyEnabled = true
 
     return parsed
   },
@@ -83168,10 +83168,10 @@ const Marker = {
               ele.style.border = '1px solid '+color
             }
 
-            Gibber.subscribe( 'metronome.tick', cb )
+            Dilber.subscribe( 'metronome.tick', cb )
 
-            const clear = ()=> Gibber.unsubscribe( 'metronome.tick', cb )
-            Gibber.once( 'clear', clear )
+            const clear = ()=> Dilber.unsubscribe( 'metronome.tick', cb )
+            Dilber.once( 'clear', clear )
           }else{
             solo()
           }
@@ -83342,7 +83342,7 @@ const Marker = {
 
       //seqExpression.arguments.forEach( function( seqArgument ) {
         if( seqArgument.type === 'CallExpression' ) {
-          const idx = Gibber.Audio.Gen.names.indexOf( seqArgument.callee.name )
+          const idx = Dilber.Audio.Gen.names.indexOf( seqArgument.callee.name )
           
           // not a gen, markup will happen elsewhere
           if( idx === -1 ) return
@@ -83456,7 +83456,7 @@ const Marker = {
       if( typeof __clear === 'function' ) __clear.call( patternObject )
     }
 
-    Gibber.subscribe( 'clear', patternObject.clear )
+    Dilber.subscribe( 'clear', patternObject.clear )
   },
 
   // Patterns can have *filters* which are functions
@@ -83466,7 +83466,7 @@ const Marker = {
   // a value.
   _addPatternFilter( patternObject ) {
     patternObject.filters.push( args => {
-      const wait = Gibber.Utility.beatsToMs( patternObject.nextTime + .5,  Gibber.Scheduler.bpm ),
+      const wait = Dilber.Utility.beatsToMs( patternObject.nextTime + .5,  Dilber.Scheduler.bpm ),
             idx = args[ 2 ],
             shouldUpdate = patternObject.update.shouldUpdate
 
@@ -83474,7 +83474,7 @@ const Marker = {
       // because changing the mark of the values pattern messes up the mark of the timings
       // pattern; reversing their order of execution fixes this.  
       if( patternObject.__delayAnnotations === true ) {
-        Gibber.Environment.animationScheduler.add( () => {
+        Dilber.Environment.animationScheduler.add( () => {
           if( patternObject.type !== 'Lookup' ) {
             patternObject.update.currentIndex = idx
           }else{
@@ -83484,7 +83484,7 @@ const Marker = {
           patternObject.update()
         }, wait + 1 )
       }else{
-        Gibber.Environment.animationScheduler.add( () => {
+        Dilber.Environment.animationScheduler.add( () => {
           if( patternObject.type !== 'Lookup' ) {
             patternObject.update.currentIndex = idx
           }else{
@@ -83545,7 +83545,7 @@ const Marker = {
   _updatePatternContents( pattern, patternClassName, track ) {
     let marker, pos, newMarker
 
-    if( Gibber.shouldDelay === false ) {
+    if( Dilber.shouldDelay === false ) {
 
       // XXX this works fine for pattern *transformations*, but it doesn't work
       // when you're completely replacing the contents of the pattern with a new
@@ -83682,7 +83682,7 @@ return Marker
 
 
 },{"./annotations/markup/arrayExpression.js":226,"./annotations/markup/binaryExpression.js":227,"./annotations/markup/callExpression.js":228,"./annotations/markup/identifier.js":229,"./annotations/markup/literal.js":230,"./annotations/markup/mapping.js":231,"./annotations/markup/tidal.js":232,"./annotations/markup/unaryExpression.js":233,"./annotations/standalone/drumsAnnotation.js":234,"./annotations/standalone/hexStepsAnnotations.js":235,"./annotations/standalone/stepsAnnotation.js":236,"./annotations/update/anonymousAnnotation.js":237,"./annotations/update/createBorderCycle.js":238,"./annotations/update/euclidAnnotation.js":239,"./annotations/update/lookupAnnotation.js":240,"./annotations/visitors.js":242,"./annotations/waveform.js":243,"acorn":140,"acorn-walk":138}],245:[function(require,module,exports){
-module.exports = function( Gibber, Environment ) {
+module.exports = function( Dilber, Environment ) {
 
 
   const rpad = function( value, pad ) {
@@ -83802,7 +83802,7 @@ module.exports = function( Gibber, Environment ) {
     // watch( k, 'trigger', ()=>{} ) which just offends my sense of aesthetics.
 
     if( isTidal ) {
-      Gibber.Audio.Gibberish.worklet.port.postMessage({
+      Dilber.Audio.Gibberish.worklet.port.postMessage({
         address:'method',
         name:'addFilter',
         object: sequencer.id,
@@ -83890,7 +83890,7 @@ module.exports = function( environment ) {
       window.console.clear()
     },
 
-    init( Gibber ) {
+    init( Dilber ) {
       Console.__messageNames.forEach( n => {
         Console.__notifications[ n ] = v => {
           Console.__messages[ n ].push( v )
@@ -83898,8 +83898,8 @@ module.exports = function( environment ) {
         Console.__messages[ n ] = []
       })
 
-      Gibber.Audio.subscribe( 'new ugen', this.__notifications['new ugen'] )
-      Gibber.subscribe( 'new sequence', seq => {
+      Dilber.Audio.subscribe( 'new ugen', this.__notifications['new ugen'] )
+      Dilber.subscribe( 'new sequence', seq => {
         let msg = ''
         if( seq.target !== undefined ) {
           if( seq.target.__meta__ !== undefined ) {
@@ -83913,7 +83913,7 @@ module.exports = function( environment ) {
         this.__notifications['new sequence']( msg )
       })
 
-      Gibber.subscribe( 'new tidal', seq => {
+      Dilber.subscribe( 'new tidal', seq => {
         let msg = ''
         if( seq.target.__meta__ !== undefined ) {
           msg = `tidal pattern controlling '${seq.key}' on ${seq.target.__meta__.name[1] || seq.target.__meta__.name[0] } now running.`
@@ -83923,7 +83923,7 @@ module.exports = function( environment ) {
         this.__notifications['new tidal']( msg )
       })
 
-      Gibber.subscribe( 'error', this.__notifications.error )
+      Dilber.subscribe( 'error', this.__notifications.error )
 
       window.console.warn = Console.warn
       window.console.error = Console.error
@@ -83985,10 +83985,10 @@ let cm, cmconsole, exampleCode,
           end = sel.end,
           start = sel.start
 
-        Gibber.Environment.share.commands.unshift([ 
+        Dilber.Environment.share.commands.unshift([ 
           start.line, start.ch, end.line, end.ch, 
           selectedCode.code, 
-          Gibber.Environment.share.username 
+          Dilber.Environment.share.username 
         ])
       },
 
@@ -83996,7 +83996,7 @@ let cm, cmconsole, exampleCode,
         try {
           if( selectedCode === null ) selectedCode = environment.getSelectionCodeColumn( cm, useBlock )
 
-          window.genish = Gibber.Audio.Gen.ugens
+          window.genish = Dilber.Audio.Gen.ugens
           
           let code = `{
         'use jsdsp'
@@ -84011,7 +84011,7 @@ let cm, cmconsole, exampleCode,
 
           const func = new Function( code )
 
-          Gibber.shouldDelay = Gibber.Audio.shouldDelay = useDelay 
+          Dilber.shouldDelay = Dilber.Audio.shouldDelay = useDelay 
 
           const preWindowMembers = Object.keys( window )
           let err = null
@@ -84028,7 +84028,7 @@ let cm, cmconsole, exampleCode,
           const postWindowMembers = Object.keys( window )
 
           if( preWindowMembers.length !== postWindowMembers.length && environment.useProxies === true )   {
-            environment.createProxies( preWindowMembers, postWindowMembers, window, Environment, Gibber )
+            environment.createProxies( preWindowMembers, postWindowMembers, window, Environment, Dilber )
           }
 
           const markupFunction = () => {
@@ -84036,16 +84036,16 @@ let cm, cmconsole, exampleCode,
               selectedCode.code, 
               selectedCode.selection, 
               cm, 
-              Gibber.currentTrack 
+              Dilber.currentTrack 
             ) 
           }
 
           markupFunction.origin = func
 
           if( !Environment.debug ) {
-            Gibber.Scheduler.functionsToExecute.push( func )
+            Dilber.Scheduler.functionsToExecute.push( func )
             if( environment.annotations === true ) {
-              Gibber.Scheduler.functionsToExecute.push( markupFunction )
+              Dilber.Scheduler.functionsToExecute.push( markupFunction )
             }
           }else{
             //func()
@@ -84056,7 +84056,7 @@ let cm, cmconsole, exampleCode,
           return
         }
 
-        Gibber.shouldDelay = false
+        Dilber.shouldDelay = false
       },
 
       getSelectionCodeColumn( cm, findBlock ) {
@@ -84129,7 +84129,7 @@ let cm, cmconsole, exampleCode,
   **************************************************
    ***********************************************/`
 
-module.exports = function( Gibber, element = '#editor', userEditable=true ) {
+module.exports = function( Dilber, element = '#editor', userEditable=true ) {
 
   const keys = {
     w:0,
@@ -84170,7 +84170,7 @@ module.exports = function( Gibber, element = '#editor', userEditable=true ) {
       cursor.style.background = state ? 'transparent' : 'var(--f_med)'
     }
 
-    Gibber.subscribe( 'metronome.tick', blink )
+    Dilber.subscribe( 'metronome.tick', blink )
   }, 1000 )
 
   Babel.registerPlugin( 'jsdsp', jsdsp )
@@ -84196,7 +84196,7 @@ module.exports = function( Gibber, element = '#editor', userEditable=true ) {
   })
 
   // setup autocomplete etc.
-  require( './tern.js' )( Gibber, cm, environment )
+  require( './tern.js' )( Dilber, cm, environment )
 
   cm.__setup = function() {
 
@@ -84325,7 +84325,7 @@ k = Kick().trigger.seq( 1, 1/4 )`
     }else if( SDF.cameraEnabled ) {
       SDF.keys[ e.key ] = 1
     }else if( e.key === '.' && e.ctrlKey === true ) {
-      Gibber.clear( false )
+      Dilber.clear( false )
 
       for( let key of environment.proxies ) delete window[ key ]
       environment.proxies.length = 0
@@ -84348,12 +84348,12 @@ CodeMirror.keyMap.playground =  {
   'Alt-Enter'( cm )   { environment.runCode( cm, true,  true  ) },
   'Shift-Alt-Enter'( cm ) { environment.runCode( cm, true, false, true ) },
   'Ctrl-Alt-B'( cm ) {
-    Gibber.Graphics.__showCodeBackground = !Gibber.Graphics.__showCodeBackground
+    Dilber.Graphics.__showCodeBackground = !Dilber.Graphics.__showCodeBackground
 
-    if( Gibber.Graphics.__showCodeBackground ) {
-      Gibber.Graphics.addCodeBackground()
+    if( Dilber.Graphics.__showCodeBackground ) {
+      Dilber.Graphics.addCodeBackground()
     }else{
-      Gibber.Graphics.clearCodeBackground()
+      Dilber.Graphics.clearCodeBackground()
     }
   },
 
@@ -84368,14 +84368,14 @@ CodeMirror.keyMap.playground =  {
   'Ctrl-\\'( cm ) { environment.console.clear() }, 
 
   'Ctrl-.'( cm, ...args ) {
-    Gibber.clear()
+    Dilber.clear()
 
     for( let key of environment.proxies ) delete window[ key ]
     environment.proxies.length = 0
     //e.preventDefault()
   },
   'Shift-Ctrl-.'( cm ) {
-    Gibber.clear()
+    Dilber.clear()
 
     for( let key of environment.proxies ) delete window[ key ]
     environment.proxies.length = 0
@@ -84412,7 +84412,7 @@ CodeMirror.keyMap.playground =  {
 },{"../node_modules/acorn-loose/dist/acorn-loose.js":135,"../node_modules/acorn-walk/dist/walk.js":137,"../node_modules/acorn/dist/acorn.js":139,"../node_modules/codemirror/addon/dialog/dialog.js":144,"../node_modules/codemirror/addon/edit/closebrackets.js":145,"../node_modules/codemirror/addon/edit/matchbrackets.js":146,"../node_modules/codemirror/addon/hint/javascript-hint.js":147,"../node_modules/codemirror/addon/hint/show-hint.js":148,"../node_modules/codemirror/mode/javascript/javascript.js":151,"./proxies.js":251,"./tern.js":255,"codemirror":150}],248:[function(require,module,exports){
 "use strict";
 
-const Gibber = require('gibber.core.lib'),
+const Dilber = require('gibber.core.lib'),
       Audio = require('gibber.audio.lib'),
       Graphics = require('gibber.graphics.lib'),
       codeMarkup = require('./codeMarkup.js'),
@@ -84433,11 +84433,11 @@ let cm,
     exampleCode,
     isStereo = false,
     fontSize = 1;
-window.Gibber = Gibber;
+window.Dilber = Dilber;
 
 window.onload = function () {
-  [cm, environment] = Editor(Gibber);
-  Gibber.extensions = {};
+  [cm, environment] = Editor(Dilber);
+  Dilber.extensions = {};
   const theme = new Theme();
   theme.install(document.body);
   theme.start();
@@ -84468,7 +84468,7 @@ window.onload = function () {
   console.warn = () => {};
 
   const altCanvas = document.querySelector(localStorage.getItem('canvas'));
-  Gibber.init([{
+  Dilber.init([{
     name: 'Audio',
     plugin: Audio,
     // Audio is required, imported, or grabbed via <script>
@@ -84483,22 +84483,22 @@ window.onload = function () {
       canvas: altCanvas || document.querySelector('#graphics')
     }
   }]).then(() => {
-    Gibber.Audio.Theory.__loadingPrefix = './resources/tune.json/';
-    Gibber.export(window);
-    addSamplerExtensions(Gibber);
-    addFadeExtensions(Gibber);
+    Dilber.Audio.Theory.__loadingPrefix = './resources/tune.json/';
+    Dilber.export(window);
+    addSamplerExtensions(Dilber);
+    addFadeExtensions(Dilber);
 
     window.future = function (fnc, time, dict) {
-      Gibber.Audio.Gibberish.utilities.future(fnc, Clock.btos(time * 4), dict);
+      Dilber.Audio.Gibberish.utilities.future(fnc, Clock.btos(time * 4), dict);
     };
 
-    environment.console.init(Gibber);
+    environment.console.init(Dilber);
     console.log = console.__log;
     console.warn = console.__warn;
 
     window.solo = function (...soloed) {
       if (soloed.length > 0) {
-        Gibber.Seq.sequencers.forEach(s => {
+        Dilber.Seq.sequencers.forEach(s => {
           let shouldStop = true;
           soloed.forEach(solo => {
             if (s.target.__wrapped__ === solo.__wrapped__) shouldStop = false;
@@ -84510,7 +84510,7 @@ window.onload = function () {
             if (s.__isRunning === false) s.start(s.__delay || 0);
           }
         });
-        Gibber.Tidal.sequencers.forEach(s => {
+        Dilber.Tidal.sequencers.forEach(s => {
           let shouldStop = true;
           soloed.forEach(solo => {
             if (s.target.__wrapped__ === solo.__wrapped__) shouldStop = false;
@@ -84523,20 +84523,20 @@ window.onload = function () {
           }
         });
       } else {
-        Gibber.Seq.sequencers.forEach(s => {
+        Dilber.Seq.sequencers.forEach(s => {
           if (s.__isRunning === false) s.start(s.__delay || 0);
         });
-        Gibber.Tidal.sequencers.forEach(s => {
+        Dilber.Tidal.sequencers.forEach(s => {
           if (s.__isRunning === false) s.start(s.__delay || 0);
         });
       }
     };
 
-    window.Graphics = Gibber.Graphics;
-    window.Audio = Gibber.Audio;
-    window.fn = Gibber.Audio.Gibberish.utilities.fn;
-    window._ = Gibber.Audio.Gibberish.Sequencer.DO_NOT_OUTPUT;
-    window.printcb = Gibber.Audio.printcb;
+    window.Graphics = Dilber.Graphics;
+    window.Audio = Dilber.Audio;
+    window.fn = Dilber.Audio.Gibberish.utilities.fn;
+    window._ = Dilber.Audio.Gibberish.Sequencer.DO_NOT_OUTPUT;
+    window.printcb = Dilber.Audio.printcb;
 
     window.find = function (name) {
       let out = {
@@ -84570,16 +84570,16 @@ window.onload = function () {
     };
 
     Object.assign(window, Audio.globals);
-    Gibber.Audio.subscribe('restart', Audio.setupGlobals);
+    Dilber.Audio.subscribe('restart', Audio.setupGlobals);
 
-    Gibber.Audio.Gibberish.utilities.workletHandlers.eval = function (evt) {
+    Dilber.Audio.Gibberish.utilities.workletHandlers.eval = function (evt) {
       eval(evt.data.code);
     };
 
     const fft = window.FFT = Marching.FFT;
-    fft.input = Gibber.Audio.Gibberish.worklet;
+    fft.input = Dilber.Audio.Gibberish.worklet;
     fft.__hasInput = true;
-    fft.ctx = Gibber.Audio.Gibberish.ctx;
+    fft.ctx = Dilber.Audio.Gibberish.ctx;
 
     fft.start = function (bins = null) {
       fft.bins = bins;
@@ -84592,14 +84592,14 @@ window.onload = function () {
       clearInterval(fft.interval);
     };
 
-    Metronome.init(Gibber);
+    Metronome.init(Dilber);
     environment.metronome = Metronome;
-    Gibber.subscribe('clear', shouldPrint => {
+    Dilber.subscribe('clear', shouldPrint => {
       for (let key in Environment.sounds) {
         delete Environment.sounds[key];
       }
 
-      window.Out = Gibber.Audio.Out;
+      window.Out = Dilber.Audio.Out;
       if (shouldPrint) Console.log('%cgibber has been cleared.', 'background:#006;color:white;');
     });
 
@@ -84607,8 +84607,8 @@ window.onload = function () {
 
     Storage.runUserSetup();
 
-    for (let instrumentName in Gibber.Audio.instruments) {
-      const constructor = Gibber.Audio.instruments[instrumentName];
+    for (let instrumentName in Dilber.Audio.instruments) {
+      const constructor = Dilber.Audio.instruments[instrumentName];
 
       if (constructor.presets) {
         // sampler.list() shows sample directories on server
@@ -84642,8 +84642,8 @@ window.onload = function () {
       }
     }
 
-    for (let effectName in Gibber.Audio.effects) {
-      const constructor = Gibber.Audio.effects[effectName];
+    for (let effectName in Dilber.Audio.effects) {
+      const constructor = Dilber.Audio.effects[effectName];
 
       if (constructor.presets) {
         //constructor.list = constructor.presets.list.bind( constructor.presets )
@@ -84688,7 +84688,7 @@ window.onload = function () {
       return obj;
     };
 
-    Console.log('%cgibber is now running. thanks for playing!', `color:black;background:white; width:100%`);
+    Console.log('%cDilber is now running!', `color:black;background:white; width:100%`);
   });
   environment.editor = cm; //environment.console = cmconsole
 
@@ -84696,7 +84696,7 @@ window.onload = function () {
   environment.annotations = true; // XXX this should not be in 'debug' mode...
 
   environment.debug = true;
-  environment.codeMarkup = codeMarkup(Gibber);
+  environment.codeMarkup = codeMarkup(Dilber);
   environment.codeMarkup.init();
 
   environment.displayCallbackUpdates = function () {
@@ -84706,8 +84706,8 @@ window.onload = function () {
   };
 
   environment.Annotations = environment.codeMarkup;
-  Gibber.Environment = environment;
-  Collab(Gibber, environment);
+  Dilber.Environment = environment;
+  Collab(Dilber, environment);
   setupExamples();
   setupThemeMenu();
   setupCollapseBtn();
@@ -84720,8 +84720,8 @@ window.onload = function () {
 const exts = ['wav', 'aif', 'mp3', 'aiff'];
 const ignore = ['txt', 'md', 'git'];
 
-const addSamplerExtensions = function (Gibber) {
-  Gibber.Audio.instruments.Sampler.list = function (dir = null) {
+const addSamplerExtensions = function (Dilber) {
+  Dilber.Audio.instruments.Sampler.list = function (dir = null) {
     let url = 'http://localhost:5500/resources/audiofiles/';
     url += dir === null ? '' : '/' + dir;
  
@@ -84748,10 +84748,10 @@ const addSamplerExtensions = function (Gibber) {
     // });
   }; // this extension is added to individual instances inside
   // of gibber.audio.lib/instruments.js
-  //Gibber.Audio.instruments.extensions.Sampler = {
+  //Dilber.Audio.instruments.extensions.Sampler = {
 
 
-  Gibber.extensions.Sampler = {
+  Dilber.extensions.Sampler = {
     load(name = '') {
       const ext = name.split('.').pop();
       const isDir = exts.findIndex(v => v === ext) === -1;
@@ -84782,7 +84782,7 @@ const addSamplerExtensions = function (Gibber) {
   };
 };
 
-const addFadeExtensions = function (Gibber) {
+const addFadeExtensions = function (Dilber) {
   const fade = {
     fadein(time = 16) {
       this.gain.fade(0, null, time);
@@ -84794,9 +84794,9 @@ const addFadeExtensions = function (Gibber) {
 
   };
 
-  for (let instrumentName in Gibber.Audio.instruments) {
-    if (Gibber.extensions[instrumentName] === undefined) Gibber.extensions[instrumentName] = {};
-    Object.assign(Gibber.extensions[instrumentName], fade);
+  for (let instrumentName in Dilber.Audio.instruments) {
+    if (Dilber.extensions[instrumentName] === undefined) Dilber.extensions[instrumentName] = {};
+    Object.assign(Dilber.extensions[instrumentName], fade);
   }
 }; // shouldRunNetworkCode is used to prevent recursive ws sending of code
 // while isNetworked is used to test for acive ws connection
@@ -84980,7 +84980,7 @@ const setupRestartBtn = function () {
     if(nnt !== null ){
       return
     }
-    Gibber.Audio.restart(); // DRY... also used for gabber button
+    Dilber.Audio.restart(); // DRY... also used for gabber button
 
     const menu = document.createElement('div');
     menu.setAttribute('id', 'restartnotification');
@@ -85145,11 +85145,11 @@ window.__use = function (lib) {
           canvas.setAttribute('class', 'graphics');
           document.body.appendChild(canvas);
           window.hydra = hydra;
-          Gibber.subscribe('clear', () => hydra.hush());
+          Dilber.subscribe('clear', () => hydra.hush());
           hydra.setResolution(canvas.width, canvas.height);
 
-          if (Gibber.Environment) {
-            Gibber.Graphics.addCodeBackground();
+          if (Dilber.Environment) {
+            Dilber.Graphics.addCodeBackground();
 
             if (shouldSrcGibberCanvas) {
               s0.init({
@@ -85165,7 +85165,7 @@ window.__use = function (lib) {
         };
 
         libs.Hydra = Hydra;
-        Gibber.Audio.Ugen.OUTPUT = 0;
+        Dilber.Audio.Ugen.OUTPUT = 0;
         res(Hydra);
       };
 
@@ -85183,8 +85183,8 @@ window.__use = function (lib) {
      // p5script.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js';
      p5script.src = './resources/external/p5.js';
       window.setup = function () {
-        if (Gibber.Environment) {
-          Gibber.Graphics.addCodeBackground();
+        if (Dilber.Environment) {
+          Dilber.Graphics.addCodeBackground();
         }
 
         createCanvas(window.innerWidth, window.innerHeight); // manage the draw loop ourselves so we can handle errors
@@ -85222,11 +85222,11 @@ window.__use = function (lib) {
       };
 
       p5script.onload = function () {
-        Gibber.subscribe('clear', () => {
+        Dilber.subscribe('clear', () => {
           clear();
         }); // .out() from ugens returns scalar, not function
 
-        Gibber.Audio.Ugen.OUTPUT = 1;
+        Dilber.Audio.Ugen.OUTPUT = 1;
         libs.P5 = window.P5;
         window.p5 = window.p5.instance;
 
@@ -85268,17 +85268,17 @@ window.wait = function () {
 };
 
 window.__Gibberwocky = function () {
-  Gibber.Audio.Gibberish.worklet.port.postMessage({
+  Dilber.Audio.Gibberish.worklet.port.postMessage({
     address: 'eval',
     code: `Gibberish.scheduler.shouldSync = true; Gibberish.isPlaying = false`
   });
-  Gibber.shouldDelay = Gibber.Audio.shouldDelay = false;
-  Gibber.ws = new WebSocket('ws://localhost:8082');
+  Dilber.shouldDelay = Dilber.Audio.shouldDelay = false;
+  Dilber.ws = new WebSocket('ws://localhost:8082');
   setTimeout(function () {
-    Gibber.ws.onmessage = function (data) {
+    Dilber.ws.onmessage = function (data) {
       //console.log( data.data )
       if (data.data.indexOf('bit 1') > -1) {
-        Gibber.Audio.Gibberish.worklet.port.postMessage({
+        Dilber.Audio.Gibberish.worklet.port.postMessage({
           address: 'eval',
           code: 'if( Gibberish.isPlaying === true ) Gibberish.scheduler.shouldSync = false'
         });
@@ -85286,14 +85286,14 @@ window.__Gibberwocky = function () {
         console.log('play'); //Environment.metronome.clear()
         //Environment.metronome.beat = 0
 
-        Gibber.Audio.Gibberish.worklet.port.postMessage({
+        Dilber.Audio.Gibberish.worklet.port.postMessage({
           address: 'eval',
           code: 'Gibberish.isPlaying = true;'
         });
       } else if (data.data.indexOf('ply 0') > -1) {
         console.log('stop');
         Environment.metronome.clear();
-        Gibber.Audio.Gibberish.worklet.port.postMessage({
+        Dilber.Audio.Gibberish.worklet.port.postMessage({
           address: 'eval',
           code: 'Gibberish.isPlaying = false; Gibberish.scheduler.shouldSync = true;' //Gibberish.Clock.beatCount = 0;'
 
@@ -85401,7 +85401,7 @@ module.exports = function() {
   select.onchange = function( e ) {
     
     loadexample( select[ select.selectedIndex ].getAttribute( 'file' ) )
-    Gibber.clear()
+    Dilber.clear()
     document.getElementById('graphics').style = 'visibility:hidden';
   }
 
@@ -85459,7 +85459,7 @@ module.exports = function() {
 }
 
 },{"showdown":209}],250:[function(require,module,exports){
-let Gibber = null
+let Dilber = null
 
 const Metronome = {
   shouldDraw: true,
@@ -85478,7 +85478,7 @@ const Metronome = {
     
       this.ctx.clearRect( 0, 0, this.width, this.height )
       this.ctx.globalAlpha = .75
-      this.ctx.fillStyle = Gibber.Environment.theme.get('b_med')
+      this.ctx.fillStyle = Dilber.Environment.theme.get('b_med')
       this.ctx.fillRect(  beatPos, 0,  beatWidth, this.height )
     }
   },
@@ -85489,21 +85489,21 @@ const Metronome = {
   },
 
   tick( event ) {
-    //const __beat =  Math.floor( (phase / (44100 / (Gibber.Audio.Clock.bpm/60))) % 4 )
+    //const __beat =  Math.floor( (phase / (44100 / (Dilber.Audio.Clock.bpm/60))) % 4 )
     const __beat = event.data.value % 4 
     if( __beat !== Metronome.beat ) {
       Metronome.draw( __beat, 4 )
       Metronome.beat = __beat
-      Gibber.publish( 'metronome.tick', __beat )
+      Dilber.publish( 'metronome.tick', __beat )
     }
 
   },
   
   init( __Gibber ) {
-    Gibber = __Gibber
-    //Gibber.Audio.Gibberish.onphaseupdate = this.tick 
+    Dilber = __Gibber
+    //Dilber.Audio.Gibberish.onphaseupdate = this.tick 
 
-    Gibber.Audio.Gibberish.utilities.workletHandlers.beat = this.tick
+    Dilber.Audio.Gibberish.utilities.workletHandlers.beat = this.tick
     this.canvas = document.querySelector( '#metronome' )
     this.ctx = this.canvas.getContext( '2d' )
   
@@ -85513,7 +85513,7 @@ const Metronome = {
     this.width = this.canvas.width = w 
     this.height = this.canvas.height = header.offsetHeight      
   
-    Gibber.subscribe( 'clear', this.clear.bind( this ) )
+    Dilber.subscribe( 'clear', this.clear.bind( this ) )
     
     this.draw( 0, 4 )
     window.Metronome = this
@@ -85556,7 +85556,7 @@ const handleConnections = function( member, newUgen ) {
         }
 
         let shouldConnect = true
-        if( connection[0] !== Gibber.Audio.Gibberish.output || Gibber.Audio.autoConnect === false ) {
+        if( connection[0] !== Dilber.Audio.Gibberish.output || Dilber.Audio.autoConnect === false ) {
           if( connection[0].isProperty !== true ) {
             shouldConnect = false
           }
@@ -85583,7 +85583,7 @@ Array.prototype.addPattern = function( pattern ) {
   if( patterns !== undefined )
     patterns.push( pattern )
 }
-const proxyArray = function( arr, prop, proxiedObj, environment, Gibber ) {
+const proxyArray = function( arr, prop, proxiedObj, environment, Dilber ) {
   arr.uid = uid++
   window.__arrays[ arr.uid ] = [] 
   Object.defineProperty( proxiedObj, prop, {
@@ -85606,7 +85606,7 @@ const proxyArray = function( arr, prop, proxiedObj, environment, Gibber ) {
   })
 }
 
-const proxyUgen = function( ugen, prop, proxiedObj, environment, Gibber ) {
+const proxyUgen = function( ugen, prop, proxiedObj, environment, Dilber ) {
   if( ugen.__wrapped__.type === 'instrument' || ugen.__wrapped__.type === 'bus' ) {
     sounds[ prop ] = ugen
     environment.sounds = sounds
@@ -85664,7 +85664,7 @@ const proxyUgen = function( ugen, prop, proxiedObj, environment, Gibber ) {
   }
 }
 
-const createProxies = function( pre, post, proxiedObj, environment, Gibber ) {
+const createProxies = function( pre, post, proxiedObj, environment, Dilber ) {
   const newProps = post.filter( prop => pre.indexOf( prop ) === -1 )
 
   for( let prop of newProps ) {
@@ -85676,9 +85676,9 @@ const createProxies = function( pre, post, proxiedObj, environment, Gibber ) {
     const shouldProxyArray = !shouldProxyUgen && Array.isArray( obj )
     
     if( shouldProxyUgen ) {
-      proxyUgen( obj, prop, proxiedObj, environment, Gibber )
+      proxyUgen( obj, prop, proxiedObj, environment, Dilber )
     }else if( shouldProxyArray ) {
-      proxyArray( obj, prop, proxiedObj, environment, Gibber )
+      proxyArray( obj, prop, proxiedObj, environment, Dilber )
     }
 
     environment.proxies.push( prop )
@@ -85894,7 +85894,7 @@ const share = {
     }
 
     const clear = function( clearEditor = false, clearUsers=false ){ 
-      Gibber.clear()
+      Dilber.clear()
       commands.delete( 0, commands.length )
       if( clearUsers === true ) userData.delete( 0, userData.length )
       if( clearEditor ) editor.setValue('')
@@ -86318,7 +86318,7 @@ const share = {
       menu.style.right = 0 
       menu.style.zIndex = 1000
 
-      menu.innerHTML = `<p style='font-size:.7em; margin:.5em; margin-bottom:1.5em; color:var(--f_inv)'>gabber is a server for shared performances / chat. joining a gabber performance will make your code execute on all connected computers in the same room... and their code execute on yours.</p><input type='text' value='nickname' class='connect' id='connectname'><input class='connect' type='text' value='GibberFun' id='connectroom'><input type='checkbox' style='width:1em' id='showChat'><label for='showChat'>display chat?</label><br><input type='checkbox' checked style='width:1em' id='useSharedEditorBox'><label for='useSharedEditorBox'>share editor?</label><br><button id='connect-btn' style='float:right; margin-right:.5em'>join</button>`
+      menu.innerHTML = `<p style='font-size:.7em; margin:.5em; margin-bottom:1.5em; color:var(--f_inv)'>gabber is a server for shared performances / chat. joining a gabber performance will make your code execute on all connected computers in the same room... and their code execute on yours.</p><input type='text' value='nickname' class='connect' id='connectname'><input class='connect' type='text' value='DilberFun' id='connectroom'><input type='checkbox' style='width:1em' id='showChat'><label for='showChat'>display chat?</label><br><input type='checkbox' checked style='width:1em' id='useSharedEditorBox'><label for='useSharedEditorBox'>share editor?</label><br><button id='connect-btn' style='float:right; margin-right:.5em'>join</button>`
 
       document.body.appendChild( menu )
       document.querySelector('#connectmenu').style.left = document.querySelector('#connect').offsetLeft + 'px'
@@ -86427,7 +86427,7 @@ const share = {
         div.setAttribute( 'id', id )
         div.setAttribute( 'class', 'editorCell' )
         editor.appendChild(div)
-        const [cm] = Editor( Gibber, '#'+id, cell === username )
+        const [cm] = Editor( Dilber, '#'+id, cell === username )
         cm.setValue( '' )
 
         let style = `padding-left:1em; position:absolute; display:block; width:${editorWidth}px; height:${editorHeight}px; top:${rowCount*editorHeight}px; left:${cellCount*editorWidth}px; border:0px solid #999; box-sizing:border-box;`
@@ -86584,7 +86584,7 @@ require( '../node_modules/tern/plugin/doc_comment.js' )
 require( '../node_modules/codemirror/addon/hint/show-hint.js' )
 require( '../node_modules/codemirror/addon/tern/tern.js' )
 
-module.exports = function( Gibber, cm, environment ) {
+module.exports = function( Dilber, cm, environment ) {
   const CodeMirror = environment.CodeMirror
   const filter = function( doc, query, request,error,data ) {
     debugger
@@ -86607,7 +86607,7 @@ module.exports = function( Gibber, cm, environment ) {
         
         if( name === 'Reverb' ) { name = 'Freeverb' }
 
-        const Presets = Gibber.Audio.Presets
+        const Presets = Dilber.Audio.Presets
         let presetCategory = null
         if( Presets.instruments[ name ] !== undefined ) presetCategory = Presets.instruments[ name ]
         if( Presets.effects[ name ] !== undefined ) presetCategory = Presets.effects[ name ]
@@ -97522,7 +97522,7 @@ module.exports = function( Gibberish ) {
       }
     },
 
-    // can't include inputs here as it will be sucked up by Gibber,
+    // can't include inputs here as it will be sucked up by Dilber,
     // instead pass during Object.assign() after defaults.
     defaults: { gain:1, pan:.5, __useProxy__:true }
   })
@@ -98392,7 +98392,7 @@ module.exports = function( Gibberish ) {
       seq.__properties__ = properties
 
       // support for sequences that are triggered via other means,
-      // in Gibber this is when you provide timing to one sequence
+      // in Dilber this is when you provide timing to one sequence
       // on an object and want to use that one pattern to trigger
       // multiple sequences.
       if( seq.timings === null ) { seq.nextTime = Infinity } 
@@ -98411,7 +98411,7 @@ module.exports = function( Gibberish ) {
           
           let shouldIncreaseSpeed = density <= 1 ? false : true
 
-          // XXX this supports an edge case in Gibber, where patterns like Euclid / Hex return
+          // XXX this supports an edge case in Dilber, where patterns like Euclid / Hex return
           // objects indicating both whether or not they should should trigger values as well
           // as the next time they should run. perhaps this could be made more generalizable?
           if( timing !== null && typeof timing === 'object' ) {
@@ -98601,7 +98601,7 @@ const Sequencer = props => {
 
       if( typeof timing === 'function' ) timing = timing()
 
-      // XXX this supports an edge case in Gibber, where patterns like Euclid / Hex return
+      // XXX this supports an edge case in Dilber, where patterns like Euclid / Hex return
       // objects indicating both whether or not they should should trigger values as well
       // as the next time they should run. perhaps this could be made more generalizable?
       if( timing !== null ) {

@@ -5,7 +5,7 @@ making synths
 It will be helpful if you've gone
 through the arpeggio tutorial and
 know a bit about genish to understand
-this tutorial. All synths in Gibber
+this tutorial. All synths in Dilber
 are made using genish, which is in
 turn wrapped by Gibberish... however,
 for this tutorial we'll skip using

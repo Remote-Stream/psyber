@@ -21,7 +21,7 @@ a = Freesound( 4048 )
 a.trigger( 1 )
 
 // the note method of the Freesound object (and all Sampler objects)
-// acts differently from other synths. Instead of using Gibber's theory
+// acts differently from other synths. Instead of using Dilber's theory
 // system, the note value sets the sampler's .rate property in addition
 // to triggering its envelope.
 

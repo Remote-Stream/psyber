@@ -70,7 +70,7 @@ arp.p3 = 14
 
 // Let's use phasor() next. Phasor is basically the same as accum,
 // but it accepts a frequency value instead of an amount ot increment.
-// Gibber has a btof() function that converts beats to a frequency;
+// Dilber has a btof() function that converts beats to a frequency;
 // let's use this to create a beat-synced arpeggiator:
 
 verb = Reverb.space.bus()

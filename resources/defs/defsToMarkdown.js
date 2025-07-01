@@ -67,7 +67,7 @@ const displayProperties = function( obj, __text, propertiesText='Properties' ) {
   return __text + text
 }
 
-let text = `# Gibber
+let text = `# Dilber
 
 # Prototypes
 ## Audio

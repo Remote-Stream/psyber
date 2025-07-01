@@ -127,7 +127,7 @@ module.exports = function( Marker ) {
           }
 
           if( righthandName !== undefined ) {
-            state.containsGen = Marker.Gibber.Audio.Gen.names.indexOf( righthandName ) > -1
+            state.containsGen = Marker.Dilber.Audio.Gen.names.indexOf( righthandName ) > -1
 
             // if assigning to a global variable...
             if( leftName.indexOf('.') === -1 ) {

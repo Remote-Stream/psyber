@@ -40,7 +40,7 @@ e.rotate.seq( 1,1 )
 // all the subsequent examples, we'll create a pattern
 // and assign it to the variable "notes"
 
-Gibber.clear()
+Dilber.clear()
  
 syn = Synth( 'bleep' )
 
@@ -50,7 +50,7 @@ notes.transpose.seq( 1,1 )
 // tell it to reset every 8 measures
 notes.reset.seq( 1,8 )
 
-Gibber.clear()
+Dilber.clear()
 
 // below is a catalog of all the possible 
 // pattern transformations.
@@ -101,7 +101,7 @@ notes.reverse.seq( 1, [ 1,2,4 ] )
 notes.rotate.seq( [-1,1], [1/2,1,2,4,8] )
 notes.transpose.seq( [-1,1], [2,4,8] )
 
-Gibber.clear()
+Dilber.clear()
 
 // the set() method of pattern objects enables
 // you to change manually set all the pattern

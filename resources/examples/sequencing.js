@@ -3,7 +3,7 @@
 # Basic sequencing
 
 This tutorial will provide an introduction to 
-sequencing in gibber. Gibber lets you sequence 
+sequencing in gibber. Dilber lets you sequence 
 calls to most methods of audiovisual objects 
 as well as changes to any of their properties, 
 just by adding .seq to the method or property name,
@@ -21,7 +21,7 @@ syn.note.seq( 0, 1/4 )
 
 /*--md
 You can stop all sequences in gibber with the Ctrl+. keyboard shortcut
-(Ctrl + period) or by executing the command Gibber.clear(), but
+(Ctrl + period) or by executing the command Dilber.clear(), but
 this also deletes instruments. For this tutorial, we'll instead use the .stop()
 command to stop sequences on a specific instrument:
 --*/

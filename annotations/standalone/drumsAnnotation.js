@@ -57,7 +57,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
     span = $( spanName )
 
     span.add( 'euclid0' )
-    if( currentValue !== Gibber.Seq.DNR && ( typeof currentValue === 'object' && currentValue.shouldExecute !== 0 ) ) {
+    if( currentValue !== Dilber.Seq.DNR && ( typeof currentValue === 'object' && currentValue.shouldExecute !== 0 ) ) {
       span.add( 'euclid1' )
 
       setTimeout( ()=> { 
@@ -99,7 +99,7 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
     if( typeof __clear === 'function' ) __clear.call( patternObject )
   }
 
-  Gibber.subscribe( 'clear', patternObject.clear )
+  Dilber.subscribe( 'clear', patternObject.clear )
 
   Marker._addPatternFilter( patternObject )
 }  

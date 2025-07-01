@@ -3,7 +3,7 @@
 tutorial #5: tidal
 
 TidalCycles is a fantastic DSL for 
-sequencing pattern. In Gibber (and
+sequencing pattern. In Dilber (and
 some other live coding systems),
 standard sequencing is done by 
 separating the output of patterns
@@ -15,7 +15,7 @@ their uses.
 
 // The Tidal mini-notation is the
 // preferred way to do drum sequencing
-// in Gibber. The sample-based drum
+// in Dilber. The sample-based drum
 // player has four drums: kick drum(kd),
 // snare drum(sd), closed hihat(ch), 
 // and open hihat(oh).

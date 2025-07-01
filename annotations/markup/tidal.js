@@ -107,13 +107,13 @@ module.exports = function( Marker ) {
       if( current !== codestr ) {
         codestr = current//.slice(1,-1)
 
-        const valid = Gibber.Tidal.check( codestr, tidal.key, target )
+        const valid = Dilber.Tidal.check( codestr, tidal.key, target )
 
         if( valid ) { 
-          const tmp = Gibber.shouldDelay
-          Gibber.shouldDelay = Gibber.Audio.shouldDelay = false 
+          const tmp = Dilber.shouldDelay
+          Dilber.shouldDelay = Dilber.Audio.shouldDelay = false 
           tidal.set( codestr )
-          Gibber.shouldDelay = tmp
+          Dilber.shouldDelay = tmp
 
           pos.start = pos.from
           pos.end = pos.to

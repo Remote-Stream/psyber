@@ -30,7 +30,7 @@ Synth().note(0)
 // here's a very different synth with a sine oscillator, a 
 // much shorter envelope, and a delay effect applied:
 
-Gibber.clear()
+Dilber.clear()
 Synth('bleep.echo').note(0)
 
 // In the above example, 'bleep.echo' is the name of a preset.
@@ -57,7 +57,7 @@ s.waveform = 'saw'
 // by triangle waves. Square waves have completely smooth (flat) sections
 // followed by abrupt drops/rises. Sawtooth waves gradually rise and then
 // abruptly drop. In subtractive synthesis, which is what most instruments in
-// Gibber use, typically you start with a "brighter" waveform (like saw or square)
+// Dilber use, typically you start with a "brighter" waveform (like saw or square)
 // and then filter (subtract) frequencies from it to create different
 // character.
 
@@ -68,7 +68,7 @@ s.waveform = 'saw'
 // (width) of the high vs low signal. A value of .5 would generate a square
 // wave.
  
-Gibber.clear()
+Dilber.clear()
 s = Synth('blank', { waveform:'pwm' }).note.seq( 0, 1 )
 
 s.pulsewidth = .05
@@ -98,7 +98,7 @@ s = Synth('blank', { waveform:'saw' }).note.seq( 14, 1 )
 // sounds pretty gnarly right? now try this:
 s.antialias = true
 
-// The default for Gibber is to use antialised oscillators, but
+// The default for Dilber is to use antialised oscillators, but
 // for certain types of music (like chiptune / 8-bit styles) you
 // might want to turn this off in your presets. Note that for lower
 // notes the effect is much less noticeable:

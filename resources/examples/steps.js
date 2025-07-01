@@ -4,7 +4,7 @@ using steps
 
 Steps is an interesting alternative
 way to sequence. It enables you to
-use many of the various options Gibber
+use many of the various options Dilber
 has to define patterns to control a
 single instrument, and also features
 a unique sequencing mode reminiscent
@@ -44,7 +44,7 @@ s = Steps({
 // we can quickly create polyrhythms; below we
 // use 1/8, 1/6, 1/5, and 1/4 notes.
 
-Gibber.clear()
+Dilber.clear()
 drums = EDrums()
 s = Steps({
   kd: 'x..xx.x.',                
@@ -55,7 +55,7 @@ s = Steps({
 }, drums )
 
 // capital X provides an accent
-Gibber.clear()
+Dilber.clear()
 drums = EDrums()
 s = Steps({
   kd: 'xX..',                 
@@ -65,7 +65,7 @@ s = Steps({
 // ... or, you can use hexadecimal, where
 // 1 is the softest and f is the loudest.
 
-Gibber.clear()
+Dilber.clear()
 drums = EDrums()
 s = Steps({
   kd: '169f....',                   
@@ -91,7 +91,7 @@ steps = Steps({
 // any of the transformations there on individual sequences
 // in a Steps object or apply them to all sequences at once.
 
-Gibber.clear()
+Dilber.clear()
 drums = EDrums()
 s = Steps({
   kd: 'x.x.....',                   

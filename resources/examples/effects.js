@@ -18,7 +18,7 @@ strategies for routing sound.
 delay = Delay({ time:1/6, feedback:.75 })
 
 // Next we'll make a synth. Every synth
-// in Gibber has an effects chain that
+// in Dilber has an effects chain that
 // we can add effects to.
 
 syn = Synth( 'bleep' )
@@ -26,7 +26,7 @@ syn.fx.add( delay )
 syn.note(0)
 
 // when we add an effect to the effect
-// chain, Gibber assigns the synth to
+// chain, Dilber assigns the synth to
 // the input property of the effect, and
 // then connects the effect to the main
 // output. We could also manually do this:
@@ -81,7 +81,7 @@ syn2.note(7)
 // demos. You can see a list of these presets
 // by opening up the developer tools console for
 // your browser and entering:
-// Gibber.Audio.Presets.misc.Bus2
+// Dilber.Audio.Presets.misc.Bus2
 
 // in addition to having their own fx
 // chains, busses also have their own pan
@@ -89,7 +89,7 @@ syn2.note(7)
 // be used to group sounds together and
 // fade them in/out or pan them. However,
 // most synths connect to the master bus
-// in Gibber by default; for this type of
+// in Dilber by default; for this type of
 // grouping to work you first have to
 // disconnect them. *this is really important
 // to try and remember*

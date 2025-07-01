@@ -52,7 +52,7 @@ tutorialsand demos use these types of blocks, so get used to
 pressing `Alt+Enter`, which is much quicker than selecting 
 text and hitting `Ctrl+Enter` (although functionally the same).
 
-By default Gibber waits until the start of the next musical 
+By default Dilber waits until the start of the next musical 
 measure to execute code. Try running the code below:
 --*/
 

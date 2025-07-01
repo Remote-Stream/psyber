@@ -72,10 +72,10 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
           }
 
           if( Array.isArray( arr ) ) {
-            const tmp = Gibber.shouldDelay
-            Gibber.shouldDelay = Gibber.Audio.shouldDelay = false 
+            const tmp = Dilber.shouldDelay
+            Dilber.shouldDelay = Dilber.Audio.shouldDelay = false 
             patternObject.set( arr )
-            Gibber.shouldDelay = tmp
+            Dilber.shouldDelay = tmp
 
             pos.start = pos.from
             pos.end = pos.to
@@ -292,7 +292,7 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
     }
 
     // XXX remove global reference somehow...
-    Gibber.subscribe( 'clear', patternObject.clear )
+    Dilber.subscribe( 'clear', patternObject.clear )
     out = update
   }
 

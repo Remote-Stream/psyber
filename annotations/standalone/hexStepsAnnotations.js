@@ -3,7 +3,7 @@ const $ = Utility.create
 const EuclidAnnotation = require( '../update/euclidAnnotation.js' )
 
 module.exports = function( node, cm, track, objectName, state, cb ) {
-  const Marker = Gibber.Environment.codeMarkup 
+  const Marker = Dilber.Environment.codeMarkup 
   const steps = node.arguments[ 0 ].properties
   const Identifier = Marker.patternMarkupFunctions.Identifier
 
@@ -83,12 +83,12 @@ module.exports = function( node, cm, track, objectName, state, cb ) {
         if( typeof __clear === 'function' ) __clear.call( pattern )
       }
 
-      Gibber.subscribe( 'clear', pattern.clear )
+      Dilber.subscribe( 'clear', pattern.clear )
       /*
 
       patternObject._onchange = () => {
-        let delay = Utility.beatsToMs( 1,  Gibber.Scheduler.bpm )
-        Gibber.Environment.animationScheduler.add( () => {
+        let delay = Utility.beatsToMs( 1,  Dilber.Scheduler.bpm )
+        Dilber.Environment.animationScheduler.add( () => {
           marker.doc.replaceRange( patternObject.values.join(''), step.loc.start, step.loc.end )
           mark( step, key, cm, track )
         }, delay ) 

@@ -20,7 +20,7 @@ as well.
 // that is, an oscillator with a 
 // frequency that is below audio rate.
 
-// In Gibber the lfo function takes the
+// In Dilber the lfo function takes the
 // form: waveform, frequency, gain, bias
 
 // For example, here is a sine wave applied
@@ -85,7 +85,7 @@ mod.frequency.seq( [2,4,8,16], 1 )
 // function. for example, here's a modulation
 // where its frequency increases over 8  beats:
 
-Gibber.clear()
+Dilber.clear()
 s2 = Synth({ gain:.1 }).connect()
 mod2 = gen( cycle( beats(8)*20 )* 20 )
 mod2.connect( s2.frequency )

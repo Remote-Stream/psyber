@@ -49,7 +49,7 @@ s.attack = 1/512
 // amount that the filter cutoff is affected is determined
 // by the filterMult property.
 
-Gibber.clear()
+Dilber.clear()
 
 s = Synth({ decay:1 }).note.seq( 0, 1 )
 
@@ -109,7 +109,7 @@ s = Synth('square.perc').note.seq( Rndi(-7,7), 1/8 )
 // envelope on all relevant aspects of the instrument (filter cutoff,
 // "volume" etc.)
 
-Gibber.clear()
+Dilber.clear()
 s = Synth().note.seq(0,1)
 
 s.loudness = .5
