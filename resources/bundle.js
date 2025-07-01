@@ -84600,7 +84600,7 @@ window.onload = function () {
       }
 
       window.Out = Dilber.Audio.Out;
-      if (shouldPrint) Console.log('%cgibber has been cleared.', 'background:#006;color:white;');
+      if (shouldPrint) Console.log('%cDilber has been cleared.', 'background:#006;color:white;');
     });
 
     cm.__setup();
