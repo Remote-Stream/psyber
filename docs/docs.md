@@ -1,4 +1,4 @@
-# Gibber
+# Dilber
 
 # Prototypes
 ## Audio
@@ -9,7 +9,7 @@ The ugen prototype contains the base behavior for connecting / disconnecting aud
 
 #### Methods ####
 ### ugen.connect(  *target?* ) ###
-**target** *ugen* (optional) - The target ugen to connect to. If this argument is undefined, a connection will be made to Gibber's main bus.
+**target** *ugen* (optional) - The target ugen to connect to. If this argument is undefined, a connection will be made to Dilber's main bus.
 
 ### ugen.disconnect(  *target?* ) ###
 **target** *ugen* (optional) - The target ugen to disconnect from. If this argument is undefined, all connections will be disconnected.
@@ -622,7 +622,7 @@ Freeverb
 ----
 *Prototype: [effect](#prototypes-effect)*
 
-This is a reverberation model that uses four allpass filters in series and then eight comb filters in parallel. It is the same as the generic Reverb effect in Gibber.
+This is a reverberation model that uses four allpass filters in series and then eight comb filters in parallel. It is the same as the generic Reverb effect in Dilber.
 
 
 #### Properties ####
