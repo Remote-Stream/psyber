@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Gibber</title>
+    <link rel="stylesheet" href="./resources/external/codemirror.css">
+    <link rel="stylesheet" href="./resources/external/show-hint.css">
+    <link rel="stylesheet" href="./resources/external/dialog.css">
+    <link rel="stylesheet" href="./resources/external/tern.css">
+    
+    <link rel="stylesheet" href="./resources/gibber.css">
+    <link rel="icon" href="data:,">
+
+    <!-- <script src='./gibberwocky.js'></script> -->
+    <script src='./resources/bundle.js'></script>
+    <script src='./resources/jsdsp.js'></script>
+    
+    <script src='./resources/external/babel.min.js'></script>
+  </head>
+
+  <body>
+
+    <canvas id='metronome'></canvas>
+    <header>
+      <h1></h1>
+
+      <select id='examplesMenu'></select>
+
+      <img id='themer' src='./resources/themes/soyuz.png'></img>
+      <div id='thememenu'>
+        <ul>
+          <li><img src='./resources/themes/apollo.png' /></li>
+          <li><img src='./resources/themes/battlestation.png' /></li>
+          <li><img src='./resources/themes/lotus.png' /></li>
+          <li><img src='./resources/themes/marble.png' /></li>
+          <li><img src='./resources/themes/murata.png' /></li>
+          <li><img src='./resources/themes/ninetynine.png' /></li>
+          <li><img src='./resources/themes/noir.png' /></li>
+          <li><img src='./resources/themes/nord.png' /></li>
+          <li><img src='./resources/themes/sonicpi.png' /></li>
+          <li><img src='./resources/themes/soyuz.png' /></li>
+          <li><img src='./resources/themes/zenburn.png' /></li>
+        </ul>
+      </div>
+      <input type="file" id="fileInput" style="display: none;">
+      <button id='loadbtn'>load</button>
+      <button id='savebtn'>save</button>
+      <button id='sharebtn'>share</button>
+      <button id='connect'>collaborate</button>
+
+      <button id='restart'>restart</button>
+
+      <span id='reference'>
+        <ul>
+          <li><a target='_blank' href='./docs/index.html'>reference</a></li>
+        </ul>
+      </span>
+    </header>
+
+    <div id='editor'></div>
+
+    <button id='hidebtn'>&#9650;</button>
+
+    <canvas id='graphics'></canvas>
+  </body>
+
+</html>
