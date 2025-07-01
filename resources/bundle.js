@@ -85316,7 +85316,7 @@ module.exports = function() {
     {
       name:'demos',
       options:[
-        ['starter', 'new.js'],
+        ['starter', 'starter.js'],
         ['intro', 'newintro.js'],
         ['fractal fun', 'fractal_fun.js'],
         ['pick your sample', 'picksomesamples.js'],
