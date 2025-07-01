@@ -84124,7 +84124,7 @@ let cm, cmconsole, exampleCode,
    ************************************************
   **************************************************
  ***                                              ***
-**** ready? click anywhere in the editor to begin ****
+**** Ready? Click anywhere in the editor to begin! ****
  ***                                              ***
   **************************************************
    ***********************************************/`
@@ -84243,8 +84243,7 @@ module.exports = function( Gibber, element = '#editor', userEditable=true ) {
 //   )`
 
 const defaultCode = 
-`
-// To run a line of code, you can do the following:
+`// To run a line of code, you can do the following:
 // 1. Place your cursor in the line you'd like to execute and hit Control+Enter
 // 2. Select the entire line of code with your mouse or keyboard shortcuts and hit Control+Enter
 // 3. Hit Alt+Enter to execute block of code.

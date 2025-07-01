@@ -1,5 +1,4 @@
- 
-// To run a line of code, you can do the following:
+ // To run a line of code, you can do the following:
 // 1. Place your cursor in the line you'd like to execute and hit `Control+Enter`.
 // 2. Select the entire line of code with your mouse or keyboard shortcuts and hit `Control+Enter`.
 // 3. Hit `Alt+Enter` to execute block of code.
