@@ -86188,122 +86188,6 @@ const share = {
 
         share.go( cm, environment, networkConfig, username, roomname, shouldShowChat, useSharedEditor )
       }
-      //  const { socket, provider, binding, chatData, commands, userData, scrollData, clear, ydoc } = share.initShare(
-      //    cm, 
-      //    username, 
-      //    roomname,
-      //    useSharedEditor
-      //  )
-      //  share.clear = clear
-      //  share.commands = commands
-
-      //  if( username !== 'spectator' )
-      //    userData.unshift([{ username }])
-
-      //  __socket = socket
-      //  networkConfig.isNetworked = true
-
-      //  window.socket = socket
-      //  window.binding = binding
-      //  window.provider = provider
-      //  window.chatData = chatData
-      //  window.commands = commands
-      //  window.username = username
-      //  window.Gabber = { clear }
-
-      //  commands.observe( e => {
-      //    if( e.transaction.local === false ) {
-      //      // XXX only process last change, should we process all changes?
-      //      // if we did this would allow late users to potentially "catch up"
-      //      // with a performance...
-
-      //      // make sure there commands to run...
-      //      if( e.changes.delta.length > 0 ) {
-      //        const inserts = e.changes.delta[0].insert
-      //        for( let i = inserts.length - 1; i > 0; i -= 6 ) {
-      //          const arr = e.changes.delta[0].insert.slice( i-5, i+1 )
-      //          const code = {
-      //            selection:{
-      //              start: { line:arr[0], ch:arr[1] },
-      //              end:   { line:arr[2], ch:arr[3] }
-      //            },
-      //            code: arr[4]
-      //          }
-
-      //          environment.runCode( cm, false, true, false, code )
-      //        }
-      //      }
-      //    }
-      //  })
-
-      //  chatData.observe( e => {
-      //    const msgs = e.changes.delta[0].insert
-      //    for( let i = msgs.length-1; i>=0; i-- ) {
-      //      const msg = msgs[ i ]
-
-      //      makeMsg( msg.username, msg.value )
-      //    }
-      //  })
-
-      //  scrollData.observe( e => {
-      //    const msgs = e.changes.delta[0].insert
-      //    if( msgs === undefined ) return
-      //    for( let i = msgs.length-1; i>=0; i-- ) {
-      //      const msg = msgs[ i ]
-
-      //      if( msg !== undefined && msg.username !== 'spectator' ) {
-      //        if( share.editors[ msg.username ] !== undefined ) {
-      //          share.editors[ msg.username ].scrollTo( msg.left, msg.top )
-      //        }
-      //      }
-      //    }
-      //  })
-
-      //  ydoc.scrollData = scrollData
-
-      //  const users = []
-      //  userData.observe( e => {
-      //    //console.log( e.changes )
-      //    //const delta = e.changes.delta[0]
-      //    //if( delta !== undefined ) {
-      //      //const msgs = e.changes.delta[0].insert
-      //      const msgs = e.changes.added
-      //      //if( msgs !== undefined ) {
-      //        //for( let i = msgs.length-1; i>=0; i-- ) {
-      //      for( let msg of msgs ) {
-      //        //const msg = msgs[ i ]
-      //        const __username = msg.content.arr[0].username
-      //        if( users.indexOf( __username ) === -1 && __username !== 'spectator' ) {
-      //          users.push( __username )
-      //          if( useSharedEditor === false ) {
-      //            share.createSplits( __username, users, ydoc, roomname, username )
-      //          }
-      //        }
-      //      }
-      //  })
-      //  environment.showArgHints = false
-      //  environment.showCompletions = false
-        
-      //  menu.remove()
-
-      //  const btn = document.querySelector('#connect')
-      //  btn.innerText = 'disconnect'
-      //  btn.onclick = ()=> {
-      //    provider.destroy()
-      //  } 
-      //  document.querySelector('.CodeMirror-scroll').removeEventListener( 'click', blurfnc )
-
-      //  if( shouldShowChat ) {
-      //    share.createChatWindow()
-      //    share.chatDisplayed = true
-      //  }else{
-      //    Environment.CodeMirror.keyMap.playground['Ctrl-M'] = cm => share.quickmsg( Environment.editor, false, true  )
-      //    share.chatDisplayed = false
-      //  }
-
-      //  __connected = true
-      //  return true
-      //}
 
       const menu = document.createElement('div')
       menu.setAttribute('id', 'connectmenu')
@@ -86326,13 +86210,6 @@ const share = {
       document.getElementById('connectname').select()
 
       document.getElementById('connect-btn').onclick = closeconnect
-      
-      //const blurfnc = ()=> {
-      //  menu.remove()
-      //  document.querySelector('.CodeMirror-scroll').removeEventListener( 'click', blurfnc )
-      //}
-      //document.querySelector('.CodeMirror-scroll').addEventListener( 'click', blurfnc )
-
 
     }
 
@@ -86661,42 +86538,6 @@ module.exports = function( Dilber, cm, environment ) {
       }
     })
   })
-
-  /*
-  cm.getWrapperElement().addEventListener( 'click', e => {
-    if( e.altKey === true ) {
-      let obj
-      let node = e.path[0]
-      while( node.parentNode.className.indexOf( 'CodeMirror-line' ) === -1 ) {
-        node = node.parentNode
-      }
-      const split = node.innerText.split( '=' )[0].split('.')
-      let txt = null
-      try {
-        obj = window[  split[0].trim() ]
-        for( let i = 1; i < split.length; i++ ) {
-          obj = obj[ split[ i ].trim() ]
-        }
-        if( obj !== undefined )
-          txt = obj.value !== undefined ? obj.value : obj
-      } catch(e) {
-        throw e
-      }
-
-      if( obj !== undefined ) {
-        // XXX ideally this would return a promise that we could use to insert the current
-        // value of the property into once the DOM node has been added. 
-        // Instead we have to use a hacky setTimeout... to fix this we need to edit
-        // the ternserver itself.
-        server.showDocs( cm ) 
-
-        setTimeout( ()=>{
-          cm.state.ternTooltip.children[0].innerHTML = `value: ${txt} ${cm.state.ternTooltip.children[0].innerHTML}`
-        }, 50 )
-      }
-    }
-  })
-  */
 
   var Pos = CodeMirror.Pos;
   var cls = "CodeMirror-Tern-";
