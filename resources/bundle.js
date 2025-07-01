@@ -85317,12 +85317,12 @@ module.exports = function() {
       name:'demos',
       options:[
         ['starter', 'starter.js'],
-        ['intro', 'newintro.js'],
-        ['fractal fun', 'fractal_fun.js'],
-        ['pick your sample', 'picksomesamples.js'],
+        ['intro', 'intro.js'],
+        ['fractals', 'fractal_fun.js'],
+        ['samples', 'picksomesamples.js'],
         ['acid', 'acid.js'],
-        ['moody', 'intro.js'],
-        ['geometry melds', 'meld.js']
+        ['moody', 'moody.js'],
+        ['geometry', 'meld.js']
       ]
     },
 
