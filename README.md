@@ -5,15 +5,16 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized an
 It supports step sequencing, TydalCycles / Strudel notation, Hydrasynth, P5 and 3D raymarching.
 
 ## How to use
-1. Go to https://dilber.io
+1. Go to https://dilber.io and start dilbering
 
-2. Or clone this repo and run it localy in VS code using Live Server extension
+2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 
 ## What has been changed
 ```
 - Folder structure:
   ./docs
+  ./samples    <-- sample folders and files
   ./resources  <-- all other files
    index.html  <-- Main page
 
@@ -24,11 +25,6 @@ It supports step sequencing, TydalCycles / Strudel notation, Hydrasynth, P5 and 
 - Improved error catching and logging
 - Fixed audio when switching between examples
 - Added missing sounds from examples
-```
-
-## Where to put my samples
-```
-resources/samples
 ```
 
 ## Where to find out more
