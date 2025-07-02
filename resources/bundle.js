@@ -84832,8 +84832,7 @@ const setupThemeMenu = function () {
       menu.style.display = 'none';
       return
     }
-   
-    
+       
     menu.style.display = 'block';
     menu.setAttribute('class', 'menu');
     menu.style.width = '68px';
