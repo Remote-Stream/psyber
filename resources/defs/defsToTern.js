@@ -6,7 +6,7 @@ const fs = require('fs'),
       //prettyJS = require('pretty-js')
       
 const def = {
-  "!name": "dilber",
+  "!name": "gibber",
   "!define" : {}
 }
 

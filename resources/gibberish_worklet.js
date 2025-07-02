@@ -19258,7 +19258,7 @@ class GibberishProcessor extends AudioWorkletProcessor {
 
       if( target === undefined ) {
         // this should only occur when a buffer is loaded prior to a delayed instantiation. for example,
-        // if gibber starts downloading a file, on beat two and is finished by beat three, the next measure
+        // if dilber starts downloading a file, on beat two and is finished by beat three, the next measure
         // will not have occurred yet, meaning a delayed sampler instantiation will not yet have occurred.
         // in this case, we wait until the next measure boundary.
         this.queue.push( event )
@@ -19270,7 +19270,7 @@ class GibberishProcessor extends AudioWorkletProcessor {
 
       if( target === undefined ) {
         // this should only occur when a buffer is loaded prior to a delayed instantiation. for example,
-        // if gibber starts downloading a file, on beat two and is finished by beat three, the next measure
+        // if dilber starts downloading a file, on beat two and is finished by beat three, the next measure
         // will not have occurred yet, meaning a delayed sampler instantiation will not yet have occurred.
         // in this case, we wait until the next measure boundary.
         this.queue.push( event )

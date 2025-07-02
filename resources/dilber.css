@@ -2,6 +2,7 @@
   display:block; 
   color:var(--f_high);
   font-weight:bold;
+ 
 }
 
 #restart { margin-right: 20px;} 
@@ -212,6 +213,7 @@ h1 {
   display:inline-block;
   margin:0;
   color:var(--f_high);
+  padding-left: 10px;
 }
 
 #metronome {

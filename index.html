@@ -1,30 +1,25 @@
 <!doctype html>
 <html>
-
 <head>
   <meta charset='utf-8'>
-  <title>Dilber | live audio-visual coding environment in Javascript for the browser (P5, Hydra)</title>
+  <title>Dilber | live audio-visual coding environment in Javascript for the browser</title>
   <link rel="stylesheet" href="./resources/external/codemirror.css">
   <link rel="stylesheet" href="./resources/external/show-hint.css">
   <link rel="stylesheet" href="./resources/external/dialog.css">
   <link rel="stylesheet" href="./resources/external/tern.css">
   <link rel="stylesheet" href="./resources/dilber.css">
-  <link rel="icon" href="favicon.ico">
-  <script src='./resources/external/babel.min.js'></script>
   <meta property="og:title" content="Dilber - Live audio-visual coding in JavaScript" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dilber.io" />
   <meta property="og:image" content="https://i.imgur.com/XvFlPqY.png" />
+  <link rel="icon" href="favicon.ico">
+  <script src='./resources/external/babel.min.js'></script>
 </head>
-
 <body>
-
   <canvas id='metronome'></canvas>
   <header>
     <h1>dilber</h1>
-
     <select id='examplesMenu'></select>
-
     <img id='themer' src='./resources/themes/soyuz.png'></img>
     <div id='thememenu'>
       <ul>
@@ -45,26 +40,18 @@
     <input type="file" id="fileInput" style="display: none;">
     <button id='loadbtn'>load</button>
     <button id='savebtn'>save</button>
-   
     <button id='sharebtn'>share</button>
     <button id='connect'>collaborate</button>
-
-
-
     <span id='reference'>
       <ul>
         <li><a target='_blank' href='./docs/index.html'>docs</a></li>
       </ul>
     </span>
   </header>
-
   <div id='editor'></div>
-
   <button id='hidebtn'>&#9650;</button>
-
   <canvas id='graphics'></canvas>
-  <script src='./resources/bundle.js'></script>
   <script src='./resources/jsdsp.js'></script>
+  <script src='./resources/bundle.js'></script>
 </body>
-
 </html>

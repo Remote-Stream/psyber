@@ -11128,66 +11128,7 @@ const Dilber = {
     if (mappings[tolib] !== undefined && mappings[tolib][fromlib] !== undefined) {
       const mapper = mappings[tolib][fromlib];
       mapper(name, to, from);
-    } //if( from.type === 'audio' ) {
-    //  const f = to[ '__' + name ].follow = Follow({ input: from, bufferSize:4096 })
-    //  Marching.callbacks.push( time => {
-    //    if( f.output !== undefined ) {
-    //      to[ name ] = f.output
-    //    }
-    //  })
-    //  let m = f.multiplier
-    //  Object.defineProperty( to[ name ], 'multiplier', {
-    //    configurable:true,
-    //    get() { return m },
-    //    set(v) { m = v; f.multiplier = m }
-    //  })
-    //  let o = f.offset
-    //  Object.defineProperty( to[ name ], 'offset', {
-    //    configurable:true,
-    //    get() { return o },
-    //    set(v) { o = v; f.offset = o }
-    //  })
-    //}else if( from.type === 'gen' ) {
-    //  const gen = from.render( 60, 'graphics' )
-    //  // needed for annotations
-    //  to[ name ].value.id = to[ name ].value.varName
-    //  // XXX fix the two possible locations for the callback
-    //  if( to[ name ].value.callback !== undefined ) {
-    //    const idx = Marching.callbacks.indexOf( to[ name ].value.callback )
-    //    Marching.callbacks.splice( idx, 1 )
-    //  }else if( to[ '__'+name ].callback !== undefined ) {
-    //    const idx = Marching.callbacks.indexOf( to[ '__'+name ].callback )
-    //    Marching.callbacks.splice( idx, 1 )
-    //  }
-    //  // XXX fix the two possible locations for the callback
-    //  if( typeof to[ name ].value === 'object' ) {
-    //    to[ name ].value.callback = t => {
-    //      const val = gen()
-    //      to[ name ] = val
-    //      //console.log( 'val:', val, to[ name ].value.widget !== undefined )
-    //      let target = to[ name ].value.widget !== undefined ? to[ name ].value.widget : from.widget
-    //      if( target === undefined && to[ name ].value.mark !== undefined ) 
-    //        target = to[ name ].value.mark.replacedWith
-    //      Dilber.Environment.codeMarkup.waveform.updateWidget( target, val, false )
-    //    }
-    //  }else{
-    //    // assignment hack while DOM creation is taking place,
-    //    // only needed for mappings to individual vector elements.
-    //    if( to[ '__'+name ].widget === undefined ) {
-    //      setTimeout( ()=> to[ '__'+name ].widget = gen.pre.widget, 150 )
-    //    }
-    //    to[ '__'+name ].callback = t => {
-    //      const val = gen()
-    //      to[ name ] = val
-    //      Dilber.Environment.codeMarkup.waveform.updateWidget( to[ '__'+name ].widget, val, false )
-    //    }
-    //  }
-    //  if( typeof to[ name ].value !== 'object' ) {
-    //    Marching.callbacks.push( to[ '__'+name ].callback )
-    //  }else{
-    //    Marching.callbacks.push( to[ name ].value.callback )
-    //  }
-    //}
+    } 
 
   },
 
@@ -13539,7 +13480,7 @@ let Dilber = null,
     storerot;
 const excludeFromSequencing = ['material'];
 const Graphics = {
-  defs: require('../defs/graphics.js'),
+  defs: require('./gibber.graphics.lib/defs/graphics.js'),
   canvas: null,
   ctx: null,
   quality: 3,
@@ -14343,7 +14284,7 @@ const Graphics = {
 };
 module.exports = Graphics;
 
-},{"../defs/graphics.js":130,"marching":344}],135:[function(require,module,exports){
+},{"./gibber.graphics.lib/defs/graphics.js":130,"marching":344}],135:[function(require,module,exports){
 "use strict";
 
 (function (global, factory) {
@@ -84997,8 +84938,7 @@ const setupRestartBtn = function () {
     menu.style.zIndex = 1000;
     menu.innerHTML = `<p style='font-size:.7em; margin:.5em; margin-bottom:1.5em; color:var(--f_inv)'>The audio engine has been restarted.</p><button id='restartcloselink' style='float:right; margin-right:.5em'>close</buttton>`;
     document.body.appendChild(menu);
-    // document.querySelector('#restartnotification').style.left = document.querySelector('#sharebtn').offsetRight + 'px';
-    document.querySelector('#restartnotification').style.right = '670px'
+    document.querySelector('#restartnotification').style.left =  document.querySelector('#themer').offsetLeft + "px";
 
     const blurfnc = () => {
       menu.remove();
@@ -85404,7 +85344,8 @@ module.exports = function() {
     
     loadexample( select[ select.selectedIndex ].getAttribute( 'file' ) )
     Dilber.clear()
-    document.getElementById('graphics').style = 'visibility:hidden';
+    Dilber.Graphics.clearCodeBackground()
+    Dilber.Graphics.clear()
   }
 
   const loadexample = function( filename ) {

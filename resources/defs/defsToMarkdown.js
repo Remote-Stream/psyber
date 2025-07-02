@@ -1,5 +1,5 @@
 const fs = require('fs'),
-      gibberDef = require( './gibber.js' )
+gibberDef = require( './gibber.js' )
       
 const displayHeader = function( obj, __text ) {
   const prototype = obj.prototype !== undefined 
