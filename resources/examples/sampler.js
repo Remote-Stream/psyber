@@ -81,10 +81,10 @@ s.end.seq( [.05,.1,.2,.5], 1 )
 Dilber.clear()
 s = Sampler({
   files:[
-    'resources/audiofiles/kick.wav',
-    'resources/audiofiles/hat.wav',
-    'resources/audiofiles/snare.wav',
-    'resources/audiofiles/openhat.wav'
+    'resources/samples/kick.wav',
+    'resources/samples/hat.wav',
+    'resources/samples/snare.wav',
+    'resources/samples/openhat.wav'
   ]
 })
 
