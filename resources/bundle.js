@@ -84062,15 +84062,15 @@ let cm, cmconsole, exampleCode,
 
    const startingText = 
    `
-    /**********************************************
-    ************************************************
-   ****                                          ****
-  ***            Welcome to Dilber!                ***
- ***                                                ***
-**** Ready? Click anywhere in the editor to begin! ****
- ***                                              ***
-  **************************************************
-   ***********************************************/`
+
+   /***********************************************
+   ***                                           ***
+  ***            Welcome to Dilber!               ***
+ ***                                               ***
+ ***       Ready? Click anywhere to begin!         ***
+  ***                                             ***
+   *************************************************/
+`
 
 module.exports = function( Dilber, element = '#editor', userEditable=true ) {
 
@@ -84423,7 +84423,7 @@ window.onload = function () {
     name: 'Graphics',
     plugin: Graphics,
     options: {
-      canvas: altCanvas || document.querySelector('#graphics')
+      canvas: document.querySelector('#graphics') || altCanvas
     }
   }]).then(() => {
     Dilber.Audio.Theory.__loadingPrefix = './resources/tune.json/';
@@ -84826,9 +84826,14 @@ const themes = ['apollo.svg', 'battlestation.svg', 'lotus.svg', 'marble.svg', 'm
 
 const setupThemeMenu = function () {
   const btn = document.getElementById('themer');
-
+  const menu = document.querySelector('#thememenu');
   btn.onclick = function () {
-    const menu = document.querySelector('#thememenu');
+    if(menu.style.display === 'block'){
+      menu.style.display = 'none';
+      return
+    }
+   
+    
     menu.style.display = 'block';
     menu.setAttribute('class', 'menu');
     menu.style.width = '68px';
@@ -84840,6 +84845,7 @@ const setupThemeMenu = function () {
     menu.style.top = '2.5em';
     menu.style.right = 0;
     menu.style.zIndex = 1000;
+   
     const list = menu.firstElementChild; // array-like
 
     const items = [...list.children];
@@ -85071,6 +85077,7 @@ window.__use = function (lib) {
         let __hydra = null;
 
         window.Hydra = function (shouldSrcGibberCanvas = false) {
+          document.querySelector('#graphics').style.visibility = 'hidden';
           const w = null;
           const h = null;
           environment.useProxies = false;
@@ -85084,7 +85091,7 @@ window.__use = function (lib) {
             global: false,
             detectAudio: false
           }) : __hydra;
-          document.getElementById('graphics').style = 'visibility:hidden';
+          
           canvas.setAttribute('class', 'graphics');
           document.body.appendChild(canvas);
           window.hydra = hydra;
@@ -85342,11 +85349,16 @@ module.exports = function() {
   }
 
   select.onchange = function( e ) {
-    
-    loadexample( select[ select.selectedIndex ].getAttribute( 'file' ) )
     Dilber.clear()
-    Dilber.Graphics.clearCodeBackground()
-    Dilber.Graphics.clear()
+    const tempHydraCanvas = document.querySelector('.graphics');
+    if(tempHydraCanvas) { 
+      document.body.removeChild(tempHydraCanvas);
+      document.querySelector('#graphics').style.visibility = 'visible';
+    }
+    setTimeout(function() {
+      loadexample(select[ select.selectedIndex ].getAttribute( 'file' ) ) 
+      }, 500);
+    
   }
 
   const loadexample = function( filename ) {
