@@ -84994,11 +84994,11 @@ const setupRestartBtn = function () {
     menu.style.border = '1px var(--f_inv) solid';
     menu.style.borderTop = 0;
     menu.style.top = '2.5em';
-    menu.style.right = 0;
     menu.style.zIndex = 1000;
     menu.innerHTML = `<p style='font-size:.7em; margin:.5em; margin-bottom:1.5em; color:var(--f_inv)'>The audio engine has been restarted.</p><button id='restartcloselink' style='float:right; margin-right:.5em'>close</buttton>`;
     document.body.appendChild(menu);
-    document.querySelector('#restartnotification').style.left = document.querySelector('#sharebtn').offsetLeft + 'px';
+    // document.querySelector('#restartnotification').style.left = document.querySelector('#sharebtn').offsetRight + 'px';
+    document.querySelector('#restartnotification').style.right = '670px'
 
     const blurfnc = () => {
       menu.remove();
@@ -85084,7 +85084,7 @@ const saveToStorage = function(){
     lines.pop();
   }
   var d = lines.join('\n')
-  download('MySet.gib', d)
+  download('MySet.dilber', d)
 }
 
 window.use = function (...libs) {
@@ -85322,7 +85322,7 @@ module.exports = function() {
         ['samples', 'picksomesamples.js'],
         ['acid', 'acid.js'],
         ['moody', 'moody.js'],
-        ['geometry', 'meld.js']
+        //['geometry', 'meld.js']
       ]
     },
 
@@ -86195,7 +86195,7 @@ const share = {
       menu.setAttribute('id', 'connectmenu')
       menu.setAttribute('class', 'menu' )
       menu.style.width = '12.5em'
-      menu.style.height = '13.5em'
+      menu.style.height = '12.5em'
       menu.style.position = 'absolute'
       menu.style.display = 'block'
       menu.style.border = '1px #666 solid'
@@ -86204,7 +86204,7 @@ const share = {
       menu.style.right = 0 
       menu.style.zIndex = 1000
 
-      menu.innerHTML = `<p style='font-size:.7em; margin:.5em; margin-bottom:1.5em; color:var(--f_inv)'>gabber is a server for shared performances / chat. joining a gabber performance will make your code execute on all connected computers in the same room... and their code execute on yours.</p><input type='text' value='nickname' class='connect' id='connectname'><input class='connect' type='text' value='DilberFun' id='connectroom'><input type='checkbox' style='width:1em' id='showChat'><label for='showChat'>display chat?</label><br><input type='checkbox' checked style='width:1em' id='useSharedEditorBox'><label for='useSharedEditorBox'>share editor?</label><br><button id='connect-btn' style='float:right; margin-right:.5em'>join</button>`
+      menu.innerHTML = `<p style='font-size:.7em; margin:.5em; margin-bottom:1.5em; color:var(--f_inv)'>Start shared performances and chat. Your code will run on all connected computers in the same room and vice versa.</p><input type='text' value='nickname' class='connect' id='connectname'><input class='connect' type='text' value='DilberFun' id='connectroom'><input type='checkbox' style='width:1em' id='showChat'><label for='showChat'>display chat?</label><br><input type='checkbox' checked style='width:1em' id='useSharedEditorBox'><label for='useSharedEditorBox'>share editor?</label><br><button id='connect-btn' style='float:right; margin-right:.5em'>join</button>`
 
       document.body.appendChild( menu )
       document.querySelector('#connectmenu').style.left = document.querySelector('#connect').offsetLeft + 'px'
