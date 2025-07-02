@@ -1,7 +1,7 @@
 # Dilber | live audio-visual coding environment in Javascript for the browser
 ![demo](resources/images/demo.png)
 
-Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved and with many bug fixes and additional features.
+Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved with bug fixes and additional features.
 
 ## Features
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
