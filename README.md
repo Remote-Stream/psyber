@@ -14,7 +14,7 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 - Saving and loading your dilber files from computer
 
 ## How to use
-1. Go to https://dilber.io and start dilbering
+1. Go to [Dilber.io](https://dilber.io) and start <i>dilbering</i>!
 
 2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
