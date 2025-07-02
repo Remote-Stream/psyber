@@ -1,7 +1,7 @@
 # Dilber | live audio-visual coding environment in Javascript for the browser
-![https://i.imgur.com/XvFlPqY.png](https://i.imgur.com/XvFlPqY.png)
+![demo](resources/images/demo.png)
 
-Dilber is a fork of Gibber, stabilized and improved and with many bugs fixed and additional features.
+Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized and improved and with many bugs fixed and additional features.
 It supports step sequencing, TydalCycles / Strudel notation, Hydrasynth, P5 and 3D raymarching.
 
 ## How to use
