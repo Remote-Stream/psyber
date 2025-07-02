@@ -14,11 +14,18 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 - P2P realtime collaboration with shared editor and chat
 - Saving and loading your dilber files from computer
 
-## How to use
+## How to start
 1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
 
 2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
+## Basic commands
+```
+'Ctrl + Enter' - run line of code at the cursor
+'Alt + Enter' - run a block of code
+'Ctrl + .' - stop all
+ # You can also use Ctrl+A to select all then press Ctrl+Enter to run
+```
 
 ## Changes
 ```
@@ -40,3 +47,4 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 ## Where to find out more
 - Open [dilber.io](https://dilber.io) and take a look at examples/tutorial list (instructions are commented)
 - Read the full [documentation](https://dilber.io/docs/index.html)
+
