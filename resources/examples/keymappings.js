@@ -4,7 +4,7 @@
    
 This tutorial-that-is-not-really-a-tutorial
 just lists all the various keystroke mappings
-in gibber and provides explanations as needed.
+in dilber and provides explanations as needed.
 In macOS, replace any `Alt` keys with `Option`.
 
 ## Running Code 
@@ -24,7 +24,7 @@ try `Ctrl+Shift+.`)
 ## Console 
 (also see using the console tutorial)
 
-- open the console (this is a browser shortcut, not gibber specific)
+- open the console (this is a browser shortcut, not dilber specific)
 
 | platform |       chrome/edge       |        firefox          |
 | ------   | ----------------------- | ----------------------- |
@@ -34,7 +34,7 @@ try `Ctrl+Shift+.`)
 - clear the console = `Ctrl+\`
 
 ## Saving & Loading Preload Code 
-preload code runs as soon as gibber loads. it's a good
+preload code runs as soon as dilber loads. it's a good
 way to initialize small scripts / preferences etc.
 
 - Save new preload code = `Shift+Ctrl+s`

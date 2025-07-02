@@ -5565,7 +5565,7 @@ const Clock = {
 
   init:function( Gen, Audio ) {
     // needed so that when the clock is re-initialized (for example, after clearing)
-    // gibber won't try and serialized its sequencer
+    // dilber won't try and serialized its sequencer
     this.seq = null
 
     const clockFunc = ()=> {
@@ -13396,7 +13396,7 @@ module.exports = [
 {
   name: "operation",
   type: "operation",
-  doc: "The majority of 3D objects in gibber include methods found in this prototype.",
+  doc: "The majority of 3D objects in dilber include methods found in this prototype.",
   methods: {
     translate: {
       args: [{
@@ -13493,7 +13493,7 @@ module.exports = [
   name: "geometry",
   type: "operation",
   prototype: "operation",
-  doc: "Any 3D geometry in gibber includes methods from this prototype.",
+  doc: "Any 3D geometry in dilber includes methods from this prototype.",
   methods: {
     material: {
       returns: 'this',
@@ -83797,7 +83797,7 @@ module.exports = function( Dilber, Environment ) {
     window.watchers.push( __cb )
 
     // I added .__owner and .__name properties to all sequencable functions
-    // in gibber for situations like below. this enables us to just call
+    // in dilber for situations like below. this enables us to just call
     // watch( k.trigger, ()=> {} ) instead of having to do something like
     // watch( k, 'trigger', ()=>{} ) which just offends my sense of aesthetics.
 
@@ -84714,7 +84714,7 @@ window.onload = function () {
   setupThemeMenu();
   setupCollapseBtn();
   setupRestartBtn();
-}; // these extensions are specific for the gibber server
+}; // these extensions are specific for the dilber server
 // and won't work unless you're using it or some other
 // middleware (like serve-index) to serve directory indexes
 
@@ -84749,7 +84749,7 @@ const addSamplerExtensions = function (Dilber) {
     //   console.table(filtered);
     // });
   }; // this extension is added to individual instances inside
-  // of gibber.audio.lib/instruments.js
+  // of dilber.audio.lib/instruments.js
   //Dilber.Audio.instruments.extensions.Sampler = {
 
 
@@ -84762,7 +84762,7 @@ const addSamplerExtensions = function (Dilber) {
       if (name.indexOf('http') > -1) {
         url = name;
       } else {
-        // ... otherwise use gibber's standard locations
+        // ... otherwise use dilber's standard locations
         url = isDir ? '../resources/audiofiles/' + name : './resources/audiofiles/' + name;
       }
 
@@ -85370,9 +85370,9 @@ module.exports = function() {
     {
       name:'graphics',
       options:[
-        ['intro to constructive solid geometry', 'graphics.intro.js' ],  
-        ['lighting and materials', 'graphics.lighting.js' ], 
-        ['textures', 'texture.js' ],
+        // ['intro to constructive solid geometry', 'graphics.intro.js' ],  
+        // ['lighting and materials', 'graphics.lighting.js' ], 
+        // ['textures', 'texture.js' ],
         ['hydra', 'hydra.js' ],
         ['p5.js', 'p5.js' ]
       ]
@@ -86036,7 +86036,7 @@ const share = {
 
     __connected = true
 
-    window.alert( `Welcome to gibber performance ${roomname}! You must close this dialog box and then click in the gibber interface to begin watching the performance. You'll see the metronome start running in the upper left corner of the window after clicking in the interface, and hopefully the performers will begin coding shortly. Enjoy the show!` )
+    window.alert( `Welcome to dilber performance ${roomname}! You must close this dialog box and then click in the dilber interface to begin watching the performance. You'll see the metronome start running in the upper left corner of the window after clicking in the interface, and hopefully the performers will begin coding shortly. Enjoy the show!` )
 
     return true
 
@@ -107119,7 +107119,7 @@ function tapsToFuncSource(taps) {
 class BlurExpr extends expr_1.ExprVec4 {
     constructor(direction, taps = 5, samplerNum) {
         // this is already guaranteed by typescript, but creates helpful error for
-        // use in gibber or anyone just using javascript
+        // use in dilber or anyone just using javascript
         if (![5, 9, 13].includes(taps)) {
             throw new Error("taps for gauss blur can only be 5, 9 or 13");
         }

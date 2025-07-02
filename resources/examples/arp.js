@@ -1,24 +1,3 @@
-/* __--__--__--__--__--__--__--____
-
-arpeggios and signals as sequences
-
-We're going to re-create the arpeggiator 
-used in this gibber performance:
-https://youtu.be/VnqS8hQVhXA?t=492
-
-This relies on knowing a little bit 
-about genish.js, a JavaScript DSP
-library inspired by the gen~ extension
-for Max/MSP. You can learn more about
-genish.js at:
-
-http://charlie-roberts.com/genish
-
-...but this tutorial will try to cover 
-some basics as well.
-    
-** __--__--__--__--__--__--__--__*/
-
 // start off by making our instrument
 verb = Reverb.space.bus() 
 syn = Monosynth( 'shinybass' ).connect( verb, .25 )
@@ -35,7 +14,7 @@ syn = Monosynth( 'shinybass' ).connect( verb, .25 )
 arp = gen( accum(.00001) )
 syn.note.seq( arp, 1/4 )
 
-// In the above example, there's some extra code in gibber
+// In the above example, there's some extra code in dilber
 // that automatically rounds signals when you use them to
 // sequence note events; this is why the sequence alternates
 // between two notes... a 0 when it rounds down and a 1 
@@ -64,7 +43,7 @@ arp.p3 = 14
 
 // The p2 value resets the accum waveform whenever it 
 // exceeds one. You probably won't use this very often
-// in gibber, but it's important to remember to skip it
+// in dilber, but it's important to remember to skip it
 // when using these numbers. This is true for other genish
 // functions that build on top of accum, like beats and phasor.
 

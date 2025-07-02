@@ -77,7 +77,7 @@ syn2.note(7)
 // there are a number of presets for Bus2 that
 // basically just add fx to the bus so you can
 // use them as send effects. For example, 
-// 'spaceverb' is used in many of the gibber
+// 'spaceverb' is used in many of the dilber
 // demos. You can see a list of these presets
 // by opening up the developer tools console for
 // your browser and entering:

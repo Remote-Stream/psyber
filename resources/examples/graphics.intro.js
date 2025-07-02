@@ -1,6 +1,6 @@
 /* __--__--__--__--__--__--__--____
 
-intro to graphics in gibber
+intro to graphics in dilber
    
 Graphics in Dilber are created using
 marching.js, a ray-marching library:
@@ -45,7 +45,7 @@ Union2(
 // the Union function combines two geometries, while
 // Union2 lets us combine as many as we like.
 
-// like audio gibber objects, we can store
+// like audio dilber objects, we can store
 // graphics objects in variables and then manipulate
 // them.
 

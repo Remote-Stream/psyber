@@ -11,15 +11,17 @@
   <link rel="stylesheet" href="./resources/dilber.css">
   <link rel="icon" href="favicon.ico">
   <script src='./resources/external/babel.min.js'></script>
-  <script src='./resources/bundle.js'></script>
-  <script src='./resources/jsdsp.js'></script>
+  <meta property="og:title" content="Dilber - Live audio-visual coding in browser" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dilber.io" />
+  <meta property="og:image" content="https://i.imgur.com/XvFlPqY.png" />
 </head>
 
 <body>
 
   <canvas id='metronome'></canvas>
   <header>
-    <h1></h1>
+    <h1>dilber</h1>
 
     <select id='examplesMenu'></select>
 
@@ -39,13 +41,15 @@
         <li><img src='./resources/themes/zenburn.png' /></li>
       </ul>
     </div>
+    <button id='restart'>stop</button>
     <input type="file" id="fileInput" style="display: none;">
     <button id='loadbtn'>load</button>
     <button id='savebtn'>save</button>
+   
     <button id='sharebtn'>share</button>
     <button id='connect'>collaborate</button>
 
-    <button id='restart'>restart</button>
+
 
     <span id='reference'>
       <ul>
@@ -59,6 +63,8 @@
   <button id='hidebtn'>&#9650;</button>
 
   <canvas id='graphics'></canvas>
+  <script src='./resources/bundle.js'></script>
+  <script src='./resources/jsdsp.js'></script>
 </body>
 
 </html>

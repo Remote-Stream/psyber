@@ -3,8 +3,8 @@
 sound design: envelopes, gain, and loudness
    
 this tutorial looks at how enveloping
-works in gibber. The use of envelopes in
-gibber is opinionated... they affect
+works in dilber. The use of envelopes in
+dilber is opinionated... they affect
 everything from amplitude of instruments
 to how FM modulation and feedback is
 applied. The goal is for this envelope to affect
@@ -12,14 +12,14 @@ the *perceptual* loudness of the instrument, as
 opposed to only affecting the amplitude.
 So, while many other systems only
 attach a primary envelope to amplitude,
-in gibber this single envelope is attached
+in dilber this single envelope is attached
 all over the place. This helps sounds in
-gibber have greater timbral changes over
+dilber have greater timbral changes over
 the course of each individual note, at the
 expense of some loss of control; for example,
 other systems might enable you to attach
 different envelopes to control the amplitude
-vs. the filter cutoff frequency. In gibber
+vs. the filter cutoff frequency. In dilber
 these are all controlled by a single envelope.
     
 ** __--__--__--__--__--__--__--__*/
@@ -30,7 +30,7 @@ these are all controlled by a single envelope.
 
 s = Synth().note(0)
 
-// by default, most instruments in gibber use
+// by default, most instruments in dilber use
 // a simple two-stage envelop with attack / decay
 // properties. We can adjust these:
 
@@ -87,7 +87,7 @@ s.release = 1/2
 // that value. .release determines how long it takes for the
 // envelope to fade to 0 after the sustained portion is complete.
 
-// By default in gibber envelopes are "linear"; they advance
+// By default in dilber envelopes are "linear"; they advance
 // at a uniform rate throughout each stage. Or think of is more
 // simply as each stage of the envelope is a straight line. However,
 // sound is typically perceived logarithmically, not linearly, so
@@ -99,7 +99,7 @@ s = Synth().note.seq( 0, 1/2 )
 
 s = Synth({ shape:'exponential' }).note.seq( 0,1/2 )
 
-// all of the presets in gibber that contain '.perc' use an 
+// all of the presets in dilber that contain '.perc' use an 
 // exponential envelope; some other sounds do as well.
 
 s = Synth('square.perc').note.seq( Rndi(-7,7), 1/8 )
@@ -149,6 +149,6 @@ s.loudness.fade( 0, null, 4 )
 // as the fade advances.
 
 // OK, you should hopefully have a pretty good understanding how
-// enveloping works in gibber, and how you can use the loudness and
+// enveloping works in dilber, and how you can use the loudness and
 // gain properties to control perceptual loudness vs the output strength
 // of an instrument. Next up is an in depth discussion of filters.

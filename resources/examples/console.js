@@ -4,8 +4,8 @@
 # Using the console
    
 The browser console can help you debug  errors and
-understand what gibber is doing. There are instructions
-for opening the console when you first open gibber, 
+understand what dilber is doing. There are instructions
+for opening the console when you first open dilber, 
 here they are again:
 
 | platform |       chrome/edge       |        firefox          |
@@ -16,7 +16,7 @@ here they are again:
 This tutorial will go over some useful tricks for
 using the console.
     
-when you create a new gibber object, you'll see
+when you create a new dilber object, you'll see
 a notification appear in the console. make
 sure you've opened the console, and then run the
 line below with ctrl+enter to see this happen.

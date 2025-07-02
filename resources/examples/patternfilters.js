@@ -5,7 +5,7 @@ advanced concepts: pattern filters
 Please do the pattern and sequencing
 tutorials before this one.
 
-gibber lets you defined "filters" that
+dilber lets you defined "filters" that
 you can apply to patterns to transform
 their output in various ways. We can use
 filters to repeat values in patterns,

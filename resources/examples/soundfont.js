@@ -4,7 +4,7 @@
 ** 
 ** https://pjb.com.au/muscript/gm.html#patch
 **
-** They're probably the best tool in gibber
+** They're probably the best tool in dilber
 ** to get instruments that sound "real"... think
 ** an acoustic piano or bowed cello. That said
 ** they are not high-quality samples... really
@@ -17,7 +17,7 @@
 **
 ** https://github.com/surikov/webaudiofontdata
 **
-** The soundfonts gibber includes are, in order,
+** The soundfonts dilber includes are, in order,
 ** Asprin, Chaos, FluidR3, GeneralUserGS, and JCLive.
 ** Let's try them out!
 */
@@ -59,7 +59,7 @@ s4.chord.seq( Rndi(-14,14,6), 2 )
 s4.gain = .5
 s4,decay = 44100 * 10
  
-s5 = Soundfont('Timpani', { bank:3 ).connect( verb, .1 )
+s5 = Soundfont('Timpani', { bank:3 } ).connect( verb, .1 )
 s5.decay = 44100 * 4
 s5.note.tidal( '<[-14 -14*3] [-12 -12*3]>')
 

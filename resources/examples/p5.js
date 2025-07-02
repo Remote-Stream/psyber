@@ -1,26 +1,26 @@
 /* __--__--__--__--__--__--__--____
 
-using p5.js in gibber
+using p5.js in dilber
    
 p5 is an extremely popular system for
 2D graphics. You can learn about it at:
 
 https://p5js.org
 
-we can "inject" p5 into gibber using
+we can "inject" p5 into dilber using
 the use() function, which will then 
-download p5 and run it inside of gibber.
+download p5 and run it inside of dilber.
 this tutorial gives the details on how to
 do that and some tricks for "listening" to
-gibber's musical instruments. Many of the
+dilber's musical instruments. Many of the
 concepts here are similar to how use use
-Hydra in gibber (see the associated
+Hydra in dilber (see the associated
 tutorial), but there's one or two
 important differences to be aware of.
 
 ** __--__--__--__--__--__--__--__*/
 
-// to load p5 we need to tell gibber
+// to load p5 we need to tell dilber
 // use the external file. the use() function
 // handles this for us.
 
@@ -48,12 +48,12 @@ for( let i = 0; i < 10; i++ ) {
 // background again
 background(0)
 
-// you'll notice that gibber puts a black
+// you'll notice that dilber puts a black
 // background behind the code so that it
 // remains (at least somewhat) legible. you
 // might want to also hit the little upward
 // arrow in the upper right corner, which will
-// hide the gibber menu bar so the graphics can
+// hide the dilber menu bar so the graphics can
 // be viewed better.
 
 // to get animation with p5 we need to define
@@ -76,7 +76,7 @@ draw = function() {
 // the p5 sketch will just continue running
 // using the new algorithm.
 
-// let's look at using the amplitude of gibber
+// let's look at using the amplitude of dilber
 // instruments to drive p5 sketches. 
 
 kick = Kick().trigger.seq( 1,1/4 )
@@ -126,7 +126,7 @@ draw = function() {
 
 // you might notice that the rise / fall
 // in size of the square is a little hectic.
-// by default, gibber tracks each sound over
+// by default, dilber tracks each sound over
 // a window of 1024 samples. if we increase
 // that number, we'll get smoother animations.
 // if we decrease it, we'll get a sharper response

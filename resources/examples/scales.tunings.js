@@ -80,7 +80,7 @@ Theory.mode = null
 
 // with all that that said, there are times when you 
 // might want to bypass the music theory system in
-// gibber altogether, and just provide direct frequency
+// dilber altogether, and just provide direct frequency
 // values to instruments. you can do that using the
 // .notef() method.
 
@@ -88,7 +88,7 @@ s = Synth('bleep').notef.seq( [100,200,300,400], 1/4 )
 
 // by default, note() rounds any arguments you send to
 // it so that they can be used to look up notes in 
-// gibber's current scale. however, the notec method
+// dilber's current scale. however, the notec method
 // (for "note continuous") lets you interpolate between
 // scale indices for a full continuous range of pitches.
 

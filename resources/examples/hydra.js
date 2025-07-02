@@ -1,7 +1,7 @@
 
 /* __--__--__--__--__--__--__--____
 
-using hydra in gibber
+using hydra in dilber
    
 hydra is an amazing system for (mostly)
 2D graphics, primarily inspired by analog
@@ -10,23 +10,23 @@ Olivia Jack. You can play with it at:
 
 https://hydra.ojack.xyz
 
-we can "inject" hydra into gibber using
+we can "inject" hydra into dilber using
 the use() function, which will then 
-download hydra and run it inside of gibber.
+download hydra and run it inside of dilber.
 this tutorial gives the details on how to
 do that and some tricks for "listening" to
-gibber's musical instruments. For more info
+dilber's musical instruments. For more info
 on hydra itself, see the hydra website.
 
 ** __--__--__--__--__--__--__--__*/
 
-// to load hydra up we need to tell gibber
+// to load hydra up we need to tell dilber
 // use the external file. the use() function
 // returns a JavaScript promise that yields
 // the hydra constructor. You don't really
 // need to care about what that means... just
 // run the following line of code to start hydra
-// in gibber:
+// in dilber:
 
 use( 'hydra' ).then( init => init() )
 
@@ -37,12 +37,12 @@ use( 'hydra' ).then( init => init() )
 
 osc().out()
 
-// you'll notice that gibber puts a black
+// you'll notice that dilber puts a black
 // background behind the code so that it
 // remains (at least somewhat) legible. you
 // might want to also hit the little upward
 // arrow in the upper right corner, which will
-// hide the gibber menu bar so the graphics can
+// hide the dilber menu bar so the graphics can
 // be viewed better.
 
 // in hydra, any function argument can itself
@@ -54,7 +54,7 @@ osc().out()
 
 osc( ()=> Math.random() * 50 ).out()
 
-// clearing gibber (with ctrl+period) will
+// clearing dilber (with ctrl+period) will
 // stop hydra. You can also call hush() to
 // do this without clearing audio/music.
 
@@ -63,7 +63,7 @@ hush()
 // now that we know we can pass a function
 // as any hydra parameter, all that we need
 // to do is pass functions that provide the
-// output of gibber instruments to get a/v
+// output of dilber instruments to get a/v
 // synchronization. The __out property of
 // instruments will give their current value.
 
@@ -74,7 +74,7 @@ osc(100,.1,1)
   .out()
 
 // in order to make these types of mapping
-// simpler, gibber adds a function .out()
+// simpler, dilber adds a function .out()
 // to every instrument that in turn returns
 // a function giving it's value. You can
 // also pass a argument to scale the output
@@ -89,7 +89,7 @@ osc(100,.1,1)
 
 // you might notice that the rise / fall
 // in size of the square is a little hectic.
-// by default, gibber tracks each sound over
+// by default, dilber tracks each sound over
 // a window of 1024 samples. if we increase
 // that number, we'll get smoother animations.
 // if we decrease it, we'll get a sharper response
@@ -106,12 +106,12 @@ osc(100,.1,1)
 // try it out using multiple instruments
 // mapped to different hydra functions!
 
-// gibber also has its own FFT functionality
+// dilber also has its own FFT functionality
 // that you can use if you want to map with
 // the overall spectrum of music instead of
 // using individual components; the standard
 // hydra FFT functions are not available. To
-// start gibber's FFT running:
+// start dilber's FFT running:
 
 FFT.start()
 

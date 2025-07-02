@@ -3,7 +3,7 @@
 randomness
 
 there's a few different ways to get
-randomness in gibber, whether you're
+randomness in dilber, whether you're
 working with sequences or signals.
     
 ** __--__--__--__--__--__--__--__*/

@@ -3,7 +3,7 @@
 sound design: the monosynth
    
 having previously covered features that are common 
-across most synths in gibber (oscillators,
+across most synths in dilber (oscillators,
 envelopes, and filters) this tutorial will
 discuss the features/properties that make the Monosynth
 unique.
@@ -16,7 +16,7 @@ unique.
 // cue from classic analog synthesizers that
 // created giant sounds by stacking oscillators,
 // but only for a single note (think of almost
-// every Moog from the 70s). In gibber, each
+// every Moog from the 70s). In dilber, each
 // Monosynth has three oscillators that can
 // be detuned to create different effects.
 //

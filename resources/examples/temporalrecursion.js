@@ -3,14 +3,14 @@
 
 A temporal recursion is a function that calls itself over time. 
 
-In gibber they enable us to sequence instruments in a completely different
-style than the gibber's typical sequence/pattern-based approach. The
+In dilber they enable us to sequence instruments in a completely different
+style than the dilber's typical sequence/pattern-based approach. The
 basic workflow is to pass instruments to functions, trigger those instruments
 from within the function, and specify when the function should be called
 next.
 
 Please go through the multithreaded programming tutorial before reading
-this one, as temporal recursions run in the audio thread in gibber.
+this one, as temporal recursions run in the audio thread in dilber.
 
 `tr()` is the function to make a temporal recursion. the
 function you pass to it will run in the audio
@@ -42,7 +42,7 @@ tr( function(...args) {
 
 /*--md
 if you open your js console you can see that the time
-(number of seconds since gibber started) printed. we
+(number of seconds since dilber started) printed. we
 can use that time value to manipulate amplitude or
 the scheduling of our recursion.
 --*/

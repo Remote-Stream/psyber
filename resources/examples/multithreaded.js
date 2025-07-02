@@ -2,7 +2,7 @@
 
 advanced concepts: multi-threaded programming
 
-gibber runs audio + interaction in
+dilber runs audio + interaction in
 two separate threads. When you
 create an audio object in the main
 thread (the same thread where the 
@@ -130,7 +130,7 @@ test = (phase,seq) => {
   return seq[ phase++ % seq.length ]
 }
 
-// because gibber extracts the function body and
+// because dilber extracts the function body and
 // sends it to the audio thread as a string, the
 // function must explicitly use the return keyword
 // (normally single line arrow functions don't require
@@ -143,7 +143,7 @@ bass.note.seq (fn( test, { phase, seq }), 1/8 )
 
 // for a more sophisticated example of what can
 // be accomplished, check out this sketch by Eris
-// Fairbanks that replaces gibber's music theory
+// Fairbanks that replaces dilber's music theory
 // system almost entirely:
 //
 // https://tinyurl.com/gibberingteton

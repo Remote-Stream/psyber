@@ -135,7 +135,7 @@ s.chord.seq( [[0,2,3,4], [3,4,7,8]], 1 )
 // even if you're sequencing a repeated single chord, you
 // still need an array of arrays. Last but not least, there's
 // a shortcut for defining the number of voices, as shown
-// below and in most of the gibber demos:
+// below and in most of the dilber demos:
 
 s = Synth[4]()
 // same as s = PolySynth({ maxVoices:4 })

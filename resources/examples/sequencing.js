@@ -3,7 +3,7 @@
 # Basic sequencing
 
 This tutorial will provide an introduction to 
-sequencing in gibber. Dilber lets you sequence 
+sequencing in dilber. Dilber lets you sequence 
 calls to most methods of audiovisual objects 
 as well as changes to any of their properties, 
 just by adding .seq to the method or property name,
@@ -20,7 +20,7 @@ syn.note.seq( 0, 1/4 )
 
 
 /*--md
-You can stop all sequences in gibber with the Ctrl+. keyboard shortcut
+You can stop all sequences in dilber with the Ctrl+. keyboard shortcut
 (Ctrl + period) or by executing the command Dilber.clear(), but
 this also deletes instruments. For this tutorial, we'll instead use the .stop()
 command to stop sequences on a specific instrument:
@@ -30,7 +30,7 @@ syn.stop()
 
 
 /*--md
-Most sequences in gibber contain values (0 in the example above) 
+Most sequences in dilber contain values (0 in the example above) 
 and timings (1/4 above). To sequence multiple values we pass an array,
 which is a comma-separated list surrounded by `[]` brackets:
 --*/
@@ -86,7 +86,7 @@ syn.note.seq( 0, 1/4 )
 default, Gibberwill replace an existing sequence with a new one. 
 To stop this, you can pass an ID number as a third argument to 
 calls to `.seq()`. In the examples of sequencing we've seen so far,
-no ID has been given, which means gibber assumes a default ID of 0
+no ID has been given, which means dilber assumes a default ID of 0
 for each sequence. When you launch a sequence on a method/property
 that has the same ID as another running sequence the older sequence
 is stopped. But if the sequences have different IDs they run 

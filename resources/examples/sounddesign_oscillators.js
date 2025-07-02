@@ -3,13 +3,13 @@
 sound design: oscillators
    
 the sound design tutorials look at how to create
-your own sounds, or "presets", in gibber. This
+your own sounds, or "presets", in dilber. This
 first tutorial covers oscillators, the raw materials
-for all non-sampled-based instruments in gibber.
+for all non-sampled-based instruments in dilber.
     
 ** __--__--__--__--__--__--__--__*/
 
-// the most basic instrument in gibber is the Synth.
+// the most basic instrument in dilber is the Synth.
 // if you run the line below, and then type s.
 // (s followed by a period) you should see a list of all
 // the various properties/functions associated with the synth.
@@ -20,7 +20,7 @@ s = Synth()
 // quite a list! hopefully after this tutorial series we'll understand
 // what each of these is responsible for. instruments/presets 
 // are basically a collection of settings for these properties. 
-// For example, the default Synth in gibber comes with a low-pass
+// For example, the default Synth in dilber comes with a low-pass
 // filter enabled, a sawtooth oscillator, and a half-second
 // envelope among other characteristics. You can hear what
 // that sounds like:
@@ -115,5 +115,5 @@ s.antialias = true
 // effect can be hard to hear.
 
 // Next up, we'll talk about envelopes, which not only shape
-// the volume of gibber instruments, but also control filter settings,
+// the volume of dilber instruments, but also control filter settings,
 // FM settings and more.

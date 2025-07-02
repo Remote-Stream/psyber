@@ -33,22 +33,22 @@
 ** you specified above):
 */
 
-s = Sampler('http://localhost:5500/resources/samples/beat-box.wav')
+//s = Sampler('http://localhost:5500/resources/samples/beat-box.wav')
 
 /* Great! When you call .note on a Sampler, it
 ** doesn't use the default tuning system in
-** gibber, instead it controls the rate the
+** dilber, instead it controls the rate the
 ** sample is played back at. 
 */
+
+// let's try a sample that works well in reverse
+s = Sampler('openhat.wav')
 
 // playback at normal rate
 s.note(1)
 
 // playback at 3x speed
 s.note(3)
-
-// let's try a sample that works well in reverse
-s = Sampler('openhat.wav')
 
 // playback in reverse
 s.note(-1)
