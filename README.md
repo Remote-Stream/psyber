@@ -5,10 +5,11 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 
 ## Features
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
-- Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [3D raymarching](https://github.com/charlieroberts/gibber.graphics.lib)
+- Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [3D Raymarching](https://github.com/charlieroberts/gibber.graphics.lib)
 - Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
-- Camera efects
+- Audio effects (BitCrusher, Delay, Filter, Distortion, Flanger,Reeverb, RingMod, Vibrato, Tremolo, Wavefolder)
+- Video effects (Antialias, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)
 - Camera control (WASD, arrows)
 - P2P realtime collaboration with shared editor and chat
 - Saving and loading your dilber files from computer
