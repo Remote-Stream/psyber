@@ -33,8 +33,6 @@
 ** you specified above):
 */
 
-//s = Sampler('http://localhost:5500/resources/samples/beat-box.wav')
-
 /* Great! When you call .note on a Sampler, it
 ** doesn't use the default tuning system in
 ** dilber, instead it controls the rate the
@@ -81,10 +79,10 @@ s.end.seq( [.05,.1,.2,.5], 1 )
 Dilber.clear()
 s = Sampler({
   files:[
-    'resources/samples/kick.wav',
-    'resources/samples/hat.wav',
-    'resources/samples/snare.wav',
-    'resources/samples/openhat.wav'
+    'samples/kick.wav',
+    'samples/hat.wav',
+    'samples/snare.wav',
+    'samples/openhat.wav'
   ]
 })
 

@@ -5805,10 +5805,10 @@ module.exports = function( __Audio ) {
 
     const temp = Audio.autoConnect
     Audio.autoConnect = false
-    const k  = Audio.instruments.Sampler({ files:['./resources/samples/kick.wav' ] })
-    const s  = Audio.instruments.Sampler({ files:['./resources/samples/snare.wav' ] })
-    const ch = Audio.instruments.Sampler({ files:['./resources/samples/hat.wav' ] })
-    const oh = Audio.instruments.Sampler({ files:['./resources/samples/openhat.wav' ] })
+    const k  = Audio.instruments.Sampler({ files:['samples/kick.wav' ] })
+    const s  = Audio.instruments.Sampler({ files:['samples/snare.wav' ] })
+    const ch = Audio.instruments.Sampler({ files:['samples/hat.wav' ] })
+    const oh = Audio.instruments.Sampler({ files:['samples/openhat.wav' ] })
     Audio.autoConnect = temp
 
     const drums = Audio.Ensemble({
@@ -8431,60 +8431,39 @@ module.exports = {
 
   drums: { 
     files:[
-      'resources/samples/kick.wav',
-      'resources/samples/hat.wav',
-      'resources/samples/snare.wav',
-      'resources/samples/openhat.wav'
+      'samples/kick.wav',
+      'samples/hat.wav',
+      'samples/snare.wav',
+      'samples/openhat.wav'
     ],
     presetInit() {
       this.length = 4
     }
   },
-  beatbox: {
-    files:[
-      'resources/samples/beatbox/^k.wav',
-      'resources/samples/beatbox/^p.wav',
-      'resources/samples/beatbox/^tss.wav',
-      'resources/samples/beatbox/8.wav',
-      'resources/samples/beatbox/a.wav',
-      'resources/samples/beatbox/b.wav',
-      'resources/samples/beatbox/d.wav',
-      'resources/samples/beatbox/dot.wav',
-      'resources/samples/beatbox/duf.wav',
-      'resources/samples/beatbox/f.wav',
-      'resources/samples/beatbox/k.wav',
-      'resources/samples/beatbox/h.wav',
-      'resources/samples/beatbox/m.wav',
-      'resources/samples/beatbox/n.wav',
-    ],
-    presetInit() {
-      this.length = 14
-    }
-  },
   bleeps: {
     files:[
-      'resources/samples/bent-bleeps/51063__stamperadam__bleep1.wav',
-      'resources/samples/bent-bleeps/51064__stamperadam__bleep2.wav',
-      'resources/samples/bent-bleeps/51065__stamperadam__clap.wav',
-      'resources/samples/bent-bleeps/51066__stamperadam__click.wav',
-      'resources/samples/bent-bleeps/51067__stamperadam__click1.wav',
-      'resources/samples/bent-bleeps/51068__stamperadam__g1.wav',
-      'resources/samples/bent-bleeps/51069__stamperadam__g2.wav',
-      'resources/samples/bent-bleeps/51070__stamperadam__g3.wav',
-      'resources/samples/bent-bleeps/51071__stamperadam__g4.wav',
-      'resources/samples/bent-bleeps/51072__stamperadam__g5.wav',
-      'resources/samples/bent-bleeps/51073__stamperadam__g6.wav',
-      'resources/samples/bent-bleeps/51074__stamperadam__g7.wav',
-      'resources/samples/bent-bleeps/51075__stamperadam__g8.wav',
-      'resources/samples/bent-bleeps/51076__stamperadam__g9.wav',
-      'resources/samples/bent-bleeps/51077__stamperadam__glitch.wav',
-      'resources/samples/bent-bleeps/51078__stamperadam__hatt.wav',
-      'resources/samples/bent-bleeps/51079__stamperadam__hit.wav',
-      'resources/samples/bent-bleeps/51080__stamperadam__hitt.wav',
-      'resources/samples/bent-bleeps/51081__stamperadam__hum.wav',
-      'resources/samples/bent-bleeps/51082__stamperadam__kik.wav',
-      'resources/samples/bent-bleeps/51083__stamperadam__snar.wav',
-      'resources/samples/bent-bleeps/51084__stamperadam__wa.wav',
+      'samples/bent-bleeps/51063__stamperadam__bleep1.wav',
+      'samples/bent-bleeps/51064__stamperadam__bleep2.wav',
+      'samples/bent-bleeps/51065__stamperadam__clap.wav',
+      'samples/bent-bleeps/51066__stamperadam__click.wav',
+      'samples/bent-bleeps/51067__stamperadam__click1.wav',
+      'samples/bent-bleeps/51068__stamperadam__g1.wav',
+      'samples/bent-bleeps/51069__stamperadam__g2.wav',
+      'samples/bent-bleeps/51070__stamperadam__g3.wav',
+      'samples/bent-bleeps/51071__stamperadam__g4.wav',
+      'samples/bent-bleeps/51072__stamperadam__g5.wav',
+      'samples/bent-bleeps/51073__stamperadam__g6.wav',
+      'samples/bent-bleeps/51074__stamperadam__g7.wav',
+      'samples/bent-bleeps/51075__stamperadam__g8.wav',
+      'samples/bent-bleeps/51076__stamperadam__g9.wav',
+      'samples/bent-bleeps/51077__stamperadam__glitch.wav',
+      'samples/bent-bleeps/51078__stamperadam__hatt.wav',
+      'samples/bent-bleeps/51079__stamperadam__hit.wav',
+      'samples/bent-bleeps/51080__stamperadam__hitt.wav',
+      'samples/bent-bleeps/51081__stamperadam__hum.wav',
+      'samples/bent-bleeps/51082__stamperadam__kik.wav',
+      'samples/bent-bleeps/51083__stamperadam__snar.wav',
+      'samples/bent-bleeps/51084__stamperadam__wa.wav',
     ],
     presetInit() {
       this.length = 22
@@ -8492,13 +8471,13 @@ module.exports = {
   },
   cr7030: {
     files:[
-      './resources/samples/cr7030/68602__birdflu__bongo7030.wav',
-      './resources/samples/cr7030/68603__birdflu__clave7030.wav',
-      './resources/samples/cr7030/68606__birdflu__hatclosed7030.wav',
-      './resources/samples/cr7030/68607__birdflu__hatopen7030.wav',
-      './resources/samples/cr7030/68608__birdflu__kick7030.wav',
-      './resources/samples/cr7030/68609__birdflu__snare7030.wav',
-      './resources/samples/cr7030/68610__birdflu__tom7030.wav',
+      'samples/cr7030/68602__birdflu__bongo7030.wav',
+      'samples/cr7030/68603__birdflu__clave7030.wav',
+      'samples/cr7030/68606__birdflu__hatclosed7030.wav',
+      'samples/cr7030/68607__birdflu__hatopen7030.wav',
+      'samples/cr7030/68608__birdflu__kick7030.wav',
+      'samples/cr7030/68609__birdflu__snare7030.wav',
+      'samples/cr7030/68610__birdflu__tom7030.wav',
     ],
     presetInit(){
       this.length = 7
@@ -8506,96 +8485,96 @@ module.exports = {
   },
   kicks: {
     files:[
-      'resources/samples/kicks/249200__netr_si__kick-32.wav',
-      'resources/samples/kicks/249201__netr_si__kick-33.wav',
-      'resources/samples/kicks/249202__netr_si__kick-27.wav',
-      'resources/samples/kicks/249203__netr_si__kick-28.wav',
-      'resources/samples/kicks/249204__netr_si__kick-25.wav',
-      'resources/samples/kicks/249205__netr_si__kick-26.wav',
-      'resources/samples/kicks/249206__netr_si__kick-30.wav',
-      'resources/samples/kicks/249207__netr_si__kick-31.wav',
-      'resources/samples/kicks/249208__netr_si__kick-29.wav',
-      'resources/samples/kicks/249209__netr_si__kick-3.wav',
-      'resources/samples/kicks/249211__netr_si__kick-42.wav',
-      'resources/samples/kicks/249212__netr_si__kick-41.wav',
-      'resources/samples/kicks/249213__netr_si__kick-35.wav',
-      'resources/samples/kicks/249214__netr_si__kick-34.wav',
-      'resources/samples/kicks/249215__netr_si__kick-37.wav',
-      'resources/samples/kicks/249216__netr_si__kick-36.wav',
-      'resources/samples/kicks/249217__netr_si__kick-39.wav',
-      'resources/samples/kicks/249218__netr_si__kick-38.wav',
-      'resources/samples/kicks/249219__netr_si__kick-40.wav',
-      'resources/samples/kicks/249220__netr_si__kick-4.wav',
-      'resources/samples/kicks/249222__netr_si__kick-87.wav',
-      'resources/samples/kicks/249223__netr_si__kick-9.wav',
-      'resources/samples/kicks/249224__netr_si__kick-83.wav',
-      'resources/samples/kicks/249225__netr_si__kick-84.wav',
-      'resources/samples/kicks/249226__netr_si__kick-85.wav',
-      'resources/samples/kicks/249227__netr_si__kick-86.wav',
-      'resources/samples/kicks/249228__netr_si__kick-8.wav',
-      'resources/samples/kicks/249229__netr_si__kick-80.wav',
-      'resources/samples/kicks/249230__netr_si__kick-81.wav',
-      'resources/samples/kicks/249231__netr_si__kick-82.wav',
-      'resources/samples/kicks/249232__netr_si__kick-20.wav',
-      'resources/samples/kicks/249233__netr_si__kick-2.wav',
-      'resources/samples/kicks/249234__netr_si__kick-19.wav',
-      'resources/samples/kicks/249235__netr_si__kick-18.wav',
-      'resources/samples/kicks/249236__netr_si__kick-24.wav',
-      'resources/samples/kicks/249237__netr_si__kick-23.wav',
-      'resources/samples/kicks/249238__netr_si__kick-22.wav',
-      'resources/samples/kicks/249239__netr_si__kick-21.wav',
-      'resources/samples/kicks/249240__netr_si__kick-252.wav',
-      'resources/samples/kicks/249241__netr_si__kick-251.wav',
-      'resources/samples/kicks/249242__netr_si__kick-12.wav',
-      'resources/samples/kicks/249243__netr_si__kick-11.wav',
-      'resources/samples/kicks/249244__netr_si__kick-10.wav',
-      'resources/samples/kicks/249245__netr_si__kick-1.wav',
-      'resources/samples/kicks/249246__netr_si__kick-15.wav',
-      'resources/samples/kicks/249247__netr_si__kick-14.wav',
-      'resources/samples/kicks/249248__netr_si__kick-141.wav',
-      'resources/samples/kicks/249249__netr_si__kick-13.wav',
-      'resources/samples/kicks/249250__netr_si__kick-17.wav',
-      'resources/samples/kicks/249251__netr_si__kick-16.wav',
-      'resources/samples/kicks/249252__netr_si__kick-67.wav',
-      'resources/samples/kicks/249253__netr_si__kick-68.wav',
-      'resources/samples/kicks/249254__netr_si__kick-65.wav',
-      'resources/samples/kicks/249255__netr_si__kick-66.wav',
-      'resources/samples/kicks/249256__netr_si__kick-63.wav',
-      'resources/samples/kicks/249257__netr_si__kick-64.wav',
-      'resources/samples/kicks/249258__netr_si__kick-61.wav',
-      'resources/samples/kicks/249259__netr_si__kick-62s.wav',
-      'resources/samples/kicks/249260__netr_si__kick-69.wav',
-      'resources/samples/kicks/249261__netr_si__kick-7.wav',
-      'resources/samples/kicks/249262__netr_si__kick-75.wav',
-      'resources/samples/kicks/249263__netr_si__kick-74.wav',
-      'resources/samples/kicks/249264__netr_si__kick-77.wav',
-      'resources/samples/kicks/249265__netr_si__kick-76.wav',
-      'resources/samples/kicks/249266__netr_si__kick-71.wav',
-      'resources/samples/kicks/249267__netr_si__kick-70.wav',
-      'resources/samples/kicks/249268__netr_si__kick-73.wav',
-      'resources/samples/kicks/249269__netr_si__kick-72.wav',
-      'resources/samples/kicks/249270__netr_si__kick-79.wav',
-      'resources/samples/kicks/249271__netr_si__kick-78.wav',
-      'resources/samples/kicks/249272__netr_si__kick-43.wav',
-      'resources/samples/kicks/249273__netr_si__kick-44.wav',
-      'resources/samples/kicks/249274__netr_si__kick-45.wav',
-      'resources/samples/kicks/249275__netr_si__kick-46.wav',
-      'resources/samples/kicks/249276__netr_si__kick-47.wav',
-      'resources/samples/kicks/249277__netr_si__kick-48.wav',
-      'resources/samples/kicks/249278__netr_si__kick-49.wav',
-      'resources/samples/kicks/249279__netr_si__kick-5.wav',
-      'resources/samples/kicks/249280__netr_si__kick-50.wav',
-      'resources/samples/kicks/249281__netr_si__kick-51.wav',
-      'resources/samples/kicks/249282__netr_si__kick-60.wav',
-      'resources/samples/kicks/249283__netr_si__kick-6.wav',
-      'resources/samples/kicks/249284__netr_si__kick-59.wav',
-      'resources/samples/kicks/249285__netr_si__kick-58.wav',
-      'resources/samples/kicks/249286__netr_si__kick-57.wav',
-      'resources/samples/kicks/249287__netr_si__kick-56.wav',
-      'resources/samples/kicks/249288__netr_si__kick-55.wav',
-      'resources/samples/kicks/249289__netr_si__kick-54.wav',
-      'resources/samples/kicks/249290__netr_si__kick-53.wav',
-      'resources/samples/kicks/249291__netr_si__kick-52.wav',
+      'samples/kicks/249200__netr_si__kick-32.wav',
+      'samples/kicks/249201__netr_si__kick-33.wav',
+      'samples/kicks/249202__netr_si__kick-27.wav',
+      'samples/kicks/249203__netr_si__kick-28.wav',
+      'samples/kicks/249204__netr_si__kick-25.wav',
+      'samples/kicks/249205__netr_si__kick-26.wav',
+      'samples/kicks/249206__netr_si__kick-30.wav',
+      'samples/kicks/249207__netr_si__kick-31.wav',
+      'samples/kicks/249208__netr_si__kick-29.wav',
+      'samples/kicks/249209__netr_si__kick-3.wav',
+      'samples/kicks/249211__netr_si__kick-42.wav',
+      'samples/kicks/249212__netr_si__kick-41.wav',
+      'samples/kicks/249213__netr_si__kick-35.wav',
+      'samples/kicks/249214__netr_si__kick-34.wav',
+      'samples/kicks/249215__netr_si__kick-37.wav',
+      'samples/kicks/249216__netr_si__kick-36.wav',
+      'samples/kicks/249217__netr_si__kick-39.wav',
+      'samples/kicks/249218__netr_si__kick-38.wav',
+      'samples/kicks/249219__netr_si__kick-40.wav',
+      'samples/kicks/249220__netr_si__kick-4.wav',
+      'samples/kicks/249222__netr_si__kick-87.wav',
+      'samples/kicks/249223__netr_si__kick-9.wav',
+      'samples/kicks/249224__netr_si__kick-83.wav',
+      'samples/kicks/249225__netr_si__kick-84.wav',
+      'samples/kicks/249226__netr_si__kick-85.wav',
+      'samples/kicks/249227__netr_si__kick-86.wav',
+      'samples/kicks/249228__netr_si__kick-8.wav',
+      'samples/kicks/249229__netr_si__kick-80.wav',
+      'samples/kicks/249230__netr_si__kick-81.wav',
+      'samples/kicks/249231__netr_si__kick-82.wav',
+      'samples/kicks/249232__netr_si__kick-20.wav',
+      'samples/kicks/249233__netr_si__kick-2.wav',
+      'samples/kicks/249234__netr_si__kick-19.wav',
+      'samples/kicks/249235__netr_si__kick-18.wav',
+      'samples/kicks/249236__netr_si__kick-24.wav',
+      'samples/kicks/249237__netr_si__kick-23.wav',
+      'samples/kicks/249238__netr_si__kick-22.wav',
+      'samples/kicks/249239__netr_si__kick-21.wav',
+      'samples/kicks/249240__netr_si__kick-252.wav',
+      'samples/kicks/249241__netr_si__kick-251.wav',
+      'samples/kicks/249242__netr_si__kick-12.wav',
+      'samples/kicks/249243__netr_si__kick-11.wav',
+      'samples/kicks/249244__netr_si__kick-10.wav',
+      'samples/kicks/249245__netr_si__kick-1.wav',
+      'samples/kicks/249246__netr_si__kick-15.wav',
+      'samples/kicks/249247__netr_si__kick-14.wav',
+      'samples/kicks/249248__netr_si__kick-141.wav',
+      'samples/kicks/249249__netr_si__kick-13.wav',
+      'samples/kicks/249250__netr_si__kick-17.wav',
+      'samples/kicks/249251__netr_si__kick-16.wav',
+      'samples/kicks/249252__netr_si__kick-67.wav',
+      'samples/kicks/249253__netr_si__kick-68.wav',
+      'samples/kicks/249254__netr_si__kick-65.wav',
+      'samples/kicks/249255__netr_si__kick-66.wav',
+      'samples/kicks/249256__netr_si__kick-63.wav',
+      'samples/kicks/249257__netr_si__kick-64.wav',
+      'samples/kicks/249258__netr_si__kick-61.wav',
+      'samples/kicks/249259__netr_si__kick-62s.wav',
+      'samples/kicks/249260__netr_si__kick-69.wav',
+      'samples/kicks/249261__netr_si__kick-7.wav',
+      'samples/kicks/249262__netr_si__kick-75.wav',
+      'samples/kicks/249263__netr_si__kick-74.wav',
+      'samples/kicks/249264__netr_si__kick-77.wav',
+      'samples/kicks/249265__netr_si__kick-76.wav',
+      'samples/kicks/249266__netr_si__kick-71.wav',
+      'samples/kicks/249267__netr_si__kick-70.wav',
+      'samples/kicks/249268__netr_si__kick-73.wav',
+      'samples/kicks/249269__netr_si__kick-72.wav',
+      'samples/kicks/249270__netr_si__kick-79.wav',
+      'samples/kicks/249271__netr_si__kick-78.wav',
+      'samples/kicks/249272__netr_si__kick-43.wav',
+      'samples/kicks/249273__netr_si__kick-44.wav',
+      'samples/kicks/249274__netr_si__kick-45.wav',
+      'samples/kicks/249275__netr_si__kick-46.wav',
+      'samples/kicks/249276__netr_si__kick-47.wav',
+      'samples/kicks/249277__netr_si__kick-48.wav',
+      'samples/kicks/249278__netr_si__kick-49.wav',
+      'samples/kicks/249279__netr_si__kick-5.wav',
+      'samples/kicks/249280__netr_si__kick-50.wav',
+      'samples/kicks/249281__netr_si__kick-51.wav',
+      'samples/kicks/249282__netr_si__kick-60.wav',
+      'samples/kicks/249283__netr_si__kick-6.wav',
+      'samples/kicks/249284__netr_si__kick-59.wav',
+      'samples/kicks/249285__netr_si__kick-58.wav',
+      'samples/kicks/249286__netr_si__kick-57.wav',
+      'samples/kicks/249287__netr_si__kick-56.wav',
+      'samples/kicks/249288__netr_si__kick-55.wav',
+      'samples/kicks/249289__netr_si__kick-54.wav',
+      'samples/kicks/249290__netr_si__kick-53.wav',
+      'samples/kicks/249291__netr_si__kick-52.wav',
     ],
     presetInit() { this.length = 90 }
   }
@@ -84666,7 +84645,7 @@ const ignore = ['txt', 'md', 'git'];
 const addSamplerExtensions = function (Dilber) {
   Dilber.Audio.instruments.Sampler.list = function (dir = null) {
     // get current host
-    let url = location.protocol +'//' + location.host + '/resources/samples/';
+    let url = location.protocol +'//' + location.host + '/samples/';
     url += dir === null ? '' : '/' + dir;
  
     fetch(url)
@@ -84705,7 +84684,7 @@ const addSamplerExtensions = function (Dilber) {
         url = name;
       } else {
         // ... otherwise use dilber's standard locations
-        url = isDir ? '../resources/samples/' + name : './resources/samples/' + name;
+        url = isDir ? '../samples/' + name : './samples/' + name;
       }
 
       if (!isDir) {
@@ -84714,7 +84693,7 @@ const addSamplerExtensions = function (Dilber) {
         fetch(url).then(res => res.json()).then(data => {
           const filtered = data.filter(v => exts.indexOf(v.split('.').pop()) > -1);
           filtered.forEach(file => {
-            const url = `./resources/samples/${name}/${file}`; // different names for sampler / multisampler... sigh
+            const url = `./samples/${name}/${file}`; // different names for sampler / multisampler... sigh
 
             if (this.loadFile !== undefined) this.loadFile(url);else this.loadSample(url);
           });
