@@ -1,0 +1,47 @@
+{
+  "name": "gibber.audio.lib",
+  "version": "2.2.0",
+  "description": "standalone audio library from Gibber to use in node or in HTML documents",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/charlieroberts/gibber.audio.lib"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.0",
+    "codemirror": "^5.48.0",
+    "gulp": "^3.9.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-json-validator": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.0",
+    "serialize-javascript": "^1.5.0",
+    "tern": "^0.24.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "acorn": "^6.2.0",
+    "acorn-walk": "^6.2.0",
+    "gibberish-dsp": "latest",
+    "gibber.core.lib": "latest"
+  },
+  "bugs": {
+    "url": "https://github.com/charlieroberts/gibber.audio.lib/issues"
+  },
+  "main": "./js/audio.js",
+  "scripts": {
+    "link": "npm link gibberish-dsp genish.js gibber.core.lib"
+  },
+  "keywords": [
+    "audio",
+    "music",
+    "live coding",
+    "synthesis",
+    "sequencing",
+    "gibber"
+  ],
+  "author": "Charlie Roberts <charlie@charlie-roberts.com> (http://www.charlie-roberts.com/)",
+  "license": "MIT"
+}

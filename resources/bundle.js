@@ -85322,7 +85322,7 @@ module.exports = function() {
         ['samples', 'picksomesamples.js'],
         ['acid', 'acid.js'],
         ['moody', 'moody.js'],
-        //['geometry', 'meld.js']
+        ['geometry', 'meld.js']
       ]
     },
 
