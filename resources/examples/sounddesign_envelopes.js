@@ -1,32 +1,21 @@
 /* __--__--__--__--__--__--__--____
 
-sound design: envelopes, gain, and loudness
+Sound design: envelopes, gain, and loudness
    
-this tutorial looks at how enveloping
-works in dilber. The use of envelopes in
-dilber is opinionated... they affect
-everything from amplitude of instruments
-to how FM modulation and feedback is
-applied. The goal is for this envelope to affect
-the *perceptual* loudness of the instrument, as
-opposed to only affecting the amplitude.
-So, while many other systems only
-attach a primary envelope to amplitude,
-in dilber this single envelope is attached
-all over the place. This helps sounds in
-dilber have greater timbral changes over
-the course of each individual note, at the
-expense of some loss of control; for example,
-other systems might enable you to attach
-different envelopes to control the amplitude
-vs. the filter cutoff frequency. In dilber
+This tutorial looks at how enveloping works in dilber. The use of envelopes in
+dilber is opinionated... they affect everything from amplitude of instruments
+to how FM modulation and feedback is applied. The goal is for this envelope to affect
+the *perceptual* loudness of the instrument, as opposed to only affecting the amplitude.
+So, while many other systems only attach a primary envelope to amplitude,
+in dilber this single envelope is attached all over the place. This helps sounds in
+dilber have greater timbral changes over the course of each individual note, at the
+expense of some loss of control; for example, other systems might enable you to attach
+different envelopes to control the amplitude vs. the filter cutoff frequency. In dilber
 these are all controlled by a single envelope.
     
 ** __--__--__--__--__--__--__--__*/
 
-// In the sound design:oscillators tutorial we
-// saw how our basic synth has an envelope attached
-// to it.
+// In the sound design:oscillators tutorial we saw how our basic synth has an envelope attached to it.
 
 s = Synth().note(0)
 
@@ -147,8 +136,3 @@ s.loudness.fade( 0, null, 4 )
 // by the end of the fade the two examples are identical,
 // but in the second example the sound gradually gets brighter
 // as the fade advances.
-
-// OK, you should hopefully have a pretty good understanding how
-// enveloping works in dilber, and how you can use the loudness and
-// gain properties to control perceptual loudness vs the output strength
-// of an instrument. Next up is an in depth discussion of filters.

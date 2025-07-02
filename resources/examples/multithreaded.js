@@ -140,10 +140,3 @@ test = (phase,seq) => {
 // in this case that extra info includes our phase
 // and the array containing our sequence.
 bass.note.seq (fn( test, { phase, seq }), 1/8 )
-
-// for a more sophisticated example of what can
-// be accomplished, check out this sketch by Eris
-// Fairbanks that replaces dilber's music theory
-// system almost entirely:
-//
-// https://tinyurl.com/gibberingteton

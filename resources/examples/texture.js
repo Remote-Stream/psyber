@@ -1,23 +1,17 @@
 /* __--__--__--__--__--__--__--____
 
-textures
+Textures
    
-Dilber lets you use textures in a
-number of different ways, from presets
-to defining your own GLSL shader 
-code.
+Dilber lets you use textures in a number of different ways, from presets
+to defining your own GLSL shader code.
 
 ** __--__--__--__--__--__--__--__*/
 
-// Textures are added using the
-// .texture() method, which can
-// be applied to any geometry.
+// Textures are added using the .texture() method, which can be applied to any geometry.
 
 Sphere().texture( 'truchet' ).render()
 
-// once a texture has been created, we
-// can then access it through the 
-// texture function:
+// once a texture has been created, we can then access it through the  texture function:
 
 s = Sphere().texture( 'truchet' ).render()
 
@@ -27,9 +21,7 @@ s.texture.scale = 20
 // texture properties can be sequenced
 s.texture.scale.seq( [5,10,20,50], 1/2 )
 
-// other textures presets to play with 
-// include 'dots', 'checkers', 'zigzag',
-// and 'stripes'
+// other textures presets to play with  include 'dots', 'checkers', 'zigzag', and 'stripes'
 
 Union2(
   b = Box(.75).texture('dots', { radius:.5 }),

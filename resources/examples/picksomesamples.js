@@ -1,11 +1,8 @@
-// this demos uses multisamplers (see the tutorial
-// for more info) and the delays that can be attached
-// to sequencing (the fourth argument to any .seq call) 
-// to gradually build up over time. It begins by fading
-// in the bass / clave, and then gradually introduces other
+// This demo uses multisamplers and the delays that can be attached to sequencing (the fourth argument to any .seq call) 
+// to gradually build up over time. It begins by fading in the bass / clave, and then gradually introduces other
 // instruments and transforms various patterns in use.
  
-// select all and hit control+enter to run, or hit
+// Select all and hit Control+Enter to run, or hit
 // alt (option on mac) + enter
  
 verb = Reverb( 'space' ).bus() 

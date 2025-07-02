@@ -1,42 +1,28 @@
 /* Sampler Tutorial
 **
-** First, we'll note that both the Freesound
-** and the Drums objects use Samplers behind
-** the scenes, so if you've played with Dilber
-** a bit you've probably been using Samplers
-** without realizing it. Samplers enable you to
-** load a audiofile from a webserver and then
-** play it back at different speeds. The
-** Multisampler object enables you to load a 
-** bunch of different samples, and then select
-** the sample that you'd like to trigger on a
-** per-note basis.
+** First, we'll note that both the Freesound and the Drums objects use Samplers behind
+** the scenes, so if you've played with Dilber a bit you've probably been using Samplers
+** without realizing it. Samplers enable you to load a audiofile from a webserver and then
+** play it back at different speeds. The Multisampler object enables you to load a 
+** bunch of different samples, and then select the sample that you'd like to trigger on a per-note basis.
 **
-** While there are some samples sitting on 
-** Dilber's server for you to use, you'll
-** probably eventually want to experiment with
-** your own samples. To do this, you need a 
-** web server. If you're comfortable with
-** JavaScript, I recommend using http-server:
+** While there are some samples sitting on local Dilber's folder for you to use, you'll
+** probably eventually want to experiment with your own sample server. To do this, you need a 
+** web server. If you're comfortable with JavaScript, I recommend using http-server:
 **
 ** https://github.com/indexzero/http-server
 **
-** You need to turn on the CORS feature to
-** load samples from a different server than
-** you're loading Dilber from. You could run it
-** like so after installation:
+** You need to turn on the CORS feature to load samples from a different server than
+** you're loading Dilber from. You could run it like so after installation:
 **
 ** http-server pathToYourSampleDirectory -p 8080 --cors true
 **
-** This starts the server on port 8080. Now to
-** load a file (assuming its in the directory
-** you specified above):
+** This starts the server on port 8080. Now to load a file (assuming its in the directory you specified above):
+** s = Sampler('http://127.0.0.1:8080/yourSammpleName.wav')
 */
 
-/* Great! When you call .note on a Sampler, it
-** doesn't use the default tuning system in
-** dilber, instead it controls the rate the
-** sample is played back at. 
+/* Great! When you call .note on a Sampler, it doesn't use the default tuning system in
+** Dilber, instead it controls the rate the sample is played back at. 
 */
 
 // let's try a sample that works well in reverse

@@ -1,8 +1,6 @@
-/* fractal fun
- * this demo maps glitch sounds from the freesound database
- * to control geometric parameters (including the folding
- * of a Mandelbulb fractal) and two post-processing effects.
- * use ctrl+h to hide / unhide the code for better viewing.
+/* fractals
+ * this demo maps glitch sounds from the freesound database to control geometric parameters (including the folding
+ * of a Mandelbulb fractal) and two post-processing effects. Use CTRL+H to hide / unhide the code for better viewing.
 */ 
  
 // create blur and inversion post-processing fx.

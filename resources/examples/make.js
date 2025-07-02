@@ -1,20 +1,13 @@
 /* __--__--__--__--__--__--__--____
 
-making synths 
+Making your own synths 
 
-It will be helpful if you've gone
-through the arpeggio tutorial and
-know a bit about genish to understand
-this tutorial. All synths in Dilber
-are made using genish, which is in
-turn wrapped by Gibberish... however,
-for this tutorial we'll skip using
-Gibberish so we can focus on one
-library at a time. We'll make
-a sine oscillator with vibrato,
-where we can sequence frequency,
-modulation frequency, and modulation
-depth.
+It will be helpful if you've gone through the arpeggio tutorial and
+know a bit about genish to understand this tutorial. All synths in Dilber
+are made using genish, which is in turn wrapped by Gibberish... however,
+for this tutorial we'll skip using Gibberish so we can focus on one
+library at a time. We'll make a sine oscillator with vibrato,
+where we can sequence frequency, modulation frequency, and modulation depth.
     
 ** __--__--__--__--__--__--__--__*/
 
@@ -27,9 +20,6 @@ depth.
 // 3. Create instances using the 
 //    constructor
 
-// Let's start with our definition,
-// and keep it simple with a straight
-// sine oscillator at first.
 
 def = {
   name:'Sine',
@@ -43,7 +33,6 @@ def = {
     // a wavetable of a single cycle of a sine
     // tone.
     const graph = gen.cycle( 220 )
-    
     return graph
   }
 }
@@ -134,8 +123,3 @@ sine.gain.fade( 0, .2, 8 )
 
 sine.modDepth = 40
 sine.modFrequency = 8
-
-// more to come! but take a trip
-// to the genish playground if you're interested
-// continuing immediately.
-// http://charlie-roberts.com/genish

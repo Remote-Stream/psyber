@@ -2,18 +2,16 @@
 
 Fun with Freesound
 
-The Freesound object is a Sampler that 
-can query the freesound.org database 
-and download samples from it. The console 
-will give you messages about the querying
-and downloading progress. You can query 
-the Freesound database in a number of ways.
+The Freesound object is a Sampler that can query the freesound.org database 
+and download samples from it. The console will give you messages about the querying
+and downloading progress. You can query the Freesound database in a number of ways.
     
 ** __--__--__--__--__--__--__--__*/
 
 // download a specific sound identified by an id number obtained from the 
 // freesound.org website. For example, this next sound is taken from here:
 // http://www.freesound.org/people/RealRhodesSounds/sounds/4048/
+
 Clock.bpm = 90
 a = Freesound( 4048 )
 

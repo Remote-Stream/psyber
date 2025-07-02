@@ -1,17 +1,13 @@
 /* __--__--__--__--__--__--__--____
 
-randomness
+Randomness
 
-there's a few different ways to get
-randomness in dilber, whether you're
-working with sequences or signals.
+There's a few different ways to get randomness in dilber, whether you're working with sequences or signals.
     
 ** __--__--__--__--__--__--__--__*/
 
-// first, you can randomly pick 
-// elements of array-based patterns
-// by adding .rnd() to the end of the
-// array.
+// First, you can randomly pick elements of array-based patterns
+// by adding .rnd() to the end of the array.
 
 s = Synth('bleep').note.seq( [0,1,2,3].rnd(), 1/8 )
 

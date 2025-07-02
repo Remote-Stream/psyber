@@ -1,30 +1,20 @@
 /* __--__--__--__--__--__--__--____
 
-tutorial #6: modulation
+Modulation
    
-This looks at ways to perform
-modulation on both audio and visual
-parameters. It begins by using the
-lfo() function, and then discusses
-using lower-level gen() functions
-as well.
+This looks at ways to perform modulation on both audio and visual
+parameters. It begins by using the lfo() function, and then discusses
+using lower-level gen() functions as well.
 
 ** __--__--__--__--__--__--__--__*/
 
-// Modulation typically implies
-// continuously changing a value
-// over time. In the worlds of both
-// audio and visual synthesis, a 
-// common synthesis technique is to
-// use a "low-frequency oscillator",
-// that is, an oscillator with a 
-// frequency that is below audio rate.
+// Modulation typically implies continuously changing a value
+// over time. In the worlds of both audio and visual synthesis, a 
+// common synthesis technique is to use a "low-frequency oscillator",
+// that is, an oscillator with a frequency that is below audio rate.
 
-// In Dilber the lfo function takes the
-// form: waveform, frequency, gain, bias
-
-// For example, here is a sine wave applied
-// to the size of a box:
+// In Dilber the lfo function takes the form: waveform, frequency, gain, bias
+// For example, here is a sine wave applied to the size of a box:
 
 b = Box().render()
 b.size = lfo( 'sine', .5, .5, 1 )
@@ -91,6 +81,3 @@ mod2 = gen( cycle( beats(8)*20 )* 20 )
 mod2.connect( s2.frequency )
  
 s2.note.seq( [0,2,4,5], 1/4 )
-
-// learning more about genish will be helpful if
-// you want to create these types of custom modulations.

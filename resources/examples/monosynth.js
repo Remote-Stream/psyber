@@ -1,38 +1,24 @@
 /* __--__--__--__--__--__--__--____
 
-sound design: the monosynth
+Sound design: the monosynth
    
-having previously covered features that are common 
-across most synths in dilber (oscillators,
-envelopes, and filters) this tutorial will
-discuss the features/properties that make the Monosynth
-unique.
+Having previously covered features that are common across most synths in dilber (oscillators,
+envelopes, and filters) this tutorial will discuss the features/properties that make the Monosynth unique.
     
 ** __--__--__--__--__--__--__--__*/
 
-// let's start with the Monosynth, which has
-// perhaps the easiest extra properties to
-// understand. The name "monosynth" takes its
-// cue from classic analog synthesizers that
-// created giant sounds by stacking oscillators,
-// but only for a single note (think of almost
-// every Moog from the 70s). In dilber, each
-// Monosynth has three oscillators that can
-// be detuned to create different effects.
+// The name "monosynth" takes its cue from classic analog synthesizers that
+// created giant sounds by stacking oscillators, but only for a single note (think of almost
+// every Moog from the 70s). In dilber, each Monosynth has three oscillators that can be detuned to create different effects.
 //
-// detune2 tunes the second oscillator, while
-// detune3 tunes the third. The frequency of
-// oscillators 2 & 3 are determined by the
+// detune2 tunes the second oscillator, while detune3 tunes the third. The frequency of oscillators 2 & 3 are determined by the
 // following formula:
 //
 // frequency = oscillator1.frequency + (oscillator1.frequency * detuneValue)
 //
-// So if our main oscillator has a frequency of
-// 220, our detune2 value is 1 and our detune3 value
-// is -.5, we'll get oscillators running at frequencies
-// of 110, 220, and 440. When you double the frequency
-// of an oscillator you perceptually raise it by an octave,
-// so these three frequencies are all separated by an octave.
+// So if our main oscillator has a frequency of 220, our detune2 value is 1 and our detune3 value
+// is -.5, we'll get oscillators running at frequencies of 110, 220, and 440. When you double the frequency
+// of an oscillator you perceptually raise it by an octave, so these three frequencies are all separated by an octave.
 
 m = Monosynth({ 
   detune2:-.5, detune3:1, antialias:true, octave:-1

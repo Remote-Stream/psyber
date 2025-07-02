@@ -1,19 +1,15 @@
 /* __--__--__--__--__--__--__--____
 
-using scales / tunings
+Using scales / tunings
    
-this tutorial looks at how to use
-scales and microtonality in Dilber,
-powered by the fantastic tune.js
-library by Andrew Bernstein and Ben
-Taylor.
+this tutorial looks at how to use scales and microtonality in Dilber,
+powered by the fantastic tune.js library by Andrew Bernstein and Ben Taylor.
 
 http://abbernie.github.io/tune/
     
 ** __--__--__--__--__--__--__--__*/
 
-// By default Dilber plays scales in A minor,
-// starting in the 4th octave.
+// By default Dilber plays scales in A minor, starting in the 4th octave.
 
 s = Synth('square.perc')
 s.note.seq( [0,1,2,3,4,5,6,7,8,9,10,11,12], 1/16 )

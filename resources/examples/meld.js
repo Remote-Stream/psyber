@@ -1,7 +1,5 @@
-// a short demo of classic raymarching
-// melding effects. Three rings and a
-// plane, melting into each other. The
-// rings use a stairs transition to 
+// A short demo of classic raymarching melding effects. Three rings and a
+// plane, melting into each other. The rings use a stairs transition to 
 // generate steps where they merge.
  
 s1 = Torus82().material('red')

@@ -1,20 +1,15 @@
 /* __--__--__--__--__--__--__--____
 
-polyphony & voices
+Polyphony & voices
     
-Most synths in Dilber can only play
-one note at a time; they are 
-monophonic. This tutorial describes
-special features / considerations
-for Dilber's polyphonic synths,
-currently PolySynth, PolyFM, PolyComplex,
+Most synths in Dilber can only play one note at a time; they are 
+monophonic. This tutorial describes special features / considerations
+for Dilber's polyphonic synths, currently PolySynth, PolyFM, PolyComplex,
 PolyConga, PolyMono, and the Multisampler.
 
 ** __--__--__--__--__--__--__--__*/
 
-// Let's start by using the PolySynth
-// from the opening demo, with some 
-// minor modifications.
+// Let's start by using the PolySynth from the opening demo, with some  minor modifications.
 Clock.bpm = 140
   
 verb = Reverb.space.bus()

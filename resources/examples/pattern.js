@@ -1,21 +1,14 @@
 /* __--__--__--__--__--__--__--____
 
-tutorial #4: patterns
+Patterns
 
-Please do the sequencer tutorial 
-before this one.
+Please do the sequencer tutorial before this one.
 
-Any time you use a call to .seq, the 
-underlying data is converted into two 
-*patterns*. One pattern stores *values* 
-that the sequence outputs. The other pattern
-stores *timings* that determine when 
-these values are outputted. You can 
-perform various operations on these 
-patterns, such as inverting them, 
-rotating them, reversing them, storing 
-them and recalling them. These actions 
-can be sequenced.
+Any time you use a call to .seq, the underlying data is converted into two 
+*patterns*. One pattern stores *values* that the sequence outputs. The other pattern
+stores *timings* that determine when these values are outputted. You can 
+perform various operations on these patterns, such as inverting them, 
+rotating them, reversing them, storing them and recalling them. These actions can be sequenced.
 
 ** __--__--__--__--__--__--__--__*/
 

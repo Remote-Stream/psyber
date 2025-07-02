@@ -1,6 +1,6 @@
 /* __--__--__--__--__--__--__--____
 
-sound design: filters
+Sound design: filters
    
 There are currently four different filter models available in Dilber. 
 While the first two are only lowpass, the SVF and biquad come with multiple
@@ -111,7 +111,6 @@ s.saturation = 2
 
 s.Q = .9
 
-// this saturated sound is a classic part of
-// acid house.
+// this saturated sound is a classic part of acid house.
 
 

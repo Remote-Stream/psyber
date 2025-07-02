@@ -3,30 +3,17 @@
 
 using hydra in dilber
    
-hydra is an amazing system for (mostly)
-2D graphics, primarily inspired by analog
-video synthesizers, and created by 
-Olivia Jack. You can play with it at:
+Hydra Video Synth is an amazing system for (mostly) 2D graphics, primarily inspired by analog
+video synthesizers, and created by Olivia Jack. You can play with it at:
 
 https://hydra.ojack.xyz
 
-we can "inject" hydra into dilber using
-the use() function, which will then 
-download hydra and run it inside of dilber.
-this tutorial gives the details on how to
-do that and some tricks for "listening" to
-dilber's musical instruments. For more info
+We can "inject" hydra into dilber using the use() function, which will then 
+download hydra and run it inside of dilber. This tutorial gives the details on how to
+do that and some tricks for "listening" to dilber's musical instruments. For more info
 on hydra itself, see the hydra website.
 
 ** __--__--__--__--__--__--__--__*/
-
-// to load hydra up we need to tell dilber
-// use the external file. the use() function
-// returns a JavaScript promise that yields
-// the hydra constructor. You don't really
-// need to care about what that means... just
-// run the following line of code to start hydra
-// in dilber:
 
 use( 'hydra' ).then( init => init() )
 

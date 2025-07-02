@@ -1,28 +1,18 @@
 /* __--__--__--__--__--__--__--____
 
-using p5.js in dilber
+Using p5.js in dilber
    
-p5 is an extremely popular system for
-2D graphics. You can learn about it at:
+p5 is an extremely popular system for 2D graphics. You can learn about it at:
 
 https://p5js.org
 
-we can "inject" p5 into dilber using
-the use() function, which will then 
-download p5 and run it inside of dilber.
-this tutorial gives the details on how to
-do that and some tricks for "listening" to
-dilber's musical instruments. Many of the
-concepts here are similar to how use use
-Hydra in dilber (see the associated
-tutorial), but there's one or two
-important differences to be aware of.
+We can "inject" p5 into dilber using the use() function, which will then 
+download p5 and run it inside of dilber. This tutorial gives the details on how to
+do that and some tricks for "listening" to dilber's musical instruments. Many of the
+concepts here are similar to how use use Hydra in dilber (see the associated
+tutorial), but there's one or two important differences to be aware of.
 
 ** __--__--__--__--__--__--__--__*/
-
-// to load p5 we need to tell dilber
-// use the external file. the use() function
-// handles this for us.
 
 use( 'p5' )
 

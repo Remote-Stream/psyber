@@ -1,13 +1,10 @@
 /* __--__--__--__--__--__--__--____
 
-audiovisual mapping
+Audiovisual mapping
     
-In this tutorial we look at how to
-use audio objects to control visual
-parameters. Unlike most systems
-Dilber gives you the ability to assign
-individual instruments to visual
-output for greater control.
+In this tutorial we look at how to use audio objects to control visual
+parameters. Unlike most systems Dilber gives you the ability to assign
+individual instruments to visual output for greater control.
     
 ** __--__--__--__--__--__--__--__*/
 

@@ -1,29 +1,22 @@
 /* __--__--__--__--__--__--__--____
 
-sound design: oscillators
+Sound design: oscillators
    
-the sound design tutorials look at how to create
-your own sounds, or "presets", in dilber. This
-first tutorial covers oscillators, the raw materials
-for all non-sampled-based instruments in dilber.
+The sound design tutorials look at how to create your own sounds, or "presets", in dilber. This
+first tutorial covers oscillators, the raw materials for all non-sampled-based instruments in dilber.
     
 ** __--__--__--__--__--__--__--__*/
 
-// the most basic instrument in dilber is the Synth.
-// if you run the line below, and then type s.
-// (s followed by a period) you should see a list of all
+// The most basic instrument in dilber is the Synth.
+// if you run the line below, and then type s (s followed by a period) you should see a list of all
 // the various properties/functions associated with the synth.
 // Try this now.
 
 s = Synth()
 
-// quite a list! hopefully after this tutorial series we'll understand
-// what each of these is responsible for. instruments/presets 
-// are basically a collection of settings for these properties. 
-// For example, the default Synth in dilber comes with a low-pass
-// filter enabled, a sawtooth oscillator, and a half-second
-// envelope among other characteristics. You can hear what
-// that sounds like:
+// Quite a list! hopefully after this tutorial series we'll understand what each of these is responsible for. instruments/presets 
+// are basically a collection of settings for these properties. For example, the default Synth in dilber comes with a low-pass
+// filter enabled, a sawtooth oscillator, and a half-second envelope among other characteristics. You can hear what that sounds like:
 
 Synth().note(0)
 
@@ -80,16 +73,9 @@ s.pulsewidth = .5
 s.decay = 1
 s.pulsewidth = gen( .25 + cycle(.25) * .24 )
 
-  // you can hear that  pulsewidth oscillator can create a wide variety of sounds.
-// fun to experiment with!
+// you can hear that  pulsewidth oscillator can create a wide variety of sounds.
 
-// one last important aspect of oscillators... whether or not they are
-// "anti-aliased". A full description of anti-aliasing is beyond the scope
-// of this tutorial; if you're interested I highly recommend checking out
-// this interactive essay by Jack Shaedler: 
-// https://jackschaedler.github.io/circles-sines-signals/index.html
-
-// tldr: due to digital audio limitations, basic oscillators will introduce
+// Due to digital audio limitations, basic oscillators will introduce
 // distortion that will become especially noticable when using higher notes.
 // let's compare:
 
@@ -113,7 +99,3 @@ s.antialias = true
 // trigger low notes, by the time overtones reach frequencies where
 // aliasing occurs the high frequencies are so quiet that the
 // effect can be hard to hear.
-
-// Next up, we'll talk about envelopes, which not only shape
-// the volume of dilber instruments, but also control filter settings,
-// FM settings and more.

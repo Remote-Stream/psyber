@@ -1,33 +1,24 @@
 /* __--__--__--__--__--__--__--____
 
-tutorial #5: tidal
+Tutorial #5: tidal
 
-TidalCycles is a fantastic DSL for 
-sequencing pattern. In Dilber (and
-some other live coding systems),
-standard sequencing is done by 
-separating the output of patterns
-from their timing. In Tidal, they're
-tightly coupled. Both methods have
-their uses.
+TidalCycles is a fantastic DSL for sequencing pattern. In Dilber (and
+some other live coding systems), standard sequencing is done by 
+separating the output of patterns from their timing. In Tidal, they're
+tightly coupled. Both methods have their uses.
 
 ** __--__--__--__--__--__--__--__*/
 
-// The Tidal mini-notation is the
-// preferred way to do drum sequencing
-// in Dilber. The sample-based drum
-// player has four drums: kick drum(kd),
-// snare drum(sd), closed hihat(ch), 
-// and open hihat(oh).
+// The Tidal mini-notation is the preferred way to do drum sequencing
+// in Dilber. The sample-based drum player has four drums: kick drum(kd),
+// snare drum(sd), closed hihat(ch), and open hihat(oh).
 
 drums = Drums()
 
-// in the example below, we play
-// one kick drum per 'cycle'
+// in the example below, we play one kick drum per 'cycle'
 drums.tidal( 'kd' )
 
-// split a cycle into one kick drum
-// and one snare drum
+// split a cycle into one kick drum and one snare drum
 drums.tidal( 'kd sd' )
 
 // repeat, each drum gets a 1/4
@@ -53,8 +44,7 @@ drums.tidal( 'kd/2' )
 // pattern to alternate which member is played.
 drums.tidal( '< kd sd kd oh > ch*2' )
 
-// we can use commas inside of [] to play multiple 
-// sounds at once
+// we can use commas inside of [] to play multiple sounds at once
 drums.tidal( '< kd sd kd [oh,kd] > ch*2' )
 
 // it doesn't have to be individual sounds...

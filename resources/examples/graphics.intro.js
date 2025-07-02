@@ -1,22 +1,17 @@
 /* __--__--__--__--__--__--__--____
 
-intro to graphics in dilber
+intro to graphics in Dilber
    
-Graphics in Dilber are created using
-marching.js, a ray-marching library:
+Graphics in Dilber are created using marching.js, a ray-marching library:
 
 http://charlie-roberts.com/marching
 
-Ray marching lets us do interesting 
-volumetric effects that are difficult
-with "regular" 3D graphics libraries.
+Ray marching lets us do interesting  volumetric effects that are difficult with "regular" 3D graphics libraries.
     
 ** __--__--__--__--__--__--__--__*/
 
-// Marching.js enables easy constructive
-// solid geometry (CSG). At its simplest, 
-// this means adding and subtracting shapes. 
-// For example, we can render a box:
+// Marching.js enables easy constructive solid geometry (CSG). At its simplest, 
+// this means adding and subtracting shapes. For example, we can render a box:
 
 Graphics.quality = 'low' // or 'med' or 'high
 b = Box().render()

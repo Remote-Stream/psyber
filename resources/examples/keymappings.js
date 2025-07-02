@@ -2,10 +2,8 @@
 /*--md
 # Key mappings
    
-This tutorial-that-is-not-really-a-tutorial
-just lists all the various keystroke mappings
-in dilber and provides explanations as needed.
-In macOS, replace any `Alt` keys with `Option`.
+This tutorial-that-is-not-really-a-tutorial just lists all the various keystroke mappings
+in dilber and provides explanations as needed. In macOS, replace any `Alt` keys with `Option`.
 
 ## Running Code 
 (also see running/stopping code tutorial)

@@ -2,13 +2,9 @@
 /*--md
 # Basic sequencing
 
-This tutorial will provide an introduction to 
-sequencing in dilber. Dilber lets you sequence 
-calls to most methods of audiovisual objects 
-as well as changes to any of their properties, 
-just by adding .seq to the method or property name,
-and specifying *timings* for when the sequence
-should fire.
+This tutorial will provide an introduction to do sequencing in Dilber. Dilber lets you sequence 
+calls to most methods of audiovisual objects as well as changes to any of their properties, 
+just by adding .seq to the method or property name, and specifying *timings* for when the sequence should fire.
 --*/
 
 // send note message with value 0

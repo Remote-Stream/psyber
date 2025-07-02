@@ -1,14 +1,11 @@
 /* __--__--__--__--__--__--__--____
 
-advanced concepts: pattern filters
+Pattern filters
 
-Please do the pattern and sequencing
-tutorials before this one.
+Please do the pattern and sequencing tutorials before this one.
 
-dilber lets you defined "filters" that
-you can apply to patterns to transform
-their output in various ways. We can use
-filters to repeat values in patterns,
+Dilber lets you defined "filters" that you can apply to patterns to transform
+their output in various ways. We can use filters to repeat values in patterns,
 scale them, and create other effects.
 
 ** __--__--__--__--__--__--__--__*/

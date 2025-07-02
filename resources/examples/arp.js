@@ -2,7 +2,7 @@
 verb = Reverb.space.bus() 
 syn = Monosynth( 'shinybass' ).connect( verb, .25 )
 
-// OK, let's make a really slow moving ramp. We
+// Let's make a really slow moving ramp. We
 // can do this in gen using the accum() function.
 // The accum function increments a number every sample
 // by an amount that you pass as its first parameter,
@@ -76,6 +76,6 @@ syn.note.seq( arp  , 1/16 )
 arp.p1.seq( [1,2,4], [1/2,1] )
 arp.p3.seq( [16,24,32], [1,2] )
 
-// and just to get things a little closer to the video...
+// and just to get things funkier
 Theory.degree.seq( ['I','-VII'], 8 )
 syn.glide = 250

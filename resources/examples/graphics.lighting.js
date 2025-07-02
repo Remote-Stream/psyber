@@ -1,27 +1,19 @@
 /* __--__--__--__--__--__--__--__--
 
-By default, marching.js uses a
-lighting system consisting of a
-skydome(fill), a single front light,
-and a back light. This lighting
-system includes ambient occlusion
-and basic shadows, as taken from
+By default, marching.js uses a lighting system consisting of a
+skydome(fill), a single front light, and a back light. This lighting
+system includes ambient occlusion and basic shadows, as taken from
 this demo by Inigo Quilez:
 
 https://www.shadertoy.com/view/Xds3zN
 
-However, each Material in marching.js
-can uses its own lighting algorithm.
-In the example below, the left sphere and
-the ground plane use the default lighting
-algorithm while the right sphere uses
-the normal for each pixel to determine 
-its color.
+However, each Material in marching.js uses its own lighting algorithm.
+In the example below, the left sphere and the ground plane use the default lighting
+algorithm while the right sphere uses the normal for each pixel to determine its color.
 
 ** __--__--__--__--__--__--__--__*/
 
-// we'll use high quality graphics for
-// this tutorial with no animation
+// we'll use high quality graphics for  this tutorial with no animation
 Graphics.quality = 'high'
 Graphics.animate = false
 
