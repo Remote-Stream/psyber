@@ -4,6 +4,13 @@
   font-weight:bold;
 }
 
+#savebtn {
+  margin-right: 30px;
+}
+#loadbtn {
+  margin-left: 0px;
+}
+
 .markdown h2 { 
   font-size:.9rem;
   margin:0;
