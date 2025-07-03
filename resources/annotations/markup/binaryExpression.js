@@ -5,7 +5,7 @@ module.exports = function( Marker ) {
   const BinaryExpression = function( patternNode, state, seq, patternType,container=null, index=0 ) {
     if( patternNode.processed === true ) return 
     const cm = state.cm
-    const seqTarget = seq.target //XXX in gibberwocky this was seq.object
+    const seqTarget = seq.target 
     const patternObject = seq[ patternType ]
     if( patternObject === null ) return 
     const [ className, start, end ] = Marker._getNamesAndPosition( patternNode, state, patternType, index )

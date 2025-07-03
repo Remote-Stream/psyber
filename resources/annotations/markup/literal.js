@@ -5,7 +5,7 @@ module.exports = function( Marker ) {
     if( patternNode.processed === true ) return 
 
     const cm = state.cm
-    const seqTarget = seq.target // XXX seq.object for gibberwocky
+    const seqTarget = seq.target 
     const patternObject = seq[ patternType ]
     if( patternObject === null || patternObject == undefined ) return
 

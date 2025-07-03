@@ -11,7 +11,7 @@ module.exports = function( Marker ) {
     if( node.processed === true ) return 
 
     const cm       = state.cm,
-          target   = tidal.target, // XXX seq.object for gibberwocky
+          target   = tidal.target, 
           pattern  = tidal.__pattern,
           markers  = {},
           line     = node.loc.start.line - 1 + node.offset.vertical,

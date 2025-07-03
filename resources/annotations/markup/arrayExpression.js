@@ -9,7 +9,7 @@ module.exports = function( Marker ) {
     if( patternNode.processed === true ) return 
 
     const cm = state.cm
-    const target = seq.target // XXX in gibberwocky this was seq.object
+    const target = seq.target 
     const patternObject = seq[ patternType ]
     const [ patternName, start, end ] = Marker._getNamesAndPosition( patternNode, state, patternType, index )
     const cssName = patternName 
