@@ -80,7 +80,7 @@ code {
   #reference { display:none } 
 }
 @media only screen and (max-width: 615px) {
-  #sharebtn, #connect, #restart { display:none } 
+  #sharebtn, #connect, #restart, #midiOutputSelect, #version { display:none } 
 }
 @media only screen and (max-width: 400px) {
   #themer { display:none } 
