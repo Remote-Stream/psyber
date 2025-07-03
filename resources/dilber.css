@@ -2,7 +2,13 @@
   display:block; 
   color:var(--f_high);
   font-weight:bold;
- 
+}
+
+#midiOutputSelect{
+  width: 118px;
+  color: #eae4e4;
+  background-color: #222;
+  border: 1px solid #ccc;
 }
 
 #restart { margin-right: 20px;} 
@@ -369,7 +375,9 @@ li.CodeMirror-hint-active {
   cursor: ew-resize
 }
 #sidebar {
-  display:inline-block;
+  display: none;
+  position: fixed;
+  left: 86%;
   width:35%;
   float:right;
   height:100%;
@@ -568,7 +576,7 @@ span.tidalblock {
   transition-delay: 0s;
 }
 
-/*
+
 #console { 
   width:100%;
   overflow:scroll;

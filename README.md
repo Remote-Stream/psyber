@@ -13,6 +13,7 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 - Camera control <i>(WASD, arrows)</i>
 - P2P realtime collaboration with shared editor and chat
 - Saving and loading your dilber files from computer
+- MIDI out for your external or hardware synths
 
 ## How to start
 1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
@@ -29,6 +30,7 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 
 ## Changes
 ```
+- MIDI out support - controll your external synths with Dilber via WebMIDI
 - Folder structure:
   ./docs
   ./samples    <-- your samples go here
