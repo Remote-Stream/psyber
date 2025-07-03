@@ -1,8 +1,6 @@
 # Dilber | live audio-visual coding environment in Javascript for the browser
 ![demo](resources/images/demo.png)
 
-Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved with bug fixes and additional features.
-
 ## Features
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
 - Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [3D Raymarching](https://github.com/charlieroberts/gibber.graphics.lib)
@@ -15,7 +13,7 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
 
-## How to start
+## Where to start
 1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
 
 2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
@@ -27,6 +25,8 @@ Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, i
 'Ctrl + .' - stop all
  # You can also use Ctrl+A to select all then press Ctrl+Enter to run
 ```
+
+Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved with bug fixes and additional features.
 
 ## Changes
 ```
