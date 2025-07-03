@@ -26,7 +26,7 @@
  # You can also use Ctrl+A to select all then press Ctrl+Enter to run
 ```
 
-Dilber is a fork of [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved with bug fixes and additional features.
+Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved with bug fixes and additional features.
 
 ## Changes
 ```
