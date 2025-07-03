@@ -4,6 +4,11 @@
   font-weight:bold;
 }
 
+.version {
+  font-size: 12px;
+  padding-left: 25px;
+}
+
 #midiOutputSelect{
   width: 118px;
   color: #eae4e4;
