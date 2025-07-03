@@ -1,5 +1,12 @@
 # Dilber | live audio-visual coding environment in Javascript for the browser
 ![demo](resources/images/demo.png)
+## Video
+
+
+
+https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
+
+
 
 ## Features
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
