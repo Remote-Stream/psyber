@@ -11143,8 +11143,6 @@ Pattern.prototype.pianoroll = function ({
   return this;
 };
 
-//logger("\uD83C\uDF00 @strudel.cycles/core loaded \uD83C\uDF00");
-
 if (globalThis._strudelLoaded) {
   console.warn(`@strudel.cycles/core was loaded more than once...
 This might happen when you have multiple versions of strudel installed. 
