@@ -19,6 +19,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Play with friends: P2P realtime collaboration with shared editor and chat
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
+- Render canvas to video with rec() command
 
 ## Where to start
 1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
@@ -51,6 +52,7 @@ Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), stabilized, im
 - Improved error catching and logging
 - Fixed audio when switching between examples
 - Added missing sounds from examples
+- Added rec(param) command to record canvas in video mode
 ```
 
 ## Where to find out more

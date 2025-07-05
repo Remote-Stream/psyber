@@ -46,3 +46,5 @@ Repeat(
   Sphere( .25 ).material( material ),
   Vec3( .75)
 ).render()
+
+// Press CTRL+. anytime to stop audio and video! Checkout other tutorials!
