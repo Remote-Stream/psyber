@@ -6,6 +6,8 @@
 
 #logo{
   cursor: pointer;
+  font-family: Verdana;
+  margin-top: 8px;
 }
 
 .version {
