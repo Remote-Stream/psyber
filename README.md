@@ -53,6 +53,8 @@ Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), stabilized, im
 - Fixed audio when switching between examples
 - Added missing sounds from examples
 - Added rec(param) command to record canvas in video mode
+     - rec() - records until you press CTRL+.
+     - rec(5) - e.g. records for 5 seconds
 ```
 
 ## Where to find out more
