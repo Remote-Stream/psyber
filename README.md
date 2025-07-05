@@ -34,8 +34,6 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
  # You can also use Ctrl+A to select all then press Ctrl+Enter to run
 ```
 
-Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), stabilized, improved with bug fixes and additional features.
-
 ## Changes
 ```
 - MIDI out support - controll your external synths with Dilber via WebMIDI
@@ -61,3 +59,5 @@ Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), stabilized, im
 - Open [dilber.io](https://dilber.io) and take a look at examples/tutorial list (instructions are commented)
 - Read the full [documentation](https://dilber.io/docs/index.html)
 
+
+Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), which is the work of [Charlie Roberts](https://github.com/charlieroberts).
