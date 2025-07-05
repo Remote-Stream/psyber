@@ -10,13 +10,13 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 
 ## Features
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
-- Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [3D Raymarching](https://github.com/charlieroberts/gibber.graphics.lib)
+- Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [marching.js](https://github.com/charlieroberts/marching)
 - Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
 - Camera control <i>(WASD, arrows)</i>
-- P2P realtime collaboration with shared editor and chat
+- Play with friends: P2P realtime collaboration with shared editor and chat
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
 
@@ -46,7 +46,7 @@ Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), stabilized, im
 
 - UI fixes for popups and notifications
 - Removed all redundant code and unnecesary files
-- P2P Collab now works also in localhost mode
+- P2P WebSockets now works properly over wss server
 - Added Load and Save functionality so you can export or load dilber files from your computer
 - Improved error catching and logging
 - Fixed audio when switching between examples
