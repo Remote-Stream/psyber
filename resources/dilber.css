@@ -193,11 +193,17 @@ input { width:6em }
 label { 
   font-size:.8em; 
   color:var(--f_inv);
-  top:-.15em;
+  top:-.5em;
   position:relative;
+  left: 4px;
 }
 
-#showChat, #useSharedEditorBox { width:1em; margin-left:.5em; display:inline }
+#showChat, #useSharedEditorBox { 
+  display: 'inline-block';
+  width:1em; 
+  margin-left:.5em; 
+   
+}
 
 #graphics, main, .graphics {
   width:100%;
