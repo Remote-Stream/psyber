@@ -107,7 +107,8 @@ code {
   /*height:34px;*/
   position:relative;
   top:.5em;
-  object-fit:cover
+  object-fit:cover;
+  cursor: pointer;
 }
 
 html { height: 100% }
@@ -136,10 +137,14 @@ body {
 
 #thememenu ul { 
   list-style:none;
-  padding:0; margin:0
+  padding:0; 
+  margin:0;
 }
 #thememenu {
   display:none; 
+}
+#thememenu ul li {
+  margin-bottom: -4px
 }
 
 .connect {
@@ -162,6 +167,7 @@ button, input {
   border-color:var(--f_med);
   color:var(--f_med);
   font-family: Helvetica Neue, sans-serif;
+  height: 25px;
 }
 
 #hidebtn { 
