@@ -19,18 +19,6 @@ in dilber and provides explanations as needed. In macOS, replace any `Alt` keys 
 (on some keyboards `Ctrl+.` might not work... in this case
 try `Ctrl+Shift+.`)
 
-## Console 
-(also see using the console tutorial)
-
-- open the console (this is a browser shortcut, not dilber specific)
-
-| platform |       chrome/edge       |        firefox          |
-| ------   | ----------------------- | ----------------------- |
-|win/lin   |   `ctrl + shift + j`    |    `ctrl + shift + i`   |
-|mac       | `command + option + j`  |  `command + option + i` |
-
-- clear the console = `Ctrl+\`
-
 ## Saving & Loading Preload Code 
 preload code runs as soon as dilber loads. it's a good
 way to initialize small scripts / preferences etc.

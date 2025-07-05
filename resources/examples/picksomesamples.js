@@ -2,8 +2,7 @@
 // to gradually build up over time. It begins by fading in the bass / clave, and then gradually introduces other
 // instruments and transforms various patterns in use.
  
-// Select all and hit Control+Enter to run, or hit
-// alt (option on mac) + enter
+// Select all and hit Control+Enter to run, or alt (option on mac) + enter
  
 verb = Reverb( 'space' ).bus() 
  
