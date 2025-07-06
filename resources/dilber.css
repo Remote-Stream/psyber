@@ -15,6 +15,14 @@
   padding-left: 25px;
 }
 
+.camera{
+  display: none;
+  position: absolute;
+  left: 90px;
+  top:6px;
+  z-index: 9;
+}
+
 #midiOutputSelect{
   display: none;
   width: 118px;
