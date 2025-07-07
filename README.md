@@ -14,6 +14,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Edit sequences while running
+- Audio in via command: FFT.startMic() - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
 - Camera control <i>(WASD, arrows)</i>
@@ -21,6 +22,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
 - Render canvas to video with rec() command
+- Share your code with others instantly
 - Works offline, too
 
 
@@ -53,7 +55,7 @@ Toggle code background:     SHIFT+ALT+B
 Toggle code visibility:     CTRL+H
 Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome when camera mode is active)
 ```
-## Instruments
+## Audio Instruments
      - FM
      - Pluck
      - Monosynth
@@ -67,12 +69,16 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
      - EDrums
      - Sampler
 
-## Use online samples with Sampler instrument
+## Visual libraries
+     - 3D Raymarching
+     - Hydra
+     - P5.js
 
+## Use online samples with Sampler instrument
 ```
 - Use a direct link to your sample as a parameter: Sampler('https://somewebsite.come/awesomesample.wav')
 
-- Use any sound from [Freesound.org]('https://freesound.org/') library by ID: 
+- Use any sound from freesound.org library by ID: 
      Freesound(4048)
 
 - Download samples by query: 
@@ -81,17 +87,16 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
 - Get random samples:
      Freesound({ 
           query:'drums +90 +bpm', // search for drums, 90, and bpm
-          max:5, 				 // max of five seconds in length
-          single:false, 		 // files do not have to contain single sounds / notes
+          max:5, 			    // max of five seconds in length
+          single:false, 		    // files do not have to contain single sounds / notes
           filename:false,         // do not require query terms to be present in filename
-          count:5,			 // load five samples...
-          maxVoices:1			 // ... but only play one at a time
+          count:5,			    // load five samples...
+          maxVoices:1		    // ... but only play one at a time
      })
 ```
 
 ## Use local samples with Sampler
 ```
-For local samples:
  - Clone this repo and put your samples in `samples` folder
  - Open index.html on your local machine (you can use http-server or LiveServer in VS Code)
  - Use it in your code like a normal instrument: Sampler('yoursample.wav')
@@ -147,7 +152,9 @@ For local samples:
 ## Changes
 ```
 - MIDI out support - controll your external synths with Dilber via WebMIDI
-- Folder structure:
+- Audio/Mic In
+- Fully static app
+- Simple folder structure:
   ./docs
   ./samples    <-- your samples go here
   ./resources  <-- all other files
