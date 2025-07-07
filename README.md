@@ -1,4 +1,4 @@
-# Dilber | Live audio-visual coding in Javascript for the browser
+# Dilber | Live audio-visual coding for the browser
 
 
 
