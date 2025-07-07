@@ -81,7 +81,7 @@ e.kick.frequency = 60
 // visuals
 Fog( .125, Vec3(0) )
 p = Plane().texture( 'checkers' ).render()
-p.texture.scale.tidal( '1 2 [4 10]*2 50 ')
+p.texture.scale.tidal( '1 2 [4 10]*2 50' )
 
 // last but not least, the ? operator can be used to
 // randomly remove notes 50% of the time by default

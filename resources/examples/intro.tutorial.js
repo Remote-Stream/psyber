@@ -30,7 +30,7 @@ at once. Try this with the code below:
 
 d = Difference(
   j = Julia().scale(2),
-  Sphere(2).texture( 'truchet', {scale:50})
+  Sphere(2).material('global').texture( 'dots', {scale:50})
 ).render()
   
 onframe = t => d.rotate(t*20,0,1,0)

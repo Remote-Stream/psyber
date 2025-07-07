@@ -32,7 +32,7 @@ These only affect the text editor, not the top menu bar.
 - Smaller = `Ctrl+-`
 
 ## Marching.js Camera
-- Toggle Camera Control = `Ctrl+Shift+C`
+- Toggle Camera Control = `Ctrl+Shift+T`
 
 When camera control is enabled, use the following
 keys to navigate the 3D scene:

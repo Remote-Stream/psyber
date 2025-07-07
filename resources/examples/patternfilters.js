@@ -130,10 +130,3 @@ syn.note.seq( ptrn = [0,1,2,3], 1/4 )
 // run the following function in the audio
 // thread, creating a global phase variable.
 run( ()=> global.phase = 0 )
-
-// ... so this filter fails.
-ptrn.addFilter( (args, __ptrn) => {
-  args[0] = __ptrn.values[ global.phase++ % __ptrn.values.length ]
-  
-  return args
-})

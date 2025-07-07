@@ -77,4 +77,5 @@ b = Box()
   .rotate( 45,1,1,1 )
   .render()
 
-onframe = time => b.rotate( time * 15, 1,1,1 )
+  // use your moouse to control the cube
+  onframe = time => b.rotate( time * 5, MouseX, MouseY, 1 )
