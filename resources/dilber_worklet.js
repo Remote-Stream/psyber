@@ -17372,7 +17372,7 @@ module.exports = function (Gibberish) {
             }
           } catch (e) {
             console.error(`A sequence targeting ${seq.target.ugenName}.${seq.key} contains an improper value and will be stopped.`);
-            return;
+            //return;
           }
         }
 

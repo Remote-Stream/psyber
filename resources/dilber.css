@@ -10,6 +10,10 @@ body { -ms-overflow-style: none; } /* IE and Edge */
 body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Chrome */
 /* end hide page scrollbar */
 
+a{
+  color: green;
+
+}
 .note{
   display:inline;
   position: sticky;
