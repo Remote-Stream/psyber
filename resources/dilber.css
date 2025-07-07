@@ -4,6 +4,21 @@
   font-weight:bold;
 }
 
+/* hide page scrollbar */
+html { scrollbar-width: none; } /* Firefox */
+body { -ms-overflow-style: none; } /* IE and Edge */
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Chrome */
+/* end hide page scrollbar */
+
+.note{
+  display:inline;
+  position: sticky;
+  color: #3f3f3f;
+  font-size: 10px;
+  left:10px;
+
+}
+
 #logo{
   cursor: pointer;
   font-family: Verdana;
