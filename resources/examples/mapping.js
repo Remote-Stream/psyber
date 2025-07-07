@@ -16,6 +16,12 @@ sphere = Sphere().render()
 kick = Kick().trigger.seq( 1,1/4 )
 sphere.radius = kick
 
+// or by moving mouse up/down
+onframe = t => sphere.radius = MouseY
+
+// or by moving mouse left/right
+onframe = t => sphere.radius = MouseX
+
 // You'll note that the sphere is
 // probably smaller than ideal. We
 // can solve this in one of two ways:

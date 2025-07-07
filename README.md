@@ -10,12 +10,14 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
 - Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [Marching.js](https://github.com/charlieroberts/marching)
 - Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
+- Over 3000 tuning modes - check `resources/tune.json/` folder
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Edit sequences while running
 - Audio in via command: FFT.startMic() - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
 - Camera control <i>(WASD, arrows)</i>
+- MouseX and MouseY tracking
 - Live perform with friends: P2P realtime collaboration with shared editor and chat over secure sockets
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
@@ -159,8 +161,10 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
    index.html  <-- Main page
 
 - UI fixes for popups and notifications
-- Removed all redundant code and unnecesary files
+- Removed most of redundant code and unnecesary files
 - P2P WebSockets now works properly over wss server
+- Added audio in via FFT.StartMic() command
+- Added MouseY and MouseY parametars for modulating things from 0.0 to 1.0
 - Added Load and Save functionality so you can export or load dilber files from your computer
 - Improved error catching and logging
 - Fixed audio when switching between examples
