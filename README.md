@@ -1,6 +1,4 @@
 # Dilber | Live audio-visual coding in Javascript for the browser
-![demo](https://omodaka9375.github.io/portfolio/static/media/dilber.41183029efc67eadec68.gif)
-## Video
 
 
 
