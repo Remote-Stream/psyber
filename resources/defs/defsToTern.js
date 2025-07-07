@@ -247,4 +247,4 @@ for( let instrument of gibberDef.instruments ) {
 
 //console.log( prettyJS( JSON.stringify(def) ) )
 
-fs.writeFileSync( '../gibber.def.json', JSON.stringify( def ) )
+fs.writeFileSync( '../dilber.def.json', JSON.stringify( def ) )
