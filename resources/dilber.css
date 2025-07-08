@@ -357,8 +357,8 @@ header span { font-size: .8em; }
   background:transparent;
 }
 
-/*span.cm-comment { color:rgb(121,121,121) !important }*/
-#editor span.cm-comment, #editor .cm-comment { color:var(--f_low ) }
+span.cm-comment { color:rgb(121,121,121) !important }
+#editor, #editor { color:var(--f_low ) }
 
 span.cm-property, 
 span.cm-attribute,
