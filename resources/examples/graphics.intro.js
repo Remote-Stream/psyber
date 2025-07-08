@@ -21,8 +21,8 @@ b = Box().render()
 s = Sphere().render()
 
 // and we can render the sphere removed from the box:
-b = Box()
-s = Sphere(1.25)
+b = Box().material('normal')
+s = Sphere(1.25).material('normal')
 Difference( b,s ).render()
 
 // Note that we can only have one function rendered at
@@ -30,11 +30,11 @@ Difference( b,s ).render()
 // this isn't usually a problem:
 
 Union2(
-  Sphere(.5).translate( -1.5 ),
-  Sphere(.5).translate( 1.5 ),
-  Sphere(.5),
-  Sphere(.5).translate( 0,1.5 ),
-  Sphere(.5).translate( 0,-1.5 )  
+  Sphere(.5).material('normal').translate( -1.5 ),
+  Sphere(.5).material('normal').translate( 1.5 ),
+  Sphere(.5).material('normal'),
+  Sphere(.5).material('normal').translate( 0,1.5 ),
+  Sphere(.5).material('normal').translate( 0,-1.5 )  
 ).render()
 
 // the Union function combines two geometries, while

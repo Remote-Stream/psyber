@@ -57,7 +57,7 @@ Clock.bpm = 140
 s4 = Soundfont('String Ensemble 1', { bank:3 }).connect( verb, 1 )
 s4.chord.seq( Rndi(-14,14,6), 2 )
 s4.gain = .5
-s4,decay = 44100 * 10
+s4.decay = 44100 * 10
  
 s5 = Soundfont('Timpani', { bank:3 } ).connect( verb, .1 )
 s5.decay = 44100 * 4

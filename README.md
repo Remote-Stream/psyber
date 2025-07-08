@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
 - Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [Marching.js](https://github.com/charlieroberts/marching)
 - Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
-- Over 3000 tuning modes - check `resources/tune.json/` folder
+- Over 3000 tunings and scales - check `https://dilber.io/scales.html` folder
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Edit sequences while running
 - Audio in via command: FFT.startMic() - check Audio In tutorial
@@ -24,6 +24,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - MIDI out for your external or hardware synths
 - Render canvas to video with rec() command
 - Share your code with others instantly
+- Custom toast messages when there is an error in the code
 - Works offline, too
 
 
@@ -171,9 +172,12 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
 - Fixed audio when switching between examples
 - Added missing sounds from examples
 - Added rec(param) command to record canvas in video mode
-     - rec() - records until you press CTRL+.
+     - rec() - records until you press CTRL+. command
      - rec(5) - e.g. records for 5 seconds
 ```
+## Third-party libraries
+ - [Tune.js](https://github.com/abbernie/tune) for an extensive list of tunings. Visit https://dilber.io/scales.html to see all
+ - [Toastify.js](https://github.com/apvarun/toastify-js) for custom toast messages
 
 ## Where to find out more
 - Open [dilber.io](https://dilber.io) and take a look at examples/tutorial list (instructions are commented)

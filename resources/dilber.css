@@ -4,6 +4,18 @@
   font-weight:bold;
 }
 
+.customlink {
+  padding-left:10px;
+  color: green !important;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 12px;;
+}
+
+
+#wssurl {
+  margin-top: -10px;
+}
 /* hide page scrollbar */
 html { scrollbar-width: none; } /* Firefox */
 body { -ms-overflow-style: none; } /* IE and Edge */
@@ -15,7 +27,12 @@ a{
 }
 
 .info{
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.error{
+  font-size: 12px;
+  background: #900;
 }
 
 .note{

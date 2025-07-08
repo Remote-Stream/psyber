@@ -15365,13 +15365,13 @@ module.exports = function (Gibberish) {
 },{"./instrument.js":124,"genish.js":40}],134:[function(require,module,exports){
 "use strict";
 
-/*fetch( '0000_Aspirin_sf2_file.json' )
-.then( res => res.json() )
-.then( json => {
-  window.zones = json.zones
-  console.log( window.zones )
-})
-
+// fetch( '0000_Aspirin.sf2.json' )
+// .then( res => res.json() )
+// .then( json => {
+//   window.zones = json.zones
+//   console.log( window.zones )
+// })
+/*
 ab = Gibberish.utilities..decodeArrayBuffer( zones[0].file )
 genish.utilities.ctx.decodeAudioData( ab, buffer => {
   __ab = buffer
@@ -15787,6 +15787,7 @@ module.exports = function (Gibberish) {
       if (soundNumber < 100) num = '0' + num;
       if (soundNumber < 10) num = '0' + num;
       fetch(`${Soundfont.resourcePath}${num}_${banks[bankIndex]}.sf2.json`).then(res => res.json()).then(json => {
+        console.log(soundNumber)
         const zones = soundfonts[soundNumber] = json.zones;
         this.zones = zones;
 

@@ -36,7 +36,7 @@ const __Identifier = function( Marker ) {
       state.cm.replaceRange( lastChar + ' ', { line, ch:ch }, { line, ch:ch + 1 } )
     }
 
-    const marker = state.cm.markText( commentStart, commentEnd, { className:className + ' gibber_comment' })
+    const marker = state.cm.markText( commentStart, commentEnd, { className:className + ' dilber_comment' })
 
     return [ marker, className ]
   }

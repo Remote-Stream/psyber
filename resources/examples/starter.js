@@ -9,8 +9,8 @@ Save code:               SHIFT+CTRL+S
 Load code:               SHIFT+CTRL+S
 Zoom in:                 SHIFT+CTRL++
 Zoom out:                SHIFT+CTRL+-
-Toggle code background:  SHIFT+ALT+B
-Free camera (3D mode):   SHIFT+CTRL+C
+Toggle code background:  CRTL+ALT+B
+Free camera (3D mode):   SHIFT+CTRL+T
 Toggle code visibility:  CTRL+H
 */
 
@@ -29,7 +29,7 @@ hat.fx.add( Distortion({ pregain:100, postgain:.1 }) )
 
 bass = Monosynth('bass.stab')
 .note.seq( 
-  gen( beats(8) * 4 ), 
+  gen( beats(8) * 4 )  , 
   Euclid(5,16) 
 )
 
@@ -37,14 +37,20 @@ bass = Monosynth('bass.stab')
 // then press SHIFT+CTRL+C to toggle free camera mode (use WASD and arrow keys to direct camera)
 
 material = Material( 'phong', Vec3(.05), Vec3(.5), Vec3(1), 8, Vec3(1,4,1) )
-Light( Vec3(2,2,3), Vec3(1) )
+
 Light( Vec3(-2,2,3), Vec3(1,0,0) )
 Background( Vec3(0) )
 Fog( .5, Vec3(0) )
  
+
 Repeat(
-  Sphere( .25 ).material( material ),
+ 	s =  Sphere( .25 ).material( material ),
   Vec3( .75)
 ).render()
+
+// add some interactivity
+s.radius = kick
+
+//use CTRL+SHIFT+T to toggle camera and start moving around scene with WASD, Alt for speed and arrow keys
 
 // Press CTRL+. anytime to stop audio and video! Checkout other tutorials!

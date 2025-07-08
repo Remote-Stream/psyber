@@ -10,6 +10,10 @@
                 "!doc": "The seq method enables you to easily sequence any method or property. You can pass a single value or a pattern/array of values for both the 'values' and 'timings' arguments. The timings argument will determine when the sequencer fires and the values argument will determine output.",
                 "!type": "fn(values: ?, timings?: ?, seq_id?: number)"
             },
+            "startMic": {
+                "!doc": "Starts audio/mic in from the browser",
+                "!type": "fn()"
+            },
             "start": {
                 "!doc": "Starts all seq and tidal schedulers controlling this property/method.",
                 "!type": "fn()"

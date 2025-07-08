@@ -25,7 +25,7 @@ module.exports = ( patternObject, marker, className, cm ) => {
 
         if( patternObject.commentMarker ) patternObject.commentMarker.clear()
 
-        patternObject.commentMarker = cm.markText( pos.from, end, { className:className + ' gibber_comment', atomic:false })
+        patternObject.commentMarker = cm.markText( pos.from, end, { className:className + ' dilber_comment', atomic:false })
       }
     }
 

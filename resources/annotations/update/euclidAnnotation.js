@@ -31,7 +31,7 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
     patternObject.markers = []
     patternObject.__isEditing = false
 
-    patternObject.commentMarker = cm.markText( pos.from, end, { className:className + ' gibber_comment', atomic:false })
+    patternObject.commentMarker = cm.markText( pos.from, end, { className:className + ' dilber_comment', atomic:false })
     //patternObject.__onclick = e => {
     //  if( e.altKey == true ) {
     //    console.log( 'click', e.shiftKey )
@@ -193,7 +193,7 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
         track.markup.textMarkers[ className ][ i ] = cm.markText(
           memberAnnotationStart,  memberAnnotationEnd,
           { 
-            'className': `${className}_${i} euclid gibber_comment`
+            'className': `${className}_${i} euclid dilber_comment`
           }
         )
 
@@ -210,7 +210,7 @@ module.exports = ( patternObject, marker, className, cm, track, patternNode, Mar
         start.ch -= 3
         end = Object.assign({}, start )
         end.ch = memberAnnotationEnd.ch + 3
-        patternObject.commentMarker = cm.markText( start, end, { className:className + ' gibber_comment', atomic:false })
+        patternObject.commentMarker = cm.markText( start, end, { className:className + ' dilber_comment', atomic:false })
       }
     }
 

@@ -21,7 +21,7 @@ Union2(
   Sphere( 1 ).translate(-1.25),
   Sphere( 1 )
     .translate(1,0,0)
-    .material( 'normal' ),
+    .material( 'phong' ),
   Plane()
 )
 .render()

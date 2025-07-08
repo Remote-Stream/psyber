@@ -70,12 +70,14 @@ b.texture.time.multiplier = 20
 // we can also use the same texture presets
 // for bump mapping, which creates physical bumps
 // and dips in the geometry using texture data.
+Dilber.clear()
+
 t = Texture('truchet', { scale:15 })
 b = Box()
   .bump( t, .025 )
   .material('red')
   .rotate( 45,1,1,1 )
-  .render()
+.render()
 
-  // use your moouse to control the cube
-  onframe = time => b.rotate( time * 5, MouseX, MouseY, 1 )
+// use your moouse to control the cube
+onframe = time => b.rotate( time * 5, MouseX, MouseY, 1 )
