@@ -23,13 +23,12 @@ s.texture.scale.seq( [5,10,20,50], 1/2 )
 
 // other textures presets to play with  include 'dots', 'checkers', 'zigzag', and 'stripes'
 
-b = Box(.75).texture('dots', { radius:.5 }).render()
-
-b = Box(.75).texture('checkers').translate(-2,0).render()
-
-b = Box(.75).texture('stripes').translate(2,0).render()
-
-b = Box(.75).texture('zigzag').translate(0,2).render()
+Union2(
+  b1 = Box(.75).material('phong').texture('dots', { radius:.5 }),
+  b2 = Box(.75).material('phong').texture('checkers').translate(-2,0),
+  b3 = Box(.75).material('phong').texture('stripes').translate(2,0),
+  b4 = Box(.75).material('phong').texture('zigzag').translate(0,2))
+  .render()
 
 // the textures above all work by wrapping
 // a 2D texture around the 3D geometry. There

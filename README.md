@@ -25,7 +25,9 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Render canvas to video with rec() command
 - Share your code with others instantly
 - Custom toast messages when there is an error in the code
-- Works offline, too
+- Soundfont support
+- Custom dilber-server support
+- Works offline
 
 
 <br>

@@ -10,7 +10,7 @@ Load code:               SHIFT+CTRL+S
 Zoom in:                 SHIFT+CTRL++
 Zoom out:                SHIFT+CTRL+-
 Toggle code background:  CRTL+ALT+B
-Free camera (3D mode):   SHIFT+CTRL+T
+Free camera (3D mode):   SHIFT+CTRL+C
 Toggle code visibility:  CTRL+H
 */
 
