@@ -357,6 +357,15 @@ header span { font-size: .8em; }
   background:transparent;
 }
 
+.CodeMirror-line-numbers{
+  font-size: 10px;
+  width: 15px;
+}
+
+.CodeMirror-gutter-wrapper{
+  left:-29px !important;
+}
+
 span.cm-comment { color:rgb(121,121,121) !important }
 #editor, #editor { color:var(--f_low ) }
 
