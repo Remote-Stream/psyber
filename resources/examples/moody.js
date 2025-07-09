@@ -19,7 +19,6 @@ k = Kick().trigger.seq( 1,1/4 )
  
 h = Hat().connect( verb, .15 )
 h.trigger.tidal( '<.5 .35*3 [.5 .25] [.75 .25 .5 .25]>' )
- 
 h.decay = gen( .05 + cycle(2) * .025 )
  
 lead = Synth( 'cry', { gain:.1, octave:1 })

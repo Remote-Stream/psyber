@@ -4,6 +4,7 @@
 // Ctrl+. to stop
 
 Clock.bpm = 120
+
 Theory.root = 'c5'
 Theory.mode = 'aeolian'
 

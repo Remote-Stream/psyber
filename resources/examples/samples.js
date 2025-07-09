@@ -5,6 +5,8 @@
 // Select all and hit Control+Enter to run, or alt (option on mac) + enter
 // Ctrl+. to stop
  
+Clock.bpm = 140
+
 verb = Reverb( 'space' ).bus() 
  
 bass = Monosynth('bass.stab')

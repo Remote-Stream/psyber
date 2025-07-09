@@ -2,8 +2,9 @@
 // Ctrl+. to stop
 
 //Use CTRL+H to hide / unhide the code for better viewing
-
+Clock.bpm = 135
 // create blur and inversion post-processing fx.
+
 blur = Blur(0)
 inv = Invert(0)
  

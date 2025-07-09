@@ -1,6 +1,6 @@
 // Select all and hit Control+Enter to run, or alt (option on mac) + enter
 // Ctrl+. to stop
-
+Clock.bpm = 135
 verb = Reverb.space.bus() 
 syn = Monosynth( 'shinybass' ).connect( verb, .25 )
 

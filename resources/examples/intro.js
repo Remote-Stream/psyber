@@ -3,7 +3,9 @@
  
 Theory.tuning = 'slendro'
 Theory.mode = null
-  
+
+Clock.bpm = 135
+
 verb =  Reverb( 'space' ).bus()
 delay = Delay( '1/3' ).bus().connect( verb, .1 )
   
