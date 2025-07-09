@@ -176,9 +176,12 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
 - Added rec(param) command to record canvas in video mode
      - rec() - records until you press CTRL+. command
      - rec(5) - e.g. records for 5 seconds
+  ... many more
 ```
+
 ## Third-party libraries
- - [Tune.js](https://github.com/abbernie/tune) for an extensive list of tunings. Visit https://dilber.io/scales.html to see all
+ - [Gibber](https://github.com/gibber-cc/gibber) for audio and graphics engine
+ - [Tune.js](https://github.com/abbernie/tune) for an extensive list of tunings. Visit https://dilber.io/scales.html
  - [Toastify.js](https://github.com/apvarun/toastify-js) for custom toast messages
  - [Vim.js](https://github.com/yuezk/vim-js) for syntax highlighting 
  - [CodeMirror](https://github.com/codemirror/dev/) for editor component
@@ -187,5 +190,11 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
 - Open [dilber.io](https://dilber.io) and take a look at examples/tutorial list (instructions are commented)
 - Read the full [documentation](https://dilber.io/docs/index.html)
 
+<br>
 
-Dilber is based on [Gibber](https://github.com/gibber-cc/gibber), which is the work of [Charlie Roberts](https://github.com/charlieroberts).
+## Support the project
+- [Buy me a coffee](https://buymeacoffee.com/omodaka9375)
+- ETH: 0xe60Ce880010af7C449256B5f12521eb98fBDf5AD
+
+## License
+MIT
