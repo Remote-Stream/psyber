@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
 - Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [Marching.js](https://github.com/charlieroberts/marching)
 - Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
-- Over 3000 tunings and scales - check `https://dilber.io/scales.html` folder
+- Over 3000 tunings and scales, see https://dilber.io/scales.html
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Edit sequences while running
 - Audio in via command: FFT.startMic() - check Audio In tutorial
