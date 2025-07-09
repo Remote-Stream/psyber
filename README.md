@@ -31,15 +31,11 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Works offline
 
 
-<br>
-
 ## Where to start
+ 1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
 
-1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
+ 2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-
-<br>
 
 ## Commands
 ```
