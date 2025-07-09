@@ -45,7 +45,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 Execute line of code:       CTRL+ENTER
 Execute block of code:      ALT+ENTER
 Execute page code:          CTRL+A (then CTRL+ENTER)
-Stop all:                   CTRL+.
+Stop all:                   CTRL+. or SHIFT+CTRL+.
    
 Save code:                  SHIFT+CTRL+S
 Load code:                  SHIFT+CTRL+L
@@ -57,7 +57,7 @@ Edit pattern:               ALT + click on the pattern (crosshair cursor will sh
    
 Toggle code background:     SHIFT+ALT+B
 Toggle code visibility:     CTRL+H
-Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome when camera mode is active)
+Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome when camera mode is active)
 ```
 ## Audio Instruments
      - FM
