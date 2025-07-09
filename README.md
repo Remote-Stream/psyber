@@ -180,6 +180,8 @@ Toggle free camera (3D):    SHIFT+CTRL+T (you will see 📹 icon at metronome wh
 ## Third-party libraries
  - [Tune.js](https://github.com/abbernie/tune) for an extensive list of tunings. Visit https://dilber.io/scales.html to see all
  - [Toastify.js](https://github.com/apvarun/toastify-js) for custom toast messages
+ - [Vim.js](https://github.com/yuezk/vim-js) for syntax highlighting 
+ - [CodeMirror](https://github.com/codemirror/dev/) for editor component
 
 ## Where to find out more
 - Open [dilber.io](https://dilber.io) and take a look at examples/tutorial list (instructions are commented)

@@ -64,7 +64,8 @@ inside of quotation marks; in programming
 we call this information "strings". You
 can see a list of all presets related to
 an instrument by calling the `.list()`
-method (e.g. `Synth.list()` or `FM.list()`).
+method (e.g. `Synth.list()` or `FM.list()`),
+then check console output.
 
 We can also pass custom property values to 
 constructors. For example:

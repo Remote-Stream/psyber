@@ -1,4 +1,6 @@
-// start off by making our instrument
+// Select all and hit Control+Enter to run, or alt (option on mac) + enter
+// Ctrl+. to stop
+
 verb = Reverb.space.bus() 
 syn = Monosynth( 'shinybass' ).connect( verb, .25 )
 
@@ -8,8 +10,7 @@ syn = Monosynth( 'shinybass' ).connect( verb, .25 )
 // by an amount that you pass as its first parameter,
 // and wraps back to 0 when gets higher than 1. Remember,
 // this operation is occurring at the sample rate (typically
-// 44100 times per second) so the number can exceed 1 fairly
-// quickly.
+// 44100 times per second) so the number can exceed 1 fairly quickly.
 
 arp = gen( accum(.00001) )
 syn.note.seq( arp, 1/4 )

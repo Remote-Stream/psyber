@@ -1,6 +1,5 @@
-// hit alt+enter to run all code
-// or run line/selection with ctrl+enter.
-// ctrl+period to stop all sounds.
+// Select all and hit Control+Enter to run, or alt (option on mac) + enter
+// Ctrl+. to stop
  
 Theory.tuning = 'slendro'
 Theory.mode = null
@@ -26,7 +25,7 @@ bass = Synth( 'bass.hollow' )
   .note.seq( [0,1,2,-1], 1 )
   .trigger.seq( [.75,.5,.25], [1/4,1/8] )
  
-clave = Clave({ gain:.1 }).connect( verb, .25 )
+clave = Clave({ gain:.05 }).connect( verb, .25 )
   .trigger.seq( .5, e = Euclid(3,8) )
  
 e.rotate.seq( [1,-1], 2, 0, 4 )

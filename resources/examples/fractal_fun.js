@@ -1,8 +1,8 @@
-/* fractals
- * this demo maps glitch sounds from the freesound database to control geometric parameters (including the folding
- * of a Mandelbulb fractal) and two post-processing effects. Use CTRL+H to hide / unhide the code for better viewing.
-*/ 
- 
+// Select all and hit Control+Enter to run, or alt (option on mac) + enter
+// Ctrl+. to stop
+
+//Use CTRL+H to hide / unhide the code for better viewing
+
 // create blur and inversion post-processing fx.
 blur = Blur(0)
 inv = Invert(0)

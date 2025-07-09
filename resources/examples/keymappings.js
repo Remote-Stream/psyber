@@ -1,3 +1,23 @@
+/* 
+BASIC COMMANDS
+
+Execute line of code:    CTRL+ENTER
+Execute block of code:   ALT+ENTER
+Execute page code:       CTRL+A then CTRL+ENTER
+
+Stop all:                CTRL+.
+Stop all immediately:    SHIFT+CTRL+.
+
+Save code:               SHIFT+CTRL+S
+Load code:               SHIFT+CTRL+S
+
+Zoom in:                 SHIFT+CTRL++
+Zoom out:                SHIFT+CTRL+-
+
+Toggle code visibility:  CTRL+H
+Toggle code background:  CRTL+ALT+B
+Free camera (3D mode):   SHIFT+CTRL+C
+*/
 
 /*--md
 # Key mappings
@@ -32,7 +52,7 @@ These only affect the text editor, not the top menu bar.
 - Smaller = `Ctrl+-`
 
 ## Marching.js Camera
-- Toggle Camera Control = `Ctrl+Shift+T`
+- Toggle Camera Control = `Ctrl+Shift+C`
 
 When camera control is enabled, use the following
 keys to navigate the 3D scene:
