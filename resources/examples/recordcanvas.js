@@ -1,24 +1,3 @@
-/* 
-BASIC COMMANDS
-
-Execute line of code:    CTRL+ENTER
-Execute block of code:   ALT+ENTER
-Execute page code:       CTRL+A then CTRL+ENTER
-
-Stop all:                CTRL+.
-Stop all immediately:    SHIFT+CTRL+.
-
-Save code:               SHIFT+CTRL+S
-Load code:               SHIFT+CTRL+S
-
-Zoom in:                 SHIFT+CTRL++
-Zoom out:                SHIFT+CTRL+-
-
-Toggle code visibility:  CTRL+H
-Toggle code background:  CRTL+ALT+B
-Free camera (3D mode):   SHIFT+CTRL+C
-*/
-
 // execute this line of code with CTRL+ENTER
 kick = Kick().trigger.seq( 1, 1/4 )
 
@@ -51,6 +30,8 @@ Repeat(
 // add some interactivity
 s.radius = kick
 
-//use CTRL+SHIFT+C to toggle camera and start moving around scene with WASD, Alt for speed and arrow keys
+// record and render our canvas to video for 5 seconds
+rec(5)
 
-// Press CTRL+. anytime to stop audio and video! Checkout other tutorials!
+// or record until you stop the music - pressing CRTL+.
+//rec()
