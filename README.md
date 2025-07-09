@@ -1,5 +1,5 @@
 # Dilber 
-Live audio-visual coding for the browser
+Live audio-visual environment in JavaScript coding for the browser
 
 
 
