@@ -14,9 +14,10 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Over 40 tutorials and demos on how to use
 - Over 3000 tunings and scales, see https://dilber.io/scales.html
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
-- Generate samples localy with `musicgen` for more samples
+- Record samples with your mic/audio in
+- Generate samples localy with `musicgen` for more sample choices
+- Create your own synths
 - Supported sample formats: wav, aif, mp3, aiff
-- Edit sequences while running
 - Audio in via command: FFT.startMic() - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
@@ -59,20 +60,6 @@ Toggle code background:     SHIFT+ALT+B
 Toggle code visibility:     CTRL+H
 Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome when camera mode is active)
 ```
-
-## Audio Instruments
-     - FM
-     - Pluck
-     - Monosynth
-     - Synth
-     - Clap
-     - Cowbell
-     - Kick
-     - Snare
-     - Hat
-     - Drums
-     - EDrums
-     - Sampler
 
 ## Visual libraries
      - 3D Raymarching
@@ -121,51 +108,17 @@ Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome wh
  - See MIDI Out tutorial in Dilber for more!
 ```
 
-## Audio FX
-     - BitCrusher
-     - Delay
-     - Distortion
-     - Filter
-     - Flanger
-     - Freeverb
-     - RingMod
-     - Vibrato
-     - Tremolo
-     - Wavefolder
+## Running custom wss server
+- Dilber server is running [y-websocket-server](https://github.com/yjs/y-websocket-server) 
+- Feel free to clone and setup your own server over SSL
 
-## Geometries
-     - Box
-     - Capsule
-     - Cone
-     - Cylinder
-     - HexPrism
-     - Julia
-     - Mandelbulb
-     - Mandelbox
-     - Plane
-     - Sphere
-     - Torus
-     - Torus82
-     - Torus88
-
-## Camera FX
-     - Antialias
-     - Bloom
-     - Blur
-     - Brightness
-     - Contast
-     - Edge
-     - Focus
-     - Godrays
-     - Hue
-     - Invert
-     - MotionBlur
 
 ## Changes
 ```
 - musicgen-small AI model support for sample generation
 - MIDI out support - controll your external synths with Dilber via WebMIDI
-- Audio/Mic In
+- Process audio/mic in for live reactivity
+- Sample your audio in
 - Fully static app
 - Simple folder structure:
   ./docs
