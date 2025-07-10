@@ -10,10 +10,12 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 ## Features
 - Audio synthesys via multiple engines ([Monosynth](https://dilber.io/docs/index.html#instruments-monosynth), [Polysynth](https://dilber.io/docs/index.html#instruments-synth), [FM synth](https://dilber.io/docs/index.html#instruments-fm) ...)
 - Video synthesys using [Hydra Video Synth](https://hydra.ojack.xyz/), [P5.js](https://p5js.org/) and [Marching.js](https://github.com/charlieroberts/marching)
-- Audio and video sequencing (step sequencing, TydalCycles / Strudel notation ...)
+- Audio and video sequencing (gibber, step sequencing, tydalcycles/strudel)
 - Over 40 tutorials and demos on how to use
 - Over 3000 tunings and scales, see https://dilber.io/scales.html
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
+- Generate samples localy with `musicgen` for more samples
+- Supported sample formats: wav, aif, mp3, aiff
 - Edit sequences while running
 - Audio in via command: FFT.startMic() - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
@@ -57,6 +59,7 @@ Toggle code background:     SHIFT+ALT+B
 Toggle code visibility:     CTRL+H
 Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome when camera mode is active)
 ```
+
 ## Audio Instruments
      - FM
      - Pluck
@@ -102,7 +105,14 @@ Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome wh
  - Clone this repo and put your samples in `samples` folder
  - Open index.html on your local machine (you can use http-server or LiveServer in VS Code)
  - Use it in your code like a normal instrument: Sampler('yoursample.wav')
+
+ or
+
+ - Use local audio model to generate new sampels for you e.g. `musicgen('90s drum beat heavy', 'drum2')
+
 ```
+
+
 
 ## Sequence external synths
 ```
@@ -153,6 +163,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome wh
 
 ## Changes
 ```
+- musicgen-small AI model support for sample generation
 - MIDI out support - controll your external synths with Dilber via WebMIDI
 - Audio/Mic In
 - Fully static app
