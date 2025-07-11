@@ -2,7 +2,7 @@ import { AutoTokenizer, MusicgenForConditionalGeneration, BaseStreamer } from '.
 // Library for turning audio data array into a WAV file
 
 let db;
-const dbname = 'sounds';
+const dbname = 'gen_sounds';
 //openDB(dbname)
 
 window.openDB = openDB
@@ -75,6 +75,7 @@ function arrayToBlob(rawdata){
   return wav_blob;
 }
 
+
 function playBlob(blob, samplename){
     Toastify({ gravity: "bottom", text: `Playing '${samplename}'`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
     const audio_el = document.createElement('audio');
@@ -104,17 +105,13 @@ function openDB(dbname){
   openOrCreateDB.addEventListener('error', () => console.error('Error opening DB'));
   
   openOrCreateDB.addEventListener('success', () => {
-    console.log('IndexDB success');
     db = openOrCreateDB.result;
     window.musicgen.db = db
   });
 
   openOrCreateDB.addEventListener('upgradeneeded', init => {
     db = init.target.result;
-  
-    db.onerror = () => {
-      console.error('Error loading database.');
-    };
+    db.onerror = () => { console.error('Error loading database') }
   
     const table = db.createObjectStore(dbname, { keyPath: 'id', autoIncrement:true });
   
@@ -124,18 +121,23 @@ function openDB(dbname){
 
 }
 
-function saveArrayToDB(arrayData, sample, prompt){
-    const cleanedSampleName = sample.replaceAll(' ','_')
-    const sampleName = cleanedSampleName + '.gen';
+window.savetodb = saveArrayToDB
+
+function saveArrayToDB(arrayData, sample, prompt = null) {
+  const cleanedSampleName = sample.replaceAll(' ','_')
+    let sampleName = cleanedSampleName + '.gen';
+    if(prompt === null) { sampleName = cleanedSampleName + '.rec' } 
+    
     const newSound = { name: sampleName, data: arrayData, prompt: prompt };
     const transaction = db.transaction([dbname], 'readwrite');
     const objectStore = transaction.objectStore(dbname);
+
     const query = objectStore.add(newSound);
     query.addEventListener('success', () => {
         Toastify({ gravity: "bottom", text: `'${sampleName}' sample ready!`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
     });
     transaction.addEventListener('complete', () => {
-        console.log("saving to db success")
+        console.log("Saved to DB")
     });
     transaction.addEventListener('error', (e) => {
         Toastify({ gravity: "bottom", text: 'Error saving sound to database', className: "error", stopOnFocus: true, style: {background: "red"}, }).showToast();
@@ -200,6 +202,7 @@ window.__getfromdb = async (sampleName) => {
 };
 
 
+window.playfromdb = playFromDB
 
 function playFromDB(sampleName){
     const objectStore = db.transaction(dbname).objectStore(dbname);
