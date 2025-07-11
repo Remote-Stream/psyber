@@ -31,12 +31,12 @@ g3 = 'https://www.ignant.com/wp-content/uploads/2013/09/Julien_Douvier_Cinemagra
 g4 = 'https://www.ignant.com/wp-content/uploads/2017/05/iGNANT_Gif_Art_Sam_Cannon_1.gif'
 
 // Now lets sequence fome gifs :)
-images = [g1, g2, g3, g4];
-durations = [5, 3, 4, 3]; // Durations in seconds
+images = [g1, g2, g3, g4]
+durations = [5, 3, 4, 3] // Durations in seconds
 
-seqBck(images, durations);  // Sequential background change
+seqBck(images, durations)  // Sequential background change
 
-seqBck(images, durations, true); // Random sequential background change
+seqBck(images, durations, true) // Random sequential background change
 
 // to go back to normal mode and remove background
 bcg()
