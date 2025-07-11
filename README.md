@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Record samples with your mic/audio in
 - Generate samples localy with `musicgen` for more sample choices
 - Create your own synths
-- Supported sample formats: wav, aif, mp3, aiff
+- Supported sample formats: `wav, aif, mp3, aiff`
 - Audio in via command: FFT.startMic() - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
@@ -27,12 +27,12 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Perform and share spectators links and invite others to watch and listen
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
-- Render canvas to video with rec() command
+- Render canvas to video with `rec()` command
 - Share your code with others instantly
 - Custom toast messages when there is an error in the code
-- Soundfont support
+- Soundfont support (Asprin, Chaos, GeneralUserGS, and JCLive)
 - Custom dilber-server support
-- Custom background via `bcg(<url>)` command
+- Custom background via `bg(<url>)` command - check `backgrounds` tutorial in app
 - Works offline
 
 
@@ -96,7 +96,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome wh
 
  or
 
- - Use local audio model to generate new sampels for you e.g. `musicgen('90s drum beat heavy', 'drum2')
+ - Use local audio model to generate new samples for you e.g. `musicgen('90s drum beat heavy 120 bpm', 'drum2')
 
 ```
 
@@ -116,17 +116,11 @@ Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome wh
 
 ## Changes
 ```
+- background image sequencing
 - musicgen-small AI model support for sample generation
 - MIDI out support - controll your external synths with Dilber via WebMIDI
 - Process audio/mic in for live reactivity
-- Sample your audio in
-- Fully static app
-- Simple folder structure:
-  ./docs
-  ./samples    <-- your samples go here
-  ./resources  <-- all other files
-   index.html  <-- Main page
-
+- Sample your audio in //todo
 - UI fixes for popups and notifications
 - Removed most of redundant code and unnecesary files
 - P2P WebSockets now works properly over wss server
@@ -134,11 +128,15 @@ Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome wh
 - Added MouseY and MouseY parametars for modulating things from 0.0 to 1.0
 - Added Load and Save functionality so you can export or load dilber files from your computer
 - Improved error catching and logging
-- Fixed audio when switching between examples
-- Added missing sounds from examples
 - Added rec(param) command to record canvas in video mode
      - rec() - records until you press CTRL+. command
      - rec(5) - e.g. records for 5 seconds
+- Fully static app, runs localy
+- Simple folder structure:
+  ./docs
+  ./samples    <-- your samples go here
+  ./resources  <-- all other files
+   index.html  <-- Main page
   ... many more
 ```
 

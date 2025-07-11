@@ -11,7 +11,7 @@
 ** good sample sets are huge in filesize and not
 ** well-suited for the web.
 **
-** Dilber includes access to five different banks
+** Dilber includes access to 4 different banks
 ** of soundfonts made by different people. Some are
 ** taken from the great webaudiofont repository:
 **
