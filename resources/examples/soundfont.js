@@ -18,7 +18,7 @@
 ** https://github.com/surikov/webaudiofontdata
 **
 ** The soundfonts dilber includes are, in order,
-** Asprin, Chaos, FluidR3, GeneralUserGS, and JCLive.
+** Asprin, Chaos, GeneralUserGS, and JCLive.
 ** Let's try them out!
 */
 
@@ -31,7 +31,7 @@ s.chord( rndi(0,14,6) )
 // reverb really helps soundfonts sound better. let's try
 // the same sound with a different bank for comparison.
 
-s2 = Soundfont('Acoustic Grand Piano', { bank: 4 }).connect( verb, .25 )
+s2 = Soundfont('Acoustic Grand Piano', { bank: 3 }).connect( verb, .25 )
 s2.chord( rndi(0,14,6) )
 
 // s2 sounds more muted to me, I prefer it. There
