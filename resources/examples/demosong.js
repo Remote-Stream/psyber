@@ -1,9 +1,31 @@
-// by charlesmartin
+/* 
+
+Windows // Mac commands:
+
+Execute line of code:       CTRL+ENTER // CONTROL+RETURN
+Execute block of code:      ALT+ENTER // COMMAND+RETURN
+Execute page code:          CTRL+A (then CTRL+ENTER) // COMMAND+A (then COMMAND+RETURN)
+Stop all:                   CTRL+. or SHIFT+CTRL+. // CONTROL+. or SHIFT+CTRL+.
+   
+Save code:                  SHIFT+CTRL+S // SHIFT+CONTROL+S
+Load code:                  SHIFT+CTRL+L // SHIFT+CONTROL+L
+   
+Zoom in:                    SHIFT+CTRL++ // SHIFT+CONTROL++ 
+Zoom out:                   SHIFT+CTRL+- // SHIFT+CONTROL++
+   
+Edit pattern:               ALT or OPTION + click on the pattern (crosshair cursor will show)
+   
+Toggle code background:     SHIFT+ALT+B // CONTROL+OPTION+B
+Toggle code visibility:     CTRL+H // CONTROL+H
+Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when camera mode is active)
+
+*/
 
 // Select all and hit Control+Enter to run, or alt (option on mac) + enter
+
 // Ctrl+. to stop
 
-Clock.bpm = 120
+Clock.bpm = 140
 
 Theory.root = 'c5'
 Theory.mode = 'aeolian'

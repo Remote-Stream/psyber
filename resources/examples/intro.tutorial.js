@@ -70,7 +70,7 @@ Notice how the drums and bass sequences line up on a rhythmic
 grid. If you execute code by selecting it and hitting 
 `Shift+Enter`, that code will run immediately, and probably be
 out of time with other running sequences. Try using `Shift+Enter`
-with the sequence below, and then re-reun the code using 
+with the sequence below, and then re-run the code using 
 `Ctrl+Enter` to hear the difference.
 --*/
 
