@@ -34,9 +34,9 @@ g4 = 'https://www.ignant.com/wp-content/uploads/2017/05/iGNANT_Gif_Art_Sam_Canno
 images = [g1, g2, g3, g4]
 durations = [5, 3, 4, 3] // Durations in seconds
 
-seqBck(images, durations)  // Sequential background change
+bcg.seq(images, durations)  // Sequential background change
 
-seqBck(images, durations, true) // Random sequential background change
+bcg.seq(images, durations, true) // Random sequential background change
 
 // to go back to normal mode and remove background
 bcg()
