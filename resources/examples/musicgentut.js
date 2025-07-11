@@ -3,7 +3,7 @@
 musicgen("90s RnB drum loop 120 bpm", "beat")
 
 s = Sampler('beat.gen')
-s.rate = 0.65 // musicgen produces samples at 32khz  so e need to slow down out rate :(
+s.rate = 0.65 // musicgen produces samples at 32khz so we need to slow down the rate :(
 s.gain = 1.2    
 
 // trigger the sample
