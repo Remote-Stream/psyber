@@ -52,14 +52,16 @@ sphere.radius.map( kick, 4, 1 )
 
 // 1. texture properties
 
-Fog( .5, Vec3(0))
+Fog( .5, Vec3(0) )
+
 p = Plane().texture('dots').render()
 gong = FM('gong', { decay:4 })
 gong.note.seq( -14, 4 )
 p.texture.radius.map( gong, 3, 0 )
 
 // 2. fractal folding
-Fog( 0, Vec3(0))
+Fog( 0, Vec3(0) )
+
 julia = Julia().render()
 camera.pos.z = 2
 onframe = t => camera.rotation = t/10
