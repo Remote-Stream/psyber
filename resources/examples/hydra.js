@@ -21,7 +21,6 @@ use( 'hydra' ).then( init => init() )
 // hydra, but once that's done we can run
 // hydra commands just like in the hydra
 // website:
-
 osc().out()
 
 // you'll notice that dilber puts a black
@@ -38,13 +37,11 @@ osc().out()
 // will create a random number that will 
 // determine that horizontal frequency of
 // our oscillator:
-
 osc( ()=> Math.random() * 50 ).out()
 
 // clearing dilber (with ctrl+period) will
 // stop hydra. You can also call hush() to
 // do this without clearing audio/music.
-
 hush()
 
 // now that we know we can pass a function
@@ -84,7 +81,6 @@ osc(100,.1,1)
 // below to values between 64 and 8192 to see the
 // difference it makes:
 
-
 smooth = 64
 osc(100,.1,1)
   .kaleid( k.out(25,2,smooth) )
@@ -115,7 +111,6 @@ osc( 10,0,()=> FFT.low * 15 )
 
 clave = Clave().trigger.seq( 1, 1/2, 0, 1/4 )
 
-
 /* increasing the window size (how many samples 
 of audio the FFT looks at) will result in
 smoother animations, while decreasing it will
@@ -138,7 +133,6 @@ an array to FFT.start(); if you do this
 the averages will then be in FFT[0], 
 FFT[1], FFT[2] etc. 
 */
-
 // 0: 0-100Hz
 // 1: 100-500Hz
 // 2: 500-2000Hz
@@ -148,3 +142,14 @@ FFT.start([100,500,2000,22050])
 osc( 10,0,()=> FFT[0] * 15 )
   .modulate( noise( ()=> FFT[2] + FFT[3] * 5 ) )
   .out()
+
+
+// example how to initiate camera feed input
+s0.initCam() //initialize webcam as external source 's0'
+src(s0).out() // use external source 's0' inside Hydra
+
+// set some effects on camera
+src(s0).color(-1, 1).out()
+
+// set some effects on camera
+src(s0).color(-1, 1).kaleid().out()
