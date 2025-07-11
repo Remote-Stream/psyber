@@ -41,4 +41,32 @@ bg.seq(images, durations, true) // Random sequential background change
 // to go back to normal mode and reset simply call
 bg()
 
-// dilber also remembers your last background between sessions so it wont get lost after a reload
+/* Dilber remembers your last background between sessions so it wont get lost after a reload */
+
+// Now lets show some text
+bg('Hello Dilber')
+
+//change color
+bg.color('orange')
+
+// add fill color behind text
+bg.fill('blue') // you can use #222 hex code like css
+
+bg.fill() // remove fill
+
+//font size
+bg.size(50)
+
+bg.rotate(70)
+
+//back to normal
+bg.rotate(0)
+
+// set y position
+bg.y(50)
+
+// set x position
+bg.x(300)
+
+//clear again
+bg()

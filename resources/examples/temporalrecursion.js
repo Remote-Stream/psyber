@@ -199,22 +199,3 @@ tr( function( f, _ ) {
  
   return Math.sin(time)*0.05+0.07
 }, 'freesound', { f, _:{ i:0, num:0 } })
-
-
-/*--md
-The above example starts to show the power of running
-temporal recursions in the audio thread... you can 
-easily create evolving granular soundscapes by running 
-the functions every few milliseconds or so. This isn't
-easily possible when recursions are used for scheduling
-from the main thread.
-
-Earlier we mentioned some functions that use the phase
-of our audio clock behind the scenes to calculate values.
-It's worth checking out the performances of Andrew Sorensen
-to get a sense of how these can be used. [A Study in Keith](https://vimeo.com/2433947)
-is perhaps the most famous example, where Andrew creates
-a piano performance in the style of jazz pianist Keith Jarrett
-in eleven minutes (it's amazing!).
---*/
-

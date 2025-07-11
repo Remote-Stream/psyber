@@ -42,24 +42,29 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
  2. Or clone this repo and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 
-## Commands
+## Dilber commands
+
+Dilber uses shortcuts to control starting and stoping code, music and visuals. Make sure to get to know them first!
+
 ```
-Execute line of code:       CTRL+ENTER
-Execute block of code:      ALT+ENTER
-Execute page code:          CTRL+A (then CTRL+ENTER)
-Stop all:                   CTRL+. or SHIFT+CTRL+.
+Windows // Mac commands:
+
+Execute line of code:       CTRL+ENTER // CONTROL+RETURN
+Execute block of code:      ALT+ENTER // COMMAND+RETURN
+Execute page code:          CTRL+A (then CTRL+ENTER) // COMMAND+A (then COMMAND+RETURN)
+Stop all:                   CTRL+. or SHIFT+CTRL+. // CONTROL+. or SHIFT+CTRL+.
    
-Save code:                  SHIFT+CTRL+S
-Load code:                  SHIFT+CTRL+L
+Save code:                  SHIFT+CTRL+S // SHIFT+CONTROL+S
+Load code:                  SHIFT+CTRL+L // SHIFT+CONTROL+L
    
-Zoom in:                    SHIFT+CTRL++
-Zoom out:                   SHIFT+CTRL+-
+Zoom in:                    SHIFT+CTRL++ // SHIFT+CONTROL++ 
+Zoom out:                   SHIFT+CTRL+- // SHIFT+CONTROL++
    
-Edit pattern:               ALT + click on the pattern (crosshair cursor will show)
+Edit pattern:               ALT or OPTION + click on the pattern (crosshair cursor will show)
    
-Toggle code background:     SHIFT+ALT+B
-Toggle code visibility:     CTRL+H
-Toggle free camera (3D):    SHIFT+CTRL+C (you will see 📹 icon at metronome when camera mode is active)
+Toggle code background:     SHIFT+ALT+B // CONTROL+OPTION+B
+Toggle code visibility:     CTRL+H // CONTROL+H
+Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when camera mode is active)
 ```
 
 ## Visual libraries
