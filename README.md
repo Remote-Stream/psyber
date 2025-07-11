@@ -1,7 +1,7 @@
 # Dilber 
 Live audio-visual coding environment in JavaScript for the browser
 
-
+![interface](/resources/images/demo.png)
 
 https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 
@@ -32,6 +32,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Custom toast messages when there is an error in the code
 - Soundfont support
 - Custom dilber-server support
+- Custom background via `bcg(<url>)` command
 - Works offline
 
 
