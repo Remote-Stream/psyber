@@ -11,7 +11,7 @@ individual instruments to visual output for greater control.
 // Simplest: controlling the radius
 // of a sphere based on the output
 // of a kick drum.
-
+Clock.bpm = 140
 sphere = Sphere().render()
 kick = Kick().trigger.seq( 1,1/4 )
 sphere.radius = kick

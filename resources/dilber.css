@@ -54,7 +54,8 @@ a{
 
 .version {
   font-size: 12px;
-  padding-left: 25px;
+  padding-left: 20px;
+  padding-top: 2px;
 }
 
 .camera{
@@ -226,7 +227,7 @@ button, input {
   border-style:none !important;
   position:absolute;
   right:.5em;
-  top:1em;
+  top:11px;
   color:var(--f_med);
   z-index:1;
 }
