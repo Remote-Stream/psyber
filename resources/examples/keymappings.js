@@ -1,28 +1,8 @@
-/* 
-BASIC COMMANDS
-
-Execute line of code:    CTRL+ENTER
-Execute block of code:   ALT+ENTER
-Execute page code:       CTRL+A then CTRL+ENTER
-
-Stop all:                CTRL+.
-Stop all immediately:    SHIFT+CTRL+.
-
-Save code:               SHIFT+CTRL+S
-Load code:               SHIFT+CTRL+S
-
-Zoom in:                 SHIFT+CTRL++
-Zoom out:                SHIFT+CTRL+-
-
-Toggle code visibility:  CTRL+H
-Toggle code background:  CRTL+ALT+B
-Free camera (3D mode):   SHIFT+CTRL+C
-*/
 
 /*--md
 # Key mappings
    
-This tutorial-that-is-not-really-a-tutorial just lists all the various keystroke mappings
+This tutorial just lists all the various keystroke mappings
 in dilber and provides explanations as needed. In macOS, replace any `Alt` keys with `Option`.
 
 ## Running Code 
