@@ -27,7 +27,6 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Perform and share spectators links and invite others to watch and listen
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
-- Render canvas to video with `rec()` command
 - Share your code with others instantly
 - Custom toast messages when there is an error in the code
 - Soundfont support (Asprin, Chaos, GeneralUserGS, and JCLive)
@@ -119,7 +118,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 - Feel free to clone and setup your own server over SSL
 
 
-## Changes
+## Recent changes
 ```
 - background image sequencing
 - musicgen-small AI model support for sample generation
@@ -133,15 +132,12 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 - Added MouseY and MouseY parametars for modulating things from 0.0 to 1.0
 - Added Load and Save functionality so you can export or load dilber files from your computer
 - Improved error catching and logging
-- Added rec(param) command to record canvas in video mode
-     - rec() - records until you press CTRL+. command
-     - rec(5) - e.g. records for 5 seconds
 - Fully static app, runs localy
 - Simple folder structure:
   ./docs
   ./samples    <-- your samples go here
   ./resources  <-- all other files
-   index.html  <-- Main page
+   index.html  <-- main page
   ... many more
 ```
 
