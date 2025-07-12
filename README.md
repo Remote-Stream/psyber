@@ -114,7 +114,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 ```
 
 ## Running custom wss server
-- Dilber server is running [y-websocket-server](https://github.com/yjs/y-websocket-server) 
+- You can find server script here [dilber-server](resources/dilber-server.js) 
 - Feel free to clone and setup your own server over SSL
 
 
