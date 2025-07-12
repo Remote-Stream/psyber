@@ -1,4 +1,13 @@
 
+:root {
+  --after-color: white;
+  --after-size: 30px;
+  --after-rot: rotate(0deg);
+  --after-fill: #121111;
+  --after-left: calc(50% - 5em);
+  --after-top: calc(50% - 5em);
+  --after-content: '';
+}
 
 .markdown h1 {
   display:block; 
@@ -332,15 +341,15 @@ header span { font-size: .8em; }
   margin: 3rem;
   position: absolute;
   content: attr(data-after);
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  color: rgb(187, 182, 182);
-  top: calc(50% - 4em);
-  left: calc(50% - 5em);
+  transform: var(--after-rot);
+  -webkit-transform: var(--after-rot);
+  color: var(--after-color);
+  top: var(--after-top);
+  left: var(--after-left);
   z-index: -99;
   font-family: monospace;
-  font-size: 30px;
-  background-color: #121111;
+  font-size: var(--after-size);
+  background-color: var(--after-fill)
   
 }
 
