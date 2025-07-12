@@ -386,14 +386,7 @@ header span { font-size: .8em; }
   background:transparent;
 }
 
-.CodeMirror-line-numbers{
-  font-size: 10px;
-  width: 15px;
-}
 
-.CodeMirror-gutter-wrapper{
-  left:-29px !important;
-}
 
 span.cm-comment { color:rgb(121,121,121) !important }
 #editor, #editor { color:var(--f_low ) }
@@ -876,4 +869,27 @@ label { margin-bottom:5px; }
     right: 0;
     max-width: fit-content
   }
+}
+
+.CodeMirror-linenumber {
+  display: block;
+  width: 8px;
+  height: 8px;
+  font-size: 10px;
+}
+
+.CodeMirror-linenumbers{
+  position: relative;
+  font-size: 10px;
+  width: 15px;
+  display: flex;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  height: 100% !important;
+  z-index: -999;
+}
+
+.CodeMirror-gutter-wrapper{
+  left:-29px !important;
 }
