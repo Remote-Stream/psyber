@@ -1,9 +1,9 @@
+// made by Omodaka9375 aka Interlooper
+
 import { AutoTokenizer, MusicgenForConditionalGeneration, BaseStreamer } from './js/transformers.js';
-// Library for turning audio data array into a WAV file
 
 let db;
 const dbname = 'gen_sounds';
-//openDB(dbname)
 
 window.openDB = openDB
 
@@ -77,7 +77,7 @@ function arrayToBlob(rawdata){
 
 
 function playBlob(blob, samplename){
-    Toastify({ gravity: "bottom", text: `Playing '${samplename}'`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+    Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `Playing '${samplename}'`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
     const audio_el = document.createElement('audio');
     audio_el.src = window.URL.createObjectURL(blob);
     audio_el.play()
@@ -93,7 +93,7 @@ function openDB(dbname){
     window.shimIndexedDB;
   
   if (!indexedDB) {
-    Toastify({ gravity: "bottom", text: 'DB not compatible - musicgen not available', className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+    Toastify({ oldestFirst: true, position: "center", gravity: "bottom", text: 'DB not compatible - musicgen not available', className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
 
     console.log("IndexedDB could not be found in this browser.");
     return;
@@ -112,17 +112,14 @@ function openDB(dbname){
   openOrCreateDB.addEventListener('upgradeneeded', init => {
     db = init.target.result;
     db.onerror = () => { console.error('Error loading database') }
-  
     const table = db.createObjectStore(dbname, { keyPath: 'id', autoIncrement:true });
-  
     table.createIndex('name', 'name', { unique: false });
     table.createIndex('data', 'data', { unique: false });
   });
 
 }
 
-window.savetodb = saveArrayToDB
-
+window.__savetodb = saveArrayToDB
 function saveArrayToDB(arrayData, sample, prompt = null) {
   const cleanedSampleName = sample.replaceAll(' ','_')
     let sampleName = cleanedSampleName + '.gen';
@@ -134,13 +131,13 @@ function saveArrayToDB(arrayData, sample, prompt = null) {
 
     const query = objectStore.add(newSound);
     query.addEventListener('success', () => {
-        Toastify({ gravity: "bottom", text: `'${sampleName}' sample ready!`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+        Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `'${sampleName}' sample ready!`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
     });
     transaction.addEventListener('complete', () => {
-        console.log("Saved to DB")
+        console.log("Sample 'sample' saved to DB")
     });
     transaction.addEventListener('error', (e) => {
-        Toastify({ gravity: "bottom", text: 'Error saving sound to database', className: "error", stopOnFocus: true, style: {background: "red"}, }).showToast();
+        Toastify({ oldestFirst: true, position: "center", gravity: "bottom", text: 'Error saving sound to database', className: "error", stopOnFocus: true, style: {background: "red"}, }).showToast();
         console.log('Transaction error: \n' + e)
     });
 }
@@ -194,19 +191,16 @@ window.__getfromdb = async (sampleName) => {
                 pointer.continue();
             }
         } else {
-          Toastify({ gravity: "bottom", text: `Sample ${sampleName} not found`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+          Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `Sample ${sampleName} not found`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
           return resolve(null); // Resolve with null if not found
         }
       })
   });
 };
 
-
-window.playfromdb = playFromDB
-
+window.__playfromdb = playFromDB
 function playFromDB(sampleName){
     const objectStore = db.transaction(dbname).objectStore(dbname);
-
     objectStore.openCursor().addEventListener('success', e => {
         const pointer = e.target.result;
         if(pointer) {
@@ -217,7 +211,7 @@ function playFromDB(sampleName){
                 pointer.continue();
             }
         } else {
-          Toastify({ gravity: "bottom", text: `Sample ${sampleName} not found`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+          Toastify({ oldestFirst: true, position: "center", gravity: "bottom", text: `Sample ${sampleName} not found`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
         }
       });
 }
@@ -227,7 +221,7 @@ function addToDB(prompt, name, duration = 8, creativity = 0.1){
     const guidance_scale =  3;
     const temperature = creativity;
     let max_length;
-    Toastify({ gravity: "bottom", text: 'Loading MusicGen ...', className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+    Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: 'Loading MusicGen ...', className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
 
     AutoTokenizer.from_pretrained('Xenova/musicgen-small')
       .then(tokenizerObj => {
@@ -247,8 +241,8 @@ function addToDB(prompt, name, duration = 8, creativity = 0.1){
         },
         device: 'wasm',
       }).then(modelObj => {
-        Toastify({ gravity: "bottom", text: 'MusicGen loaded', className: "info", stopOnFocus: false, style: { background: "#40444d" }, }).showToast();
-        Toastify({ gravity: "bottom", text: `Generating '${name}.gen'`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+        Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: 'MusicGen loaded', className: "info", stopOnFocus: false, style: { background: "#40444d" }, }).showToast();
+        Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `Generating '${name}.gen'`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
         max_length = Math.min(
             Math.max(Math.floor(duration * 50), 1) + 4,
             modelObj.generation_config.max_length ?? 1500,
@@ -286,7 +280,7 @@ window.musicgen = (prompt, name, duration = 6, creativity = 0.1) => {
       }
       if(exists){
         var msg = `The sound '${name}.gen' already exists. Try playing it!`;
-        Toastify({ gravity: "bottom", text: msg, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+        Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: msg, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
       } else {
         addToDB(prompt, name, duration, creativity)
       }
@@ -295,10 +289,10 @@ window.musicgen = (prompt, name, duration = 6, creativity = 0.1) => {
 
 window.musicgen.list = () => {
   getAllItems(function (items) {
-    console.log(`MusicGen sample count ${items.length}:`)
+    console.log(`Sample count: ${items.length}`)
     for (var i = 0; i < items.length; i += 1) {
       console.log(`./${items[i].name}`)
     }
-    Toastify({ gravity: "bottom", text: "Check dev console!", className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+    Toastify({ oldestFirst: true, position: "center", gravity: "bottom", text: "Check dev console!", className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
   })
 }

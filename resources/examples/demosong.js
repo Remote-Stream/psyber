@@ -25,7 +25,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 
 // Ctrl+. to stop
 
-Clock.bpm = 140
+Clock.bpm = 120
 
 Theory.root = 'c5'
 Theory.mode = 'aeolian'
@@ -51,19 +51,7 @@ c = Clave().fx.add( Reverb() )
     .trigger.seq( sine(0.2, 0.1, 0.4), Euclid(6, 16) )
     .note.seq( sine(5.01, 4,5), Euclid(6, 16) )
 
-// execute this code below then press SHIFT+CTRL+C to toggle free camera mode (use WASD and arrow keys to direct camera)
-material = Material( 'phong', Vec3(.05), Vec3(.5), Vec3(1), 8, Vec3(1,4,1) )
+bg('https://i.imgur.com/niSq6Mv.gif')
 
-Light( Vec3(-2,2,3), Vec3(1,0,0) )
-Background( Vec3(0) )
-Fog( .5, Vec3(0) )
- 
-Repeat(
-   sphere = Sphere( .25 ).material( material ),
-    Vec3( .75)
-  ).render()
-
-// add some interactivity
-sphere.radius = cl
-
-sphere.radius.multiplier = 4
+// uncomment and execute line blelow to clear background animation
+// bg()
