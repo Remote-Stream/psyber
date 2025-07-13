@@ -1,34 +1,34 @@
 // it is easy to set custom image as a background in your Dilber editor
 
 // try this one from my favorite move
-bg('https://images.kinorium.com/movie/shot/135141/w1500_199042.jpg')
+bg('https://i.imgur.com/M5rDIXZ.jpeg')
 
 // to see code better with background use CTRL+ALT+B to turn on code background
-bg('https://images.kinorium.com/movie/shot/135141/w1500_199049.jpg')
+bg('https://i.imgur.com/jyRfXvN.jpeg')
 
 // matrix background
-bg('https://www.looper.com/img/gallery/15-movies-about-hackers-you-should-try-next/intro-1650898036.webp')
+bg('https://i.imgur.com/L2DMcei.png')
 
 // moving stairs
-bg('https://www.ignant.com/wp-content/uploads/2013/09/Julien_Douvier_Cinemagraphs09.gif')
+bg('https://i.imgur.com/ju1QZKZ.gif')
 
 //blue day
-bg('https://www.ignant.com/wp-content/uploads/2017/05/iGNANT_Art_Sam_Cannon.gif')
+bg('https://i.imgur.com/niSq6Mv.gif')
 
 // or a calm meadow
-bg('https://www.ignant.com/wp-content/uploads/2013/09/Julien_Douvier_Cinemagraphs06.gif')
+bg('https://i.imgur.com/VTRib9Q.gif')
 
 // far away
-bg('https://www.ignant.com/wp-content/uploads/2013/09/Julien_Douvier_Cinemagraphs01.gif')
+bg('https://i.imgur.com/km7z2io.gif')
 
 // home sweet home
-bg('https://www.ignant.com/wp-content/uploads/2013/09/Julien_Douvier_Cinemagraphs02.gif')
+bg('https://i.imgur.com/icjnWSo.gif')
 
 // here are some more to try
-g1 = 'https://www.ignant.com/wp-content/uploads/2015/12/1407954614tumblr_n9wufkbh151txeruoo1_r1_500__1_.gif'
-g2 = 'https://www.ignant.com/wp-content/uploads/2017/05/iGNANT_Gif_Art_Sam_Cannon_7.gif'
-g3 = 'https://www.ignant.com/wp-content/uploads/2013/09/Julien_Douvier_Cinemagraphs10.gif'
-g4 = 'https://www.ignant.com/wp-content/uploads/2017/05/iGNANT_Gif_Art_Sam_Cannon_1.gif'
+g1 = 'https://i.imgur.com/niSq6Mv.gif'
+g2 = 'https://i.imgur.com/dFvazks.gif'
+g3 = 'https://i.imgur.com/q59SX2L.gif'
+g4 = 'https://i.imgur.com/vxNk2qq.gif'
 
 // Now lets sequence fome gifs :)
 images = [g1, g2, g3, g4]
