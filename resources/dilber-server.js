@@ -23,7 +23,6 @@ const server = https.createServer(options, app => {
   response.writeHead(200, {'Access-Control-Allow-Origin': '<your-domain>',})
 })
 
-
 app.use( express.static( './', {
   setHeaders: function(res, path) {
     res.set("Access-Control-Allow-Origin", "<your-domain>")
@@ -42,8 +41,6 @@ app.use( function(req,res,next) {
 })
 
 const wss = new WebSocket.Server({ server:app })
-
-const rooms = {}
 
 wss.on('error', (conn, req) => {
  console.log('error in conn')
