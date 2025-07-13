@@ -328,24 +328,25 @@ header span { font-size: .8em; }
 
 
 #lines {
-  display:inline; 
+  display:inline-block; 
   position: absolute;
   width: 20px;
   height: 100%;
   background-color:transparent;
-  left: 3px;
+  left: 5px;
   direction: ltr;
-  padding-top: 5.2px;
+  top:3px;
 }
 
-.line{
+.line {
   width: 10px;
   color: #6c6c6c;
   height: 10px;
   display: block;
-  padding-bottom: 0.409em;
-  font-size: 0.8em;
+  padding-bottom: 0.5659em;
+  font-size: inherit;
   padding-left: 5px;
+  line-height: inherit;
 }
 
 #editor { 
@@ -356,7 +357,7 @@ header span { font-size: .8em; }
   top:0px;
   left:0px;
   height:calc( 100% - 3em);
-  padding-left:1.5em;  
+  /* padding-left:1.5em;   */
   z-index:1;
 }
 
@@ -405,7 +406,7 @@ header span { font-size: .8em; }
 
 .CodeMirror {
   font-family:Menlo, monospace;
-  font-size:.8em;
+  /* font-size:.8em; */
   background:transparent;
 }
 
