@@ -155,10 +155,10 @@ code {
   header { padding-top:.55em }
 }
 @media only screen and (max-width: 335px) {
-  #examplesMenu { display:none } 
+  #examples { display:none } 
 }
 
-#examplesMenu {
+#examples {
   color: rgb(59, 59, 59) !important
 }
 
@@ -325,6 +325,29 @@ h1 {
 
 header span { font-size: .8em; }
 
+
+
+#lines {
+  display:inline; 
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background-color:transparent;
+  left: 3px;
+  direction: ltr;
+  padding-top: 5.2px;
+}
+
+.line{
+  width: 10px;
+  color: #6c6c6c;
+  height: 10px;
+  display: block;
+  padding-bottom: 0.409em;
+  font-size: 0.8em;
+  padding-left: 5px;
+}
+
 #editor { 
   width:100%; 
   box-sizing:border-box; 
@@ -332,8 +355,8 @@ header span { font-size: .8em; }
   position:relative;
   top:0px;
   left:0px;
-  height:calc( 100% - 3em); /*border-right:1px solid #666;*/ 
-  padding-left:1em;  
+  height:calc( 100% - 3em);
+  padding-left:1.5em;  
   z-index:1;
 }
 
@@ -893,3 +916,4 @@ label { margin-bottom:5px; }
 .CodeMirror-gutter-wrapper{
   left:-29px !important;
 }
+

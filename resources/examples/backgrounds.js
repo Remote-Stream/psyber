@@ -44,7 +44,7 @@ bg()
 /* Dilber remembers your last background between sessions so it wont get lost after a reload */
 
 // Now lets show some text
-bg('Hello Dilber')
+bg('Hello Dilbers!')
 
 //change color
 bg.color('orange')
