@@ -13,9 +13,10 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio and video sequencing (gibber, step sequencing, tydalcycles/strudel)
 - Over 40 tutorials and demos on how to use
 - Over 3000 tunings and scales, see https://dilber.io/scales.html
+- Sample sources: local, online, AI generated localy, mic in recording
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
-- Record samples with your mic/audio in
-- Generate samples localy with `musicgen` for more sample choices
+- Record samples with your mic/audio in using `recordMic(<seconds>)`, defaults to 5 seconds recordings
+- Generate samples localy with `musicgen(<prompt>,<shortname>)` for more sample choices
 - Create your own synths
 - Supported sample formats: `wav, aif, mp3, aiff`
 - Audio in via command: FFT.startMic() - check Audio In tutorial
@@ -32,6 +33,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Soundfont support (Asprin, Chaos, GeneralUserGS, and JCLive)
 - Custom dilber-server support
 - Custom background via `bg(<url>)` command - check `backgrounds` tutorial in app
+- Sequence gifs via `bg.seq([image_array], [duration_array], random=true)`
 - Works offline
 
 

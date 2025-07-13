@@ -51,8 +51,17 @@ c = Clave().fx.add( Reverb() )
     .trigger.seq( sine(0.2, 0.1, 0.4), Euclid(6, 16) )
     .note.seq( sine(5.01, 4,5), Euclid(6, 16) )
 
-// single line
-bg('https://i.imgur.com/ju1QZKZ.gif')
+// Let's use code from backgrounds tutorial
+g1 = 'https://i.imgur.com/niSq6Mv.gif'
+g2 = 'https://i.imgur.com/dFvazks.gif'
+g3 = 'https://i.imgur.com/q59SX2L.gif'
+g4 = 'https://i.imgur.com/vxNk2qq.gif'
+
+// Now lets sequence fome gifs :)
+images = [g1, g2, g3, g4]
+durations = [5, 3, 4, 3] // Durations in seconds
+
+bg.seq(images, durations, true)  // Sequential background change
 
 // uncomment and execute line blelow to clear background animation
 // bg()
