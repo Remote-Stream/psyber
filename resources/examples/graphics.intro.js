@@ -63,4 +63,3 @@ onframe = function( time ) {
 // using ES6 arrow functions we can shorten this:
 s = Sphere().render()
 onframe = t => s.translate( Math.sin( t*4 ) )
-

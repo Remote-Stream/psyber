@@ -62,4 +62,3 @@ s4.decay = 44100 * 10
 s5 = Soundfont('Timpani', { bank:3 } ).connect( verb, .1 )
 s5.decay = 44100 * 4
 s5.note.tidal( '<[-14 -14*3] [-12 -12*3]>')
-

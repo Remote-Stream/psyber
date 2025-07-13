@@ -133,8 +133,5 @@ draw = function() {
   rect( b*-.5, b*-.5, b, b )
 }
 
-// in my opinion, for this particular bass sound, 
-// a window of 8192 samples works well.
-
 // be sure to check out the p5.js website 
 // for more information and a reference: https://p5js.org

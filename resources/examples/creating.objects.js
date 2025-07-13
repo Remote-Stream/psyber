@@ -96,5 +96,3 @@ This is the easiest way to get a sense of the options available for each object.
 is displayed you can use the arrow keys to scroll through it and read about each property/function.
 Try type `syn.` below to see its list:
 --*/
-
-

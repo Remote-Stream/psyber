@@ -1,5 +1,4 @@
 /* 
-
 Windows // Mac commands:
 
 Execute line of code:       CTRL+ENTER // CONTROL+RETURN
@@ -22,17 +21,18 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 */
 
 // Select all and hit Control+Enter to run, or alt (option on mac) + enter
-
 // Ctrl+. to stop
 
+// execute single line with CTRL+ENTER or CONTROL+RETURN on Mac
 Clock.bpm = 120
-
 Theory.root = 'c5'
 Theory.mode = 'aeolian'
 
+// execute block by using ALT+ENTER or COMMAND+RETURN on Mac
 s = Synth("bleep").fx.add(Reverb() )
     .note.seq( sine( btof(7.6),7,0 ), Euclid(5, 16) )
 
+// just another block
 k = Kick()
     .notef.seq( 70, 1/4 )
 
@@ -51,7 +51,8 @@ c = Clave().fx.add( Reverb() )
     .trigger.seq( sine(0.2, 0.1, 0.4), Euclid(6, 16) )
     .note.seq( sine(5.01, 4,5), Euclid(6, 16) )
 
-bg('https://i.imgur.com/niSq6Mv.gif')
+// single line
+bg('https://i.imgur.com/ju1QZKZ.gif')
 
 // uncomment and execute line blelow to clear background animation
 // bg()
