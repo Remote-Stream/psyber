@@ -37,7 +37,7 @@ k = Kick()
     .notef.seq( 70, 1/4 )
 
 h = Hat()
-    .trigger.seq( sine(3, 0.6, 0.05) , [1/16, 1/8].rnd() )
+    .trigger.seq( sine(3, 0.6, 0.05), [1/16, 1/8].rnd() )
     .tune.seq( Rndf(0.5, 0.6), 1/16)
 
 cl = Clap()

@@ -15,7 +15,7 @@ bass = Monosynth( 'bassPad', { decay:4 })
   .connect( verb, .5 )
   .note.seq( [0,-1,-2,-4], 4 )
  
-k = Kick().trigger.seq( 1,1/4 )
+k = Kick().trigger.seq( 1, 1/4 )
  
 h = Hat().connect( verb, .15 )
 h.trigger.tidal( '<.5 .35*3 [.5 .25] [.75 .25 .5 .25]>' )
