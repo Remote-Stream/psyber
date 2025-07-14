@@ -63,5 +63,7 @@ durations = [5, 3, 4, 3] // Durations in seconds
 
 bg.seq(images, durations, true)  // Sequential background change
 
-// uncomment and execute line blelow to clear background animation
+// uncomment and execute line bellow to clear background animation
 // bg()
+
+// or press SHIFT+CTRL-. to stop all
