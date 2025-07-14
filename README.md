@@ -24,8 +24,6 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
 - Camera control <i>(WASD, arrows)</i>
 - MouseX and MouseY tracking
-- Live perform with friends: P2P realtime collaboration with shared editor and chat over secure sockets
-- Perform and share spectators links and invite others to watch and listen
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
 - Share your code with others instantly
@@ -35,6 +33,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Custom background via `bg(<url>)` command - check `backgrounds` tutorial in app
 - Sequence gifs via `bg.seq([image_array], [duration_array], random=true)`
 - Works offline
+- [Soon] Live performing with friends: P2P realtime collaboration with shared editor and chat over secure sockets
 
 
 ## Where to start
