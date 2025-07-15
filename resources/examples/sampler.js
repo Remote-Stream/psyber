@@ -7,13 +7,11 @@
 ** bunch of different samples, and then select the sample that you'd like to trigger on a per-note basis.
 **
 ** While there are some samples sitting on local Dilber's folder for you to use, you'll
-** probably eventually want to experiment with your own sample server. To do this, you need a 
-** web server. If you're comfortable with JavaScript, I recommend using http-server:
-**
-** https://github.com/indexzero/http-server
-**
-** You need to turn on the CORS feature to load samples from a different server than
-** you're loading Dilber from. You could run it like so after installation:
+** probably eventually want to experiment with your own sample server,
+** or you can run Dilber localy and copy your samples in ./samples dir
+** Note:
+** For online samples, you need to turn on the CORS feature to load samples from a different server than
+** where you're loading Dilber from. You could run it like so after installation:
 **
 ** http-server pathToYourSampleDirectory -p 8080 --cors true
 **
@@ -21,9 +19,12 @@
 ** s = Sampler('http://127.0.0.1:8080/yourSammpleName.wav')
 */
 
-/* Great! When you call .note on a Sampler, it doesn't use the default tuning system in
-** Dilber, instead it controls the rate the sample is played back at. 
-*/
+// Possible sampler sources: 
+// 1. local samples and './samples' folder and sub-folders 
+// 2. online url
+// 3. microphone recording
+// 4. musicgen AI model
+// 5. soundfounts
 
 // let's try a sample that works well in reverse
 s = Sampler('openhat.wav')
@@ -104,3 +105,4 @@ s = Sampler[5]( 'kicks' )
 s.trigger.seq( 1, 1/16 )
 s.pick.seq( gen( beats(16) * s.length ) )
 s.spread(.95)
+
