@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio and video sequencing (gibber, step sequencing, tydalcycles/strudel)
 - Over 40 tutorials and demos on how to use
 - Over 3000 tunings and scales, see https://dilber.io/scales.html
-- Sample sources: local, online, AI generated localy, mic in recording
+- Sample sources: local, online, microphone in recording, musicgen model
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Record samples with your mic/audio in using `recordMic(<seconds>)`, defaults to 5 seconds recordings
 - Generate samples localy with `musicgen(<prompt>,<shortname>)` for more sample choices
