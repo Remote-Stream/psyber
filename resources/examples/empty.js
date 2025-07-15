@@ -2,4 +2,4 @@
 // author(s): 
 // date:
 
-// check out tutorials and examples in dropdown menu
+// check out tutorials and examples in the dropdown menu
