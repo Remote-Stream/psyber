@@ -106,7 +106,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
  or
 
  - Use local audio model to generate new samples for you e.g. `musicgen('90s drum beat heavy 120 bpm', 'drum2')
-
+ - Use it in your code like a normal instrument: Sampler('drum2.gen')
 ```
 
 
