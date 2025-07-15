@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 ## Where to start
  1. Go to [dilber.io](https://dilber.io) and start <i>dilbering</i>!
 
- 2. Or go to Releases page and download latest version
+ 2. Or go to [Releases page](https://github.com/Omodaka9375/dilber/releases) and download the latest version
  
  3. Or clone this repository and run it locally in VS Code using [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
