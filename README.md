@@ -13,12 +13,12 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Audio and video sequencing (gibber, step sequencing, tydalcycles/strudel)
 - Over 40 tutorials and demos on how to use
 - Over 3000 tunings and scales, see https://dilber.io/scales.html
-- Sample sources: local, online, microphone in recording, musicgen model
+- Sample sources supported: `local files, online files, microphone recording, musicgen model`
 - Sample mangling (see [sampler docs](https://dilber.io/docs/index.html#instruments-sampler))
 - Record samples with your mic/audio in using `recordMic(<seconds>)`, defaults to 5 seconds recordings
-- Generate samples localy with `musicgen(<prompt>,<shortname>)` for more sample choices
-- Create your own synths
-- Supported sample formats: `wav, aif, mp3, aiff`
+- Generate samples locally with `musicgen(<prompt>,<shortname>)` for more sample choices
+- Create your own synths with oscilators, envelopes, lfos and more...
+- Supported sample formats are `wav, aif, mp3, aiff`
 - Audio in via command: FFT.startMic() - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
@@ -135,7 +135,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 - Added MouseY and MouseY parametars for modulating things from 0.0 to 1.0
 - Added Load and Save functionality so you can export or load dilber files from your computer
 - Improved error catching and logging
-- Fully static app, runs localy
+- Fully static app, runs locally
 - Simple folder structure:
   ./docs
   ./samples    <-- your samples go here

@@ -1,6 +1,15 @@
 // don't have samples at hand or just want try some other sounds to mangle?
+// musicgen is a open-source model from Meta (https://musicgen.com/)
+// dilber loads musicgen model into your browser and creates all samples locally
+// which is why it can take a while the first time you request a sample
 
 musicgen("90s RnB drum loop 120 bpm", "beat")
+
+// you can specify duration of sample wanted, default is 8 seconds
+musicgen("90s RnB drum loop 120 bpm", "beat", 4)
+
+// you can also controll creativity parametar, default is 0.1
+musicgen("90s RnB drum loop 120 bpm", "beat", 4, 0.3)
 
 s = Sampler('beat.gen')
 s.rate = 0.65 // musicgen produces samples at 32khz so we need to slow down the rate :(
