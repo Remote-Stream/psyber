@@ -48,7 +48,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 
 ## Dilber commands
 
-Dilber uses shortcuts to control starting and stoping code, music and visuals. Make sure to get to know them first!
+Dilber uses keyboard shortcuts to control starting and stoping code, music and visuals. Make sure to get to know them first!
 
 ```
 Windows // Mac commands:
