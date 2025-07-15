@@ -1,12 +1,14 @@
-// it is easy to set custom image as a background in your Dilber editor
+// demo gifts are courtesy of https://imgur.com/gallery/art-dump-EvSlqVE
 
-// try this one from my favorite move
+// set custom image as a background, try this one from my favorite movie
 bg('https://i.imgur.com/M5rDIXZ.jpeg')
 
-// to see code better with background use CTRL+ALT+B to turn on code background
+// to see code better with background use 
+// CTRL+ALT+B to turn on code background
+
 bg('https://i.imgur.com/jyRfXvN.jpeg')
 
-// matrix background
+// matrix
 bg('https://i.imgur.com/L2DMcei.png')
 
 // moving stairs
@@ -70,3 +72,5 @@ bg.x(300)
 
 //clear again
 bg()
+
+// or press SHIFT+CTRL+. to stop all

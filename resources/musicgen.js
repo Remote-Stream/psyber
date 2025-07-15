@@ -131,10 +131,11 @@ function saveArrayToDB(arrayData, sample, prompt = null) {
 
     const query = objectStore.add(newSound);
     query.addEventListener('success', () => {
-        Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `'${sampleName}' sample ready!`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
+      console.log('Recorded sample: ' + sampleName)
+        Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `Sample '${sampleName}' ready`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
     });
     transaction.addEventListener('complete', () => {
-        console.log("Sample 'sample' saved to DB")
+        console.log("Sample saved")
     });
     transaction.addEventListener('error', (e) => {
         Toastify({ oldestFirst: true, position: "center", gravity: "bottom", text: 'Error saving sound to database', className: "error", stopOnFocus: true, style: {background: "red"}, }).showToast();

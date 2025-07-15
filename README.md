@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Generate samples locally with `musicgen(<prompt>,<shortname>)` for more sample choices
 - Create your own synths with oscilators, envelopes, lfos and more...
 - Supported sample formats are `wav, aif, mp3, aiff`
-- Audio in via command: FFT.startMic() - check Audio In tutorial
+- Audio in via command: `FFT.startMic()` - check Audio In tutorial
 - Audio effects <i>(BitCrusher, Delay, Filter, Distortion, Flanger, Reverb, RingMod, Vibrato, Tremolo, Wavefolder)</i>
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
 - Camera control <i>(WASD, arrows)</i>
@@ -106,7 +106,12 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
  or
 
  - Use local audio model to generate new samples for you e.g. `musicgen('90s drum beat heavy 120 bpm', 'drum2')
- - Use it in your code like a normal instrument: Sampler('drum2.gen')
+ - Use it in your code: Sampler('drum2.gen')
+
+ or
+
+ - Record a sample via microphone in your browser with `recordMic()` command
+ - Use it in your code: Sampler('<recording-name>.rec')
 ```
 
 
