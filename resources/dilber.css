@@ -329,7 +329,6 @@ header span { font-size: .8em; }
   
 }
 
-
 #lines {
   display:inline-block; 
   position: absolute;
@@ -337,7 +336,6 @@ header span { font-size: .8em; }
   height: 98%;
   background-color:transparent;
   left: 6px;
-  direction: ltr;
   top:3px;
   overflow-y: clip;
 }
