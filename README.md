@@ -35,7 +35,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Sequence gifs via `bg.seq([image_array], [duration_array], random=true)`
 - Record your audio (system+mic) and video performance to .mp4 via `startSession()` and `stopSession()`
 - Autosave - in case of a crash it stores your code accross sessions. Default interval is set to 30 minutes. It can be turned off or customized.
-- Spectate mode - after creating a session in perform mode, a spectator link is copied to your clipboard. Paste it anyhere to invite people to spectate your performance live. 
+- Spectator mode - after creating a session in perform mode, a spectator link is copied to your clipboard. Paste it anyhere to invite people to spectate your performance live. 
 - [Soon] P2P realtime collaboration with shared editor and chat over secure sockets
 
 
