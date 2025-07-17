@@ -4,11 +4,8 @@
   <meta charset='utf-8'>
   <span class="camera">📹</span>
   <title>Dilber | Live audio-visual coding in Javascript for the browser</title>
-  <link rel="stylesheet" crossOrigin="anonymous" href="./resources/external/codemirror.css">
-  <link rel="stylesheet" crossOrigin="anonymous" href="./resources/external/show-hint.css">
-  <link rel="stylesheet" crossOrigin="anonymous" href="./resources/external/dialog.css">
-  <link rel="stylesheet" crossOrigin="anonymous" href="./resources/external/tern.css">
-  <link rel="stylesheet" crossOrigin="anonymous" href="./resources/dilber.css">
+  <link rel="stylesheet" crossOrigin="anonymous" type="text/css" href="./resources/externals.css">
+  <link rel="stylesheet" crossOrigin="anonymous" type="text/css" href="./resources/dilber.css">
   <meta property="og:title" content="Dilber | Live audio-visual coding in the browser" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dilber.io" />
@@ -21,8 +18,8 @@
   <header>
     <h1 id="logo" onclick="location.reload()">dilber</h1>
     <select id='examples'></select>
-    <img id='themer' src='./resources/themes/noir.png'></img>
-    <div id='thememenu'>
+    <img id='theme' src='./resources/themes/noir.png'></img>
+    <div id='themes'>
       <ul>
         <li><img src='./resources/themes/apollo.png' /></li>
         <li><img src='./resources/themes/battlestation.png' /></li>
@@ -45,7 +42,7 @@
     <button id='restart'>restart</button>
     <button id='fullscreenbtn'>fullscreen</button>
     <button id='sharebtn'>share code</button>
-    <button id='connectbtn'>collaborate</button>
+    <button id='connectbtn'>perform</button>
     <button id='middibtn'>midi out</button>
     <select id='midiOutputSelect'>Device list:</select>
     <span id='reference'>
@@ -57,9 +54,7 @@
       </ul>
     </span>
   </header>
-
   <div id='editor' data-after=""></div></div>
-  
   <button id='hidebtn'>&#9650;</button>
   <canvas id='graphics'></canvas>
   <script src='./resources/dilber.js'></script>

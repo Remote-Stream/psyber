@@ -9,6 +9,14 @@
   --after-content: '';
 }
 
+#spectatorCounter{
+
+}
+
+#specCount{
+  
+}
+
 .markdown h1 {
   display:block; 
   color:var(--f_high);
@@ -151,7 +159,7 @@ code {
   #sharebtn, #connect, #restart, #midiOutputSelect, #version { display:none } 
 }
 @media only screen and (max-width: 400px) {
-  #themer { display:none } 
+  #theme { display:none } 
   header { padding-top:.55em }
 }
 @media only screen and (max-width: 335px) {
@@ -162,7 +170,7 @@ code {
   color: rgb(59, 59, 59) !important
 }
 
-#themer {
+#theme {
   
   height:1.5em;
  
@@ -196,20 +204,20 @@ body {
 }
 
 
-#thememenu ul { 
+#themes ul { 
   list-style:none;
   padding:0; 
   margin:0;
 }
-#thememenu {
+#themes {
   display:none; 
 }
-#thememenu ul li {
+#themes ul li {
   margin-bottom: -4px
 }
 
 .connect {
-  margin:.5em; 
+  margin:.6em; 
   font-family:monospace;
   width:14em;
   margin-right:1em;
@@ -262,7 +270,7 @@ label {
 #showChat, #useSharedEditorBox { 
   display: 'inline-block';
   width:1em; 
-  margin-left:.5em; 
+  margin-left:.8em; 
    
 }
 

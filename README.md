@@ -24,18 +24,19 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Video effects <i>(Antialiasing, Bloom, Blur, Brightness, Contrast, Edges, Focus, Godrays, Motion Blur, Hue, Invert)</i>
 - Camera control <i>(WASD, arrows)</i>
 - MouseX and MouseY tracking
+- Works offline!
 - Saving and loading your dilber files from computer
 - MIDI out for your external or hardware synths
 - Share your code with others instantly
 - Custom toast messages when there is an error in the code
 - Soundfont support (Asprin, Chaos, GeneralUserGS, and JCLive)
-- Custom dilber-server support
+- Custom server support, check out [server script](resources/dilber-server.js)
 - Custom background via `bg(<url>)` command - check `backgrounds` tutorial in app
 - Sequence gifs via `bg.seq([image_array], [duration_array], random=true)`
 - Record your audio (system+mic) and video performance to .mp4 via `startSession()` and `stopSession()`
-- Autosave - in case of a crash it stores your code accross sessions. Default interval is set to 5 minutes. It can be turned off or customized.
-- Works offline
-- [Soon] Live performing with friends: P2P realtime collaboration with shared editor and chat over secure sockets
+- Autosave - in case of a crash it stores your code accross sessions. Default interval is set to 30 minutes. It can be turned off or customized.
+- Spectate mode - after creating a session in perform mode, a spectator link is copied to your clipboard. Paste it anyhere to invite people to spectate your performance live. 
+- [Soon] P2P realtime collaboration with shared editor and chat over secure sockets
 
 
 ## Where to start
