@@ -511,7 +511,11 @@
   .CodeMirror-Tern-fhint-guess { opacity: .7; }
   
 
-
+  .themesLabel {
+    padding-left: 20px;
+    font-family: monospace;
+    font-size: larger;
+  }
 
 
 
@@ -698,6 +702,7 @@ code {
   top:.5em;
   object-fit:cover;
   cursor: pointer;
+  padding-right: 15px;
 }
 
 html { height: 100% }
