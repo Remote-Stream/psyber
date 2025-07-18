@@ -515,6 +515,8 @@
     padding-left: 20px;
     font-family: monospace;
     font-size: larger;
+    font-size: 13.5px;
+    font-family: 'Verdana';
   }
 
 
@@ -697,7 +699,6 @@ code {
 #theme {
   
   height:1.5em;
- 
   position:relative;
   top:.5em;
   object-fit:cover;
