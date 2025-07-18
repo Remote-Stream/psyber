@@ -1498,4 +1498,6 @@ label { margin-bottom:5px; }
 #popup h1{
   padding-top: 20px;
   font-size: xx-large;
+  left: -8px;
+  position: relative;
 }
