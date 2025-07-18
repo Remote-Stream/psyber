@@ -79,7 +79,7 @@ syn.note.seq( 0, 1/4 )
 
 /*--md
 ...you'll notice only the second sequence actually triggers. By 
-default, Gibberwill replace an existing sequence with a new one. 
+default, Dilber will replace an existing sequence with a new one. 
 To stop this, you can pass an ID number as a third argument to 
 calls to `.seq()`. In the examples of sequencing we've seen so far,
 no ID has been given, which means dilber assumes a default ID of 0
