@@ -34,7 +34,10 @@
 
 #customUrl {
   margin-top: -10px;
+  padding-left: 10px;
+  width: 175px;
 }
+
 /* hide page scrollbar */
 html { scrollbar-width: none; } /* Firefox */
 body { -ms-overflow-style: none; } /* IE and Edge */
@@ -219,7 +222,7 @@ body {
 .connect {
   margin:.6em; 
   font-family:monospace;
-  width:14em;
+  width:13.8em;
   margin-right:1em;
   right:0;
   display:block
