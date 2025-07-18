@@ -1,7 +1,7 @@
 //session recording
 
 // to record full session, audio and video use this
-startSession()
+recordSession()
 
 //to stop session recording
 stopSession()

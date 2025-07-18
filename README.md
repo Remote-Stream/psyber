@@ -33,7 +33,7 @@ https://github.com/user-attachments/assets/d01a258c-34f4-4e3b-8bd5-1b9b1aaee542
 - Custom server support, check out [server script](resources/dilber-server.js)
 - Custom background via `bg(<url>)` command - check `backgrounds` tutorial in app
 - Sequence gifs via `bg.seq([image_array], [duration_array], random=true)`
-- Record your audio (system+mic) and video performance to .mp4 via `startSession()` and `stopSession()`
+- Record your audio (system+mic) and video performance via `recordSession()` and `stopSession()`
 - Autosave - in case of a crash it stores your code accross sessions. Default interval is set to 30 minutes. It can be turned off or customized.
 - Spectator mode - after creating a session in perform mode, a spectator link is copied to your clipboard. Paste it anyhere to invite people to spectate your performance live. 
 - [Soon] P2P realtime collaboration with shared editor and chat over secure sockets
@@ -81,7 +81,7 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 ```
 - Use a direct link to your sample as a parameter: Sampler('https://somewebsite.come/awesomesample.wav')
 
-- Use any sound from freesound.org library by ID: 
+- Use any sound from Freesound.org library by ID: 
      Freesound(4048)
 
 - Download samples by query: 
@@ -131,11 +131,12 @@ Toggle free camera (3D):    SHIFT+CTRL+C // SHIFT+CONTROL+C (📹 icon when came
 
 ## Recent changes
 ```
+- record your sessions (video and audio)
 - background image sequencing
 - musicgen-small AI model support for sample generation
 - MIDI out support - controll your external synths with Dilber via WebMIDI
 - Process audio/mic in for live reactivity
-- Sample your audio in //todo
+- Sample your audio/mic in
 - UI fixes for popups and notifications
 - Removed most of redundant code and unnecesary files
 - P2P WebSockets now works properly over wss server
