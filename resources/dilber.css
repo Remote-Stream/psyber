@@ -517,10 +517,8 @@
     font-size: larger;
     font-size: 13.5px;
     font-family: 'Verdana';
+    color:var(--f_med);
   }
-
-
-
 
 :root {
   --after-color: white;
@@ -1499,5 +1497,5 @@ label { margin-bottom:5px; }
 
 #popup h1{
   padding-top: 20px;
-  font-size: x-large;
+  font-size: xx-large;
 }
