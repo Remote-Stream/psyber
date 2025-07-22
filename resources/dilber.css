@@ -545,6 +545,7 @@
 }
 
 .customlink {
+  display: none;
   padding-left:10px;
   color: green !important;
   cursor: pointer;
@@ -554,6 +555,7 @@
 
 
 #customUrl {
+
   padding-left: 10px;
   width: 175px;
 }
