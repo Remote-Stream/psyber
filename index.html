@@ -36,14 +36,17 @@
         <li><img src='./resources/themes/pinkpanter.png' /></li>
       </ul>
     </div>
+    <input type="file" onchange="importSamples(this.files)" id="samplesInput" style="display: none;" name="files[]" multiple accept=".wav,.mp3,.aif,.aiff" />
+    <button id='uploadbtn' onclick='document.getElementById("samplesInput").click()'>import samples</button>
     <input type="file" id="fileInput" style="display: none;">
     <button id='loadbtn'>load project</button>
     <button id='savebtn'>save project</button>
-    <button id='fullscreenbtn'>fullscreen</button>
+
     <button id='sharebtn'>share</button>
     <button id='connectbtn'>perform</button>
     <button id='middibtn'>midi out</button>
     <select id='midiOutputSelect'>device list:</select>
+    <button id='fullscreenbtn'>fullscreen</button>
     <span id='reference'>
       <ul>
         <li><a target='_blank' href='https://github.com/Omodaka9375/dilber'>code</a></li>

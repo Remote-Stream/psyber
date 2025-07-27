@@ -75,7 +75,6 @@ function arrayToBlob(rawdata){
   return wav_blob;
 }
 
-
 function playBlob(blob, samplename){
     Toastify({  oldestFirst: true, position: "center", gravity: "bottom", text: `Playing '${samplename}'`, className: "info", stopOnFocus: false, style: {background: "#40444d"}, }).showToast();
     const audio_el = document.createElement('audio');
