@@ -52,10 +52,10 @@ c = Clave().fx.add( Reverb() )
     .note.seq( sine(5.01, 4,5), Euclid(6, 16) )
 
 // Let's use code from backgrounds tutorial
-g1 = 'https://i.imgur.com/niSq6Mv.gif'
-g2 = 'https://i.imgur.com/dFvazks.gif'
+g1 = 'https://i.imgur.com/A5c8icE.gif'
+g2 = 'https://i.imgur.com/jUOoIDY.gif'
 g3 = 'https://i.imgur.com/q59SX2L.gif'
-g4 = 'https://i.imgur.com/vxNk2qq.gif'
+g4 = 'https://i.imgur.com/G5NudoP.gif'
 
 // Now lets sequence fome gifs :)
 images = [g1, g2, g3, g4]
