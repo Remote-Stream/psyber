@@ -11,14 +11,14 @@ const Theme = function(client) {
 
   this.active = {}
   this.default = {
-    background: '#222222',
-    f_high: '#ffffff',
-    f_med: '#cccccc',
-    f_low: '#999999',
-    f_inv: '#ffffff',
-    b_high: '#888888',
-    b_med: '#666666',
-    b_low: '#444444',
+    background: '#181b22ff',
+    f_high: '#a4ffffff',
+    f_med: '#acfdf6ff',
+    f_low: '#79bbb5ff',
+    f_inv: '#b4fff2ff',
+    b_high: '#6f8b9eff',
+    b_med: '#416574ff',
+    b_low: '#2a634bff',
     b_inv: '#000000'
   }
 
